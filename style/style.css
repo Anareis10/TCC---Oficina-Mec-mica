@@ -16,21 +16,39 @@
     background-color: var(--cor-terciaria);
 }
 
-.Logo__PauloCar{
-    margin: 0 auto;
-    float: left;
-    width: 200px;
-    padding: 0 20px;
+.header{
+    background-color: var(--cor-primaria);
 }
 
 .parte_superior{
-    margin-inline: auto;
-    width: 300px;
+    display: flex;
 }
+
+.Logo__PauloCar{
+    float: left;
+    height: 100px;
+    width: auto;
+    padding: 0 20px;
+}
+
 .LupaPesquisa{
     display: flex;
-    margin: 0 auto;
     float: center;
-    width: 100px;
+    width: 20px;
+    height: auto;
     padding: 0 30px;
+}
+
+.LupaPesquisa{
+    display: flex;
+    float: center;
+    width: 50px;
+    height: auto;
+    padding: 10 50px;
+}
+
+
+.Logo_Carrinho{
+    float: right;
+
 }
