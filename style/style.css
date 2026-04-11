@@ -1,10 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
 }
 
+:root{
+    --cor-primaria: #000000;
+    --cor-secundaria: #FF9924;
+    --cor-terciaria: #FFFFFF;
+    --fonte-primaria: Montserrat, sans-serif;
+}
+
+.body{
+    background-color: var(--cor-terciaria);
+}
+
 .Logo__PauloCar{
-    display: flex;
     margin: 0 auto;
     float: left;
     width: 200px;
