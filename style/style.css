@@ -16,6 +16,11 @@
     background-color: var(--cor-terciaria);
 }
 
+.parte_superior{
+    margin-inline: auto;
+    width: 300px;
+}
+
 .Logo__PauloCar{
     margin: 0 auto;
     float: left;
@@ -23,14 +28,32 @@
     padding: 0 20px;
 }
 
-.parte_superior{
-    margin-inline: auto;
-    width: 300px;
+.h1{
+    text-align: center;
+    text-decoration: none;
+    color: var(--cor-primaria);
 }
+
+.Logo_Carrinho{
+    display: flex;
+    margin: 0 auto;
+    float: right;
+    width: 100px;
+    padding: 0 30px;
+}
+
 .LupaPesquisa{
     display: flex;
     margin: 0 auto;
     float: center;
     width: 100px;
     padding: 0 30px;
+}
+
+.Logo_UsuarioPadrao{
+    display: flex;
+    margin: 0 auto;
+    float: right;
+    width: 100px;
+    padding: 0 30px;    
 }
