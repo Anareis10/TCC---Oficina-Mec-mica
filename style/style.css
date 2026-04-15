@@ -25,30 +25,44 @@
 }
 
 .Logo__PauloCar{
-    float: left;
-    height: 100px;
+    display: left;
+    height: 60px;
     width: auto;
-    padding: 0 20px;
+    padding: 20px 20px;
 }
 
 .LupaPesquisa{
     display: flex;
-    float: center;
-    width: 20px;
+    width: 8%;
     height: auto;
-    padding: 0 30px;
+    padding: 40px 30px;
 }
 
-.LupaPesquisa{
+
+.barra__pesquisa{
     display: flex;
-    float: center;
-    width: 50px;
-    height: auto;
-    padding: 10 50px;
+    justify-content: center;
+    align-items: center;
+    width: 30em;
+    height: 0.05px;
+    padding: 20px 20px;
 }
-
 
 .Logo_Carrinho{
-    float: right;
+    width: 2.5%;
+    height: 0%;
+    margin-left: 68rem;
+    margin-top: 1.25rem;
+}
 
+.Logo_UsuarioPadrao{
+    width: 2.5%;
+    height: 0%;
+    margin-left: 1rem;
+    margin-top: 1.25rem;
+
+}
+
+.Login_Cadastro{
+    text-align: ;
 }
