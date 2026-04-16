@@ -1,37 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-:root{
+:root {
     --cor-primaria: #000000;
     --cor-secundaria: #FF9924;
     --cor-terciaria: #FFFFFF;
     --fonte-primaria: Montserrat, sans-serif;
 }
 
-.body{
+.body {
     background-color: var(--cor-terciaria);
 }
 
-.header{
+.header {
     background-color: var(--cor-primaria);
 }
 
-.parte_superior{
+main {
     display: flex;
+    flex-direction: row;
 }
 
-.Logo__PauloCar{
+.parte__superior {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Logo__PauloCar {
     float: left;
-    height: 100px;
+    height: 10vh;
     width: auto;
     padding: 0 20px;
+    margin: 0.5rem 0;
 }
 
-.LupaPesquisa{
+.Title {
+    font-family: var(--fonte-primaria);
+    font-size: 40px;
+    font-weight: 600;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-left: 38%;
+}
+
+.Lupa__Pesquisa {
     display: flex;
     float: center;
     width: 20px;
@@ -39,16 +55,66 @@
     padding: 0 30px;
 }
 
-.LupaPesquisa{
-    display: flex;
-    float: center;
-    width: 50px;
-    height: auto;
-    padding: 10 50px;
-}
-
-
-.Logo_Carrinho{
+.Logo__Carrinho {
     float: right;
-
+    height: 3.2rem;
+    width: auto;
+    margin-left: 31%;
 }
+
+.Logo__UsuarioPadrao {
+    margin-left: 4%;
+    height: 4.5rem;
+    width: auto;
+}
+
+.sidebar {
+    background-color: var(--cor-secundaria);
+    width: 20vh;
+    height: 100vh;
+    padding: 20px;
+    margin-left: 0.5rem;
+}
+
+.SanduicheSidebar {
+    height: 6rem;
+    width: auto;
+    margin-left: 1.2rem;
+}
+
+.Options__Links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Options__Links a {
+    font-family: var(--fonte-primaria);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--cor-primaria);
+    margin-top: 2rem;
+}
+
+.Sobre__Main {
+    background-color: var(--cor-primaria);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.Sobre__Main__Part1 {
+    margin: 15rem 0 0 5rem;
+    font-family: var(--fonte-primaria);
+    color: var(--cor-terciaria);
+    font-size: 28px;
+    font-weight: 600;
+    max-width: 42rem;
+    text-align: left;
+}
+
+.Foto__PauloCar {
+    height: 20vh;
+    width: auto;
+}
+
