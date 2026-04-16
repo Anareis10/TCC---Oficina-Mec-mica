@@ -17,9 +17,6 @@
     background-color: var(--cor-terciaria);
 }
 
-.header{
-    background-color: var(--cor-primaria);
-}
 
 .parte_superior{
     display: flex;
@@ -85,5 +82,33 @@
 
 
 .sidebar{
-    
+    background-color: var(--cor-secundaria);
+    width: 13vh;
+    height: 100vh;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.Options__Links {
+    display: flex;
+    flex-direction: column;
+}
+.Options__Links{
+    margin-top: 2.5rem;
+    text-decoration: none;
+    color: var(--cor-primaria);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.Options__Links:hover{
+    font-size: 18px;
+}
+
+header{
+    background-color: var(--cor-primaria);
+}
+.centro{
+    background-color: var(--cor-primaria);
+    width: 100%;
 }
