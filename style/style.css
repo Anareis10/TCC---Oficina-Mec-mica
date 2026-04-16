@@ -9,6 +9,7 @@
     --cor-primaria: #000000;
     --cor-secundaria: #FF9924;
     --cor-terciaria: #FFFFFF;
+    --cor-cinza-claro: #D9D9D9;
     --fonte-primaria: Montserrat, sans-serif;
 }
 
@@ -22,47 +23,67 @@
 
 .parte_superior{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--cor-terciaria);
 }
 
-.Logo__PauloCar{
-    display: left;
-    height: 60px;
-    width: auto;
-    padding: 20px 20px;
-}
 
-.LupaPesquisa{
+.superior__esquerda, .superior__direita{
     display: flex;
-    width: 8%;
-    height: auto;
-    padding: 40px 30px;
+    align-items: center;
 }
 
+.superior__centro{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-left: 40px; /*espaço depois da logo*/
+}
+
+.logo__PauloCar{
+    height: 60px;
+}
 
 .barra__pesquisa{
+    width: 400px;
+    padding: 8px;
+    border: none;
+    background-color: var(--cor-cinza-claro);
+}
+
+.superior__direita{
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 30em;
-    height: 0.05px;
-    padding: 20px 20px;
-}
+    gap: 20px;
 
-.Logo_Carrinho{
-    width: 2.5%;
-    height: 0%;
-    margin-left: 68rem;
-    margin-top: 1.25rem;
-}
-
-.Logo_UsuarioPadrao{
-    width: 2.5%;
-    height: 0%;
-    margin-left: 1rem;
-    margin-top: 1.25rem;
+    margin-left: auto; /*joga tudo para a direita*/
 
 }
 
-.Login_Cadastro{
-    text-align: ;
+.Login__Cadastro{
+    text-decoration: none;
+    color: var(--cor-primaria);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.Login__cadastro:hover{
+    text-decoration: underline;
+
+}
+
+.Login__Cadastro:hover{
+        color: var(--cor-secundaria);
+}
+
+.container__usuario, .Logo_Carrinho{
+    height: 50px;
+}
+
+
+.sidebar{
+    
 }
