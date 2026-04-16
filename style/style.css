@@ -29,6 +29,8 @@
 }
 
 .h1{
+    font-family: var(--fonte-primaria);
+    font-size: 5px;
     text-align: center;
     text-decoration: none;
     color: var(--cor-primaria);
