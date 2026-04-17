@@ -40,8 +40,16 @@
     margin-left: 40px; /*espaço depois da logo*/
 }
 
+.Logo__Carrinho{
+    height: 45px;
+}
+
 .logo__PauloCar{
     height: 60px;
+}
+
+.LupaPesquisa{
+    height: 30px;
 }
 
 .barra__pesquisa{
@@ -73,7 +81,7 @@
 }
 
 .Login__Cadastro:hover{
-        color: var(--cor-secundaria);
+    color: var(--cor-secundaria);
 }
 
 .container__usuario, .Logo_Carrinho{
@@ -83,16 +91,18 @@
 
 .sidebar{
     background-color: var(--cor-secundaria);
-    width: 13vh;
+    width: 15vh;
     height: 100vh;
     padding: 20px;
-    margin-left: 20px;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .Options__Links {
     display: flex;
     flex-direction: column;
 }
+
 .Options__Links{
     margin-top: 2.5rem;
     text-decoration: none;
@@ -102,13 +112,49 @@
 }
 
 .Options__Links:hover{
-    font-size: 18px;
+    font-weight: 800;
 }
 
-header{
-    background-color: var(--cor-primaria);
+section{
+    display: flex;
+    
+    flex-direction: row;
+    flex: 1;
+    background: var(--cor-primaria);
+    margin-left: 20px;
+    margin-right: 20px;
+    min-height: 100vh;
 }
+
+
 .centro{
-    background-color: var(--cor-primaria);
-    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    color: var(--cor-terciaria);
+    margin-top: 100px;
+}
+
+.centro h1{
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.centro h2{
+    display: block;
+    font-size: 55px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.centro p{
+    font-size: 40px;
+    margin-top: 15px;
+    text-align: center;
 }
