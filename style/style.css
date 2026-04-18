@@ -48,15 +48,57 @@
     height: 60px;
 }
 
+.textos__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o subtitulo em relação ao nome Paulo Car */
+    margin-left: 30px;
+    font-family: var(--fonte-primaria);
+}
+
+.titulo__principal {
+    font-size: 2.5rem; /* Ajustei um pouco o tamanho para caber melhor */
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 2px;
+    color: var(--cor-primaria);
+    line-height: 1;
+}
+
+.subtitulo__container {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Faz o conjunto ocupar a largura do nome de cima */
+    gap: 10px;   /* Espaçamento entre a linha e o texto */
+    margin-top: 5px;
+}
+
+.subtitulo {
+    font-size: 0.9rem; /* Subtítulo menor para dar elegância */
+    font-weight: 400;
+    margin: 0;
+    white-space: nowrap;
+    letter-spacing: 5px; /* Espaçamento entre letras estilo Stradale */
+    color: var(--cor-primaria);
+}
+
+.linha {
+    flex-grow: 1; /* Faz a linha esticar e ocupar o espaço vazio */
+    height: 1px;  /* Linha fina é mais elegante */
+    background-color: var(--cor-primaria);
+}
+
 .LupaPesquisa{
     height: 30px;
+    margin-left: 50px;
 }
 
 .barra__pesquisa{
-    width: 400px;
+    width: 500px;
     padding: 8px;
     border: none;
     background-color: var(--cor-cinza-claro);
+
 }
 
 .superior__direita{
