@@ -42,6 +42,13 @@ header::before /*pseudo-elemento*/ {
     opacity: 0.3; /*transparência*/
 }
 
+
+.conteudo__geral{
+    margin: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
 /*cor da barra superior com transparência*/
 .parte_superior{
     background-color: var(--cor-branco-transparente);
@@ -169,10 +176,7 @@ header::before /*pseudo-elemento*/ {
     font-weight: 500;
 }
 
-.Login__cadastro:hover{
-    text-decoration: underline;
 
-}
 
 /*muda a cor da palavra quando coloca o mousse em cima*/
 .Login__Cadastro:hover{
