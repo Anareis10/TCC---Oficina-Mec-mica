@@ -1,57 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
     <title>Página Inicial</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <!--A parte que normalmente fica a logo, barra de pesquisa, etc-->
+      <!-- CONTAINER COM MARGEM -->
+      <div class="conteudo-geral">
         <div class="parte_superior">
-            <div class="superior__esquerda">
-                <img class="Logo__PauloCar" src="./imagens/Logo Paulo Car.png" alt="Logo Paulo Car">
-                <div class="textos__logo">
-                    <p class="titulo__principal">PAULO CAR</p>
-                    <div class="subtitulo__container">
-                        <span class="linha"></span>
-                        <p class="subtitulo">AUTO MECÂNICA</p>
-                        <span class="linha"></span>
-                    </div>
-                </div>
-            </div>
+          <div class="superior__esquerda">
+            <img class="Logo__PauloCar" src="./imagens/Logo Paulo Car.png" />
 
-            <div class="superior__centro">
-                <img src="./imagens/Lupa.png" alt="Botão de pesquisa" class="LupaPesquisa">
-                <input class="barra__pesquisa" type="text" name="barra" placeholder="Digite aqui...">
+            <div class="textos__logo">
+              <p class="titulo__principal">PAULO CAR</p>
+              <div class="subtitulo__container">
+                <span class="linha"></span>
+                <p class="subtitulo">AUTO MECÂNICA</p>
+                <span class="linha"></span>
+              </div>
             </div>
+          </div>
 
-            <div class="superior__direita">
-                <a class="Login__Cadastro" href="#">Cadastrar</a>
-                <a class="Login__Cadastro" href="#">Entrar</a>
+          <div class="superior__centro">
+            <img src="./imagens/Lupa.png" class="LupaPesquisa" />
+            <input class="barra__pesquisa" type="text" placeholder="Pesquisar..."/>
+          </div>
 
-                <img src="./imagens/Carrinho de compras.png" alt="Logo Carrinho" class="Logo__Carrinho">
-                <img src="./imagens/perfil icone.png" alt="Logo Usuário Padrão" class="container__usuario">
-            </div>
+          <div class="superior__direita">
+            <a class="Login__Cadastro" href="#">Cadastrar</a>
+            <a class="Login__Cadastro" href="#">Entrar</a>
+
+            <img src="./imagens/Carrinho de compras.png" class="Logo__Carrinho"/>
+            <img src="./imagens/perfil icone.png" class="container__usuario" />
+          </div>
         </div>
-        <!--Barra Lateral-->
 
         <section>
-            <div class="sidebar">
-                <!--Opcões de páginas-->
-                <a class="Options__Links" href="./loja.html">LOJA</a>
-                <a class="Options__Links" href="./sobre.html">SOBRE</a>
-                <a class="Options__Links" href="./agendamento.html">AGENDAMENTO</a>
-                <a class="Options__Links" href="./servicos.html">SERVIÇOS</a>
-            </div>
-            <!--Parte que vai ficar do lado da sidebar (Barra Lateral)-->
-            <div class="centro">
-                <h1>CUIDADO ESPECIALIZADO</h1>
-                <h2>PARA O SEU VEÍCULO</h2>
-                <p>SEGURANÇA E QUALIDADE PAULO CAR</p>
-            </div>
+          <div class="centro">
+            <h1>CUIDADO ESPECIALIZADO</h1>
+            <h2>PARA O SEU VEÍCULO</h2>
+            <p>SEGURANÇA E QUALIDADE PAULO CAR</p>
+          </div>
         </section>
+
+        <div class="botoes">
+          <button>LOJA</button>
+          <button>SERVIÇOS</button>
+          <button>AGENDAMENTO</button>
+        </div>
+      </div>
     </header>
-</body>
+
+    <section class="quem__somos">
+      <div class="texto">
+        <h2 class="quem">QUEM</h2>
+        <h2 class="somos">SOMOS?</h2>
+
+        <p>
+          A oficina possui 20 anos de experiência no mercado, sempre atuando com
+          foco em injeção eletrônica, o que garantiu ao longo do tempo um
+          serviço mais preciso e de qualidade. Com o objetivo de acompanhar a
+          evolução dos veículos, a empresa vem investindo constantemente em
+          equipamentos novos e tecnológicos. Além disso, está sempre em busca de
+          mais especialização, aprimorando conhecimentos para oferecer um
+          atendimento cada vez melhor aos clientes.
+        </p>
+      </div>
+
+      <div class="imagens__oficina">
+        <img src="./imagens/Foto oficina Motor BMW 1.png" alt="motor" class="img__1"/>
+        <img src="./imagens/Foto oficina placa 1.png" alt="placa eletrônica" class="img__2"/>
+        <img src="./imagens/Foto Ofina Mercedez 1.png" alt="mercedez capo aberto" class="img__3" />
+        <img src="./imagens/Foto oficina Range Rover 1.png" alt="carro ranger rover" class="img__4"/>
+      </div>
+    </section>
+
+    <div class="rodape__principal">
+      <div class="rodape__conteudo">
+        <img src="./imagens/Logo Paulo Car.png" alt="Logo" class="logo__footer"/>
+
+        <ul class="rodape__links">
+          <li><a href="#">LOJA</a></li>
+          <li><a href="#">SERVIÇOS</a></li>
+          <li><a href="#">AGENDAMENTO</a></li>
+          <li><a href="#">CONTATO</a></li>
+        </ul>
+
+        <p>
+          Entre em contato e conte conosco para cuidar do seu automóvel<br />com
+          atenção máxima.
+        </p>
+
+        <p><span>Segunda à sexta:</span> 8h00 às 12h30 - 14h00 às 18h00</p>
+
+        <ul class="logos__redes">
+          <li><a href="#"><img src="./imagens/location 2.png" alt="icone de localização"/></a> </li>
+          <li><a href="#"><img src="./imagens/whatsapp 1.png" alt="icone do whatsapp"/></a></li>
+          <li><a href="#"><img src="./imagens/instagram 1.png" alt="icone do instagram"/></a></li>
+          <li><a href="#"><img src="./imagens/phone-call 1.png" alt="icone do telefone"/></a></li>
+          <li><a href="#"><img src="./imagens/tiktok 1.png" alt="icone do tiktok"/></a></li>
+          <li><a href="#"><img src="./imagens/facebook 1.png" alt="icone do facebook"/></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>©2026 Paulo Car - Todos os direitos reservados.</p>
+    </div>
+  </body>
 </html>
