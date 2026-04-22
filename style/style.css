@@ -254,6 +254,10 @@ button{
     font-size: 20px;
 }
 
+button:hover{
+    font-size: 25px;
+}
+
 /*2 seção: parte do sobre*/
 .quem__somos{
     display: grid; /*ativar o grid*/
@@ -263,6 +267,7 @@ button{
     align-items: flex-start; /*controla o alinhamento*/
     padding: 50px;
 }
+
  /*edita a escrita QUEM*/
 .quem{
     color: var(--cor-secundaria);
@@ -365,6 +370,10 @@ button{
     font-weight: 500;
 }
 
+.rodape__links a:hover{
+    font-size: 30px;
+}
+
 /*edita o texto*/
 .rodape__principal p{
     color: var(--cor-terciaria);
@@ -402,6 +411,5 @@ button{
     color: var(--cor-terciaria);
     margin: 0;
     margin-left: 20px;
-    
 
 }
