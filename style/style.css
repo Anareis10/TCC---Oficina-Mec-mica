@@ -37,7 +37,6 @@ header::before /*pseudo-elemento*/ {
     content: ""; /*obrigstório para o pseudo aparecer*/
     position: absolute; /*posiciona livremente dentro do header*/
     inset: 0; /*equivale a top, right, bottom e left: 0*/
-
     background: url('../imagens/Imagem de fundo.png') top/cover no-repeat; /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
     opacity: 0.3; /*transparência*/
 }
@@ -76,7 +75,6 @@ header::before /*pseudo-elemento*/ {
     display: flex; /*ativa layout flexível*/
     align-items: center; /*alinha verticalmente*/
     gap: 10px; /*espaço entre os itens filhos*/
-
     margin-left: 40px; /*espaço depois da logo*/
 }
 
@@ -144,7 +142,6 @@ header::before /*pseudo-elemento*/ {
     border: none; /*remove todas as bordas*/
     border-bottom: 2px solid black; /*cria a linha inferior*/
     background: transparent; /*fundo transparênte*/
-
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
     width: 500px; /*largura*/
@@ -163,7 +160,6 @@ header::before /*pseudo-elemento*/ {
     display: flex;
     align-items: center;
     gap: 20px;
-
     margin-left: auto; /*joga tudo para a direita*/
 
 }
