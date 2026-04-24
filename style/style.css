@@ -414,13 +414,16 @@ button{
 
 .container__agendamento{
     background-color: #FF9924;
-    height: 800px;
+    height: 1300px;
+    width: 80%;
     font-size: 500;
     text-align: center;
-    margin: 30%;
-    margin-top: 50px;
+    margin: 20%;
     text-decoration: none;
     justify-content: center;
+    margin-left: 150px;
+    margin-top: -30%;
+    margin-bottom: 10%;
 }
 
 .alinhar__carro{
@@ -438,28 +441,29 @@ button{
 }
 
 .barra__modelo__carro{
-    border: none; /*remove todas as bordas*/
+    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
-    width: 650px; /*largura*/
+    width: 1000px; /*largura*/
     margin-left: 20px;
     justify-content: left;
+    
 }
 
 .barra__placa__carro{
-    border: none; /*remove todas as bordas*/
+    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
-    width: 650px; /*largura*/
+    width: 1000px; /*largura*/
     margin-left: 20px;
     justify-content: left;
 }
 
 .barra__ano__carro{
-    border: none; /*remove todas as bordas*/
+    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
-    width: 650px; /*largura*/
+    width: 1000px; /*largura*/
     margin-left: 20px;
     justify-content: left;
 }
@@ -472,7 +476,7 @@ button{
 
 .imagem__calendario{
     margin: 0%;
-    
+    margin-top: -10%;
 }
 
 .calendario__agendamento{
@@ -493,19 +497,42 @@ button{
 }
 
 .barra__data{
-    border: none; /*remove todas as bordas*/
+    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
-    width: 650px; /*largura*/
+    width: 1000px; /*largura*/
     margin-left: 20px;
     justify-content: left;    
 }   
 
 .barra__horario{
-    border: none; /*remove todas as bordas*/
+    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
-    width: 650px; /*largura*/
+    width: 1000px; /*largura*/
     margin-left: 20px;
     justify-content: left;      
+}
+
+.barra__Confirmar{
+    display: block;
+    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    outline: none; /*remove a borda azul quando clica*/
+    padding: 5px; /*espaço interno*/
+    width: 200px; /*largura*/
+    margin-left: 835px;
+    justify-content: right; 
+    background-color: var(--cor-terciaria);
+    border-radius: 5px;
+}
+
+.botoes__agendamento{
+    display: flex;
+    justify-content: center; /*centralizar os botões na página*/
+    gap: 64px;
+    position: relative;
+    z-index: 1; /*ordem de sobreposição*/
+    margin-top: 80px;
+    font-size: 100px;
+    height: -60px;
 }
