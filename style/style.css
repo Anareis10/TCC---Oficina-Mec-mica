@@ -530,9 +530,7 @@ button{
     display: flex;
     justify-content: center; /*centralizar os botões na página*/
     gap: 64px;
-    position: relative;
-    z-index: 1; /*ordem de sobreposição*/
-    margin-top: 80px;
+    margin-bottom: 190px;
     font-size: 100px;
     height: -60px;
 }
