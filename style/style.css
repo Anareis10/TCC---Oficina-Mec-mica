@@ -29,15 +29,16 @@ header {
     position: relative; /*posiciona elementos filhos*/
     height: 100vh; /*altura*/
     width: 100%; /*largura*/
-    overflow: hidden; /*esconde qualquer conteúdo que ultrapasse*/
 }
 
 /* IMAGEM DE FUNDO (SEM MARGEM) */
 header::before /*pseudo-elemento*/ {
     content: ""; /*obrigstório para o pseudo aparecer*/
     position: absolute; /*posiciona livremente dentro do header*/
-    inset: 0; /*equivale a top, right, bottom e left: 0*/
-
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: url('../imagens/Imagem de fundo.png') top/cover no-repeat; /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
     opacity: 0.3; /*transparência*/
 }
@@ -46,7 +47,6 @@ header::before /*pseudo-elemento*/ {
 .conteudo__geral{
     margin: 0 20px;
     position: relative;
-    z-index: 1;
 }
 
 /*cor da barra superior com transparência*/
@@ -76,13 +76,7 @@ header::before /*pseudo-elemento*/ {
     display: flex; /*ativa layout flexível*/
     align-items: center; /*alinha verticalmente*/
     gap: 10px; /*espaço entre os itens filhos*/
-
     margin-left: 40px; /*espaço depois da logo*/
-}
-
-/*tamanho do carrinho de compras*/
-.Logo__Carrinho{
-    height: 45px;
 }
 
 /*tamanho da logo*/
@@ -121,7 +115,6 @@ header::before /*pseudo-elemento*/ {
     font-size: 0.9rem; /* Subtítulo menor */
     font-weight: 400; /*espessura da  fonte*/
     margin: 0; /*zera a margem*/
-    white-space: nowrap; /*impede a quebra de linha*/
     letter-spacing: 5px; /* Espaçamento entre letras */
     color: var(--cor-primaria);
 }
@@ -144,7 +137,6 @@ header::before /*pseudo-elemento*/ {
     border: none; /*remove todas as bordas*/
     border-bottom: 2px solid black; /*cria a linha inferior*/
     background: transparent; /*fundo transparênte*/
-
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
     width: 500px; /*largura*/
@@ -163,9 +155,7 @@ header::before /*pseudo-elemento*/ {
     display: flex;
     align-items: center;
     gap: 20px;
-
     margin-left: auto; /*joga tudo para a direita*/
-
 }
 
 /*edita a parte do cadastrar e entrar*/
@@ -191,8 +181,6 @@ header::before /*pseudo-elemento*/ {
 /*edita a seção section*/
 section{
     display: flex;
-    flex-direction: row; /*organiza os elementos em linha horizontal da esquerda para a direita*/
-    flex: 1; /*divide o espaço igualmente*/
 }
 
 /*edita o texto central*/
@@ -237,7 +225,6 @@ section{
     justify-content: center; /*centralizar os botões na página*/
     gap: 64px;
     position: relative;
-    z-index: 1; /*ordem de sobreposição*/
     margin-top: 80px;
     font-size: 100px;
     
@@ -252,6 +239,11 @@ button{
     font-weight: 750;
     border-radius: 10px; /*bordas arredondadas*/
     font-size: 20px;
+}
+
+.botao__interacao:hover{
+    height: auto;
+    width: 270px;
 }
 
 /*2 seção: parte do sobre*/
@@ -301,7 +293,6 @@ button{
 .imagens__oficina img{
     width: 60%;
     height: auto;
-    object-fit: cover; /*preenche sem distorcer*/
     border-radius: 10px;
     display: block;
 }
