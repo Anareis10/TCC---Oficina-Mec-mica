@@ -360,6 +360,10 @@ button:hover{
     font-weight: 500;
 }
 
+.rodape__links a:hover{
+    font-size: 30px;
+}
+
 /*edita o texto*/
 .rodape__principal p{
     color: var(--cor-terciaria);
@@ -380,6 +384,11 @@ button:hover{
     display: flex;
     gap: 30px;
     margin-bottom: 30px;
+}
+
+.icones img:hover{
+    width: auto;
+    height: 70px;
 }
 
 /*última parte do rodapé*/
