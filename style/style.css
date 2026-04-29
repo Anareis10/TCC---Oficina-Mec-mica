@@ -31,6 +31,19 @@ header {
     width: 100%; /*largura*/
 }
 
+/* IMAGEM DE FUNDO (SEM MARGEM) */
+header::before /*pseudo-elemento*/ {
+    content: ""; /*obrigstório para o pseudo aparecer*/
+    position: absolute; /*posiciona livremente dentro do header*/
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('../imagens/Imagem de fundo.png') top/cover no-repeat; /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
+    opacity: 0.3; /*transparência*/
+}
+
+
 .conteudo__geral{
     margin: 0 20px;
     position: relative;
@@ -127,6 +140,7 @@ header {
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
     width: 500px; /*largura*/
+
 }
 
 /*  atingir o placeholder da barra de pesquisa */
@@ -245,7 +259,6 @@ button:hover{
     align-items: flex-start; /*controla o alinhamento*/
     padding: 50px;
 }
-
  /*edita a escrita QUEM*/
 .quem{
     color: var(--cor-secundaria);
@@ -333,7 +346,6 @@ button:hover{
 .rodape__links{
     list-style: none; /*remove as bolinhas da lista*/
     display: flex;
-    gap: 40px; /*espaço entre os itens*/
     gap: 20px; /*espaço entre os itens*/
     padding: 0;
     margin: 0;
@@ -346,6 +358,11 @@ button:hover{
     text-decoration: none; /*retira o sublinhado*/
     font-size: 25px;
     font-weight: 500;
+}
+
+.rodape__links a:hover{
+    font-size: 30px;
+    font-weight: 540;
 }
 
 /*edita o texto*/
@@ -390,5 +407,6 @@ button:hover{
     color: var(--cor-terciaria);
     margin: 0;
     margin-left: 20px;
-}
+    
 
+}
