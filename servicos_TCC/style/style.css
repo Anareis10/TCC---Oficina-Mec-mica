@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*zera a margem e os espaçamentos padrão*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Váriaveis de cores e fonte*/
+:root{
+    --cor-primaria: #000000;
+    --cor-secundaria: #FF9924;
+    --cor-terciaria: #FFFFFF;
+    --cor-quarternaria-cinza-claro: #D9D9D9;
+    --cor-quinquenaria-cinza: #212121;
+    --cor-sextenario-cinza: #3D3C3C;
+    --cor-branco-transparente: rgba(255, 255, 255, 0.5); /*cor com transparência*/
+    --fonte-primaria: Montserrat, sans-serif;
+}
+
+/*cor de fundo da o+página*/
+body{
+    background-color: var(--cor-primaria);
+    margin: 0 20px;
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*header ocupando a tela inteira*/
+header {
+    position: relative; /*posiciona elementos filhos*/
+    height: 100vh; /*altura*/
+    width: 100%; /*largura*/
+    overflow: hidden; /*esconde qualquer conteúdo que ultrapasse*/
+}
+
+/* IMAGEM DE FUNDO (SEM MARGEM) */
+header::before /*pseudo-elemento*/ {
+    content: ""; /*obrigstório para o pseudo aparecer*/
+    position: absolute; /*posiciona livremente dentro do header*/
+    inset: 0; /*equivale a top, right, bottom e left: 0*/
+     background: url('../Image_Logos/imagem_fundocarros.png') top/cover no-repeat; /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
+    opacity: 0.3; /*transparência*/
+    margin-top: 115px;
+
+}
+
+
+.texto__principal{
+    display: flex;
+    text-align: center;
+    color: var(--cor-terciaria);
+    font-size: 96px;
+    max-width: 4rem;
+    margin-left: 38%;
+    margin-top: 20%;
+    font-weight: 1000;
+
+}
+
+
+/*cor da barra superior com transparência*/
+.parte_superior{
+    background-color: var(--cor-branco-transparente);
+
+}
+
+/*barra superior*/
+.parte_superior{
+    margin-top: 20px; /*margem de cima*/
+    display: flex; /*ativa layout flexível*/
+    align-items: center; /*alinha verticalmente*/
+    justify-content: space-between; /*distribui com espaço*/
+    padding: 10px 20px;  /*espaçamento interno*/
+
+}
+
+
+.superior__esquerda, .superior__direita{
+    display: flex; /*ativa layout flexível*/
+    align-items: center; /*alinha verticalmente*/
+}
+
+/*Gap entre elementos*/
+.superior__centro{
+    display: flex; /*ativa layout flexível*/
+    align-items: center; /*alinha verticalmente*/
+    gap: 10px; /*espaço entre os itens filhos*/
+
+    margin-left: 40px; /*espaço depois da logo*/
+}
+
+/*tamanho do carrinho de compras*/
+.Logo__Carrinho{
+    height: 45px;
+}
+
+/*tamanho da logo*/
+.Logo__PauloCar{
+   
+    width: 120px;
+    height: auto;
+}
+
+/*edita o texto que fica ao lado da logo*/
+.textos__logo {
+    display: flex; /*ativa layout flexível*/
+    flex-direction: column; /*coluna vertical*/
+    align-items: center; /* Centraliza o subtitulo em relação ao nome Paulo Car */
+    margin-left: 30px; /*margem esquerda*/
+    font-family: var(--fonte-primaria); /*chama a variável fonte Montserrat*/
+}
+ /*texto ao lado da logo*/
+.titulo__principal {
+    font-size: 2.5rem; /*tamanho da fonte*/
+    font-weight: 800; /*espessura da fonte*/
+    margin: 0; 
+    letter-spacing: 2px; /*espaço entre letras*/
+    color: var(--cor-primaria); /*chama a variável cor*/
+    line-height: 1; /*altura da linha*/
+}
+
+/*container flexível*/
+
+.subtitulo__container {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Faz o conjunto ocupar a largura do nome de cima */
+    gap: 10px;   /* Espaçamento entre a linha e o texto */
+    margin-top: 5px;
+}
+
+.sub__titulo{
+    font-size: 0.9rem; /* Subtítulo menor */
+    font-weight: 400; /*espessura da  fonte*/
+    margin: 0; /*zera a margem*/
+    white-space: nowrap; /*impede a quebra de linha*/
+    letter-spacing: 5px; /* Espaçamento entre letras */
+    color: var(--cor-primaria);
+}
+
+/*edição da linha que fica no subtítulo*/
+.linha {
+    flex-grow: 1; /* Faz a linha esticar e ocupar o espaço vazio */
+    height: 1px;  /* espessura da linha */
+    background-color: var(--cor-primaria); /*cor da linha*/
+}
+
+/*edita a lupa de pesquisa*/
+.Lupa_Pesquisa{
+    height: 30px; /*tamanho*/
+    margin-left: 150px; /*margem esquerda*/
+}
+
+/*edita a barra/linha de pesquisa*/
+.barra__pesquisa{
+    border: none; /*remove todas as bordas*/
+    border-bottom: 2px solid black; /*cria a linha inferior*/
+    background: transparent; /*fundo transparênte*/
+    outline: none; /*remove a borda azul quando clica*/
+    padding: 5px; /*espaço interno*/
+    width: 500px; /*largura*/
+   
+}
+
+
+/*  atingir o placeholder da barra de pesquisa */
+.barra__pesquisa::placeholder {
+    color: var(--cor-primaria); /* chama a variável Cor preta */
+    opacity: 1; /* Garante que a cor fique forte e não acinzentada */
+    font-size: 18px; /*tamanho da fonte*/
+}
+
+/*edita a parte da direita (carrinho, conta, entrar e o cadastrar*/
+.superior__direita{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-left: auto; /*joga tudo para a direita*/
+
+}
+
+/*edita a parte do cadastrar e entrar*/
+
+.Login__Cadastro{
+    text-decoration: none; /*retira o sublinhado*/
+    color: var(--cor-primaria); 
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+
+/*muda a cor da palavra quando coloca o mousse em cima*/
+.Login__Cadastro:hover{
+    color: var(--cor-secundaria);
+}
+
+/*tamanho do carrinho e conta*/
+.container__usuario, .Logo__Compras{
+    height: 50px;
+}
+
+/*edita a seção section*/
+section{
+    display: flex;
+    flex-direction: row; /*organiza os elementos em linha horizontal da esquerda para a direita*/
+    flex: 1; /*divide o espaço igualmente*/
+}
+
+ /*botões*/
+button{
+    width: 250px;
+    padding: 30px 0; /*espaço interno vertical*/
+    background: var(--cor-secundaria);
+    border: none; /*remove as bordas*/
+    cursor: pointer; /*muda o cursor para a mão*/
+    font-weight: 750;
+    border-radius: 10px; /*bordas arredondadas*/
+    font-size: 20px;
+}
+
+.texto__principal{
+    z-index: 1;  /*para jogar o "Nossos Serviços" para frente*/
+}
+
+/* todos os botoes de serviços*/
+.quadradinhos__servicos{
+    display: flex;
+/*controlam como os itens se comportam quando não cabem mais em uma única linha dentro de um container Flex*/
+    flex-wrap: wrap; /*Permite que os itens pulem para a próxima linha quando o espaço acaba.*/
+    align-content:space-evenly;  /* Distribui o espaço vazio de forma igual entre as linhas, acima delas e abaixo delas; funciona quando você tem múltiplas linhas (ou seja, quando o wrap está ativo) e sobra espaço vertical no container.*/
+    justify-content:center;
+    margin-top: 4rem;
+}
+
+
+/* é a classe de cada botão de serviço (cada um e o seu texto compartilha da mesma)*/
+.option {
+    margin: 2rem;
+    border: 2px solid var(--cor-secundaria);
+    background-color: var(--cor-secundaria);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 3rem 4.5rem;    
+    justify-content: center;
+    max-width: 4rem;
+    max-height: 4rem;
+    font-size: 25px;
+    border-radius: 20%;
+    box-shadow: 2px 2px 8px #3D3C3C;
+}
+
+
+/*Seção 3: rodapé*/
+.rodape__principal{
+    background-color: var(--cor-quinquenaria-cinza); /*cor de fundo*/
+    padding: 40px 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+/*edita o conteúdo*/
+.rodape__conteudo{
+    display: flex;
+    flex-direction: column; /*organiza em coluna*/
+    align-items: center; /*centraliza na horizontal*/
+    justify-content: center; /*centraliza na vertical*/
+    gap: 20px;
+    text-align: center;
+}
+
+/*edita a logo*/
+.logo__footer{
+    height: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/*lista de links na horizontal*/
+.rodape__links{
+    list-style: none; /*remove as bolinhas da lista*/
+    display: flex;
+    gap: 40px; /*espaço entre os itens*/
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px; /*margem inferior extarna*/
+}
+
+/*edita as palavras da lista*/
+.rodape__links a{
+    color: var(--cor-secundaria); /*cor*/
+    text-decoration: none; /*retira o sublinhado*/
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.rodape__links a:hover{
+    font-size: 30px;
+}
+
+/*edita o texto*/
+.rodape__principal p{
+    color: var(--cor-terciaria);
+    font-size: 32px;
+    display: block;
+    margin-bottom: 30px;
+}
+
+/*coloca negrito em algumas palavras dentro de uma frase*/
+.rodape__principal span{
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+/*formata os icones das rededs sociais*/
+.logos__redes{
+    list-style: none; /*remove as bolinhas da lista*/
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.icones img:hover{
+    width: auto;
+    height: 70px;
+}
+
+/*última parte do rodapé*/
+.copyright{
+    display: flex;
+    align-items: center;
+    background-color: var(--cor-sextenario-cinza);
+    height: 80px;
+    width: 100%;
+}
+
+/*formata o texto dos direitos autorais*/
+.copyright p{
+    font-size: 30px;
+    color: var(--cor-terciaria);
+    margin: 0;
+    margin-left: 20px;
+    
+
+}
