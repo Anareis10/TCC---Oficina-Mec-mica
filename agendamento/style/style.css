@@ -292,11 +292,13 @@ button{
 }
 
 /*agendamento*/
+/*fundo da área de agendamento*/
 .container__agendamento__fundo{
     background-color: #000000;
     margin: 0;
 }
 
+/*container principal do agendamento*/
 .container__agendamento{
     background-color: #FF9924;
     height: 1200px;
@@ -305,20 +307,25 @@ button{
     text-align: center;
     margin: 20%;
     text-decoration: none;
-    justify-content: center;
+    justify-content: center; /*centraliza na vertical*/
+    gap: 20px;
     margin-left: 150px;
     margin-top: -40%;
     margin-bottom: 5%;
 }
 
+/*alinhamento da seção de veículo*/
 .alinhar__carro{
     gap: 20px;
     margin-left: 20px;
     font-size: 25px;
 }
+
+/*opções de veículo*/
 .opcoes__veiculo{
     display: flex;
-    justify-content: left;
+    justify-content: left; 
+    gap: 20px;
     flex-direction: column;
     text-align: left;
     margin-left: 20px;
@@ -326,6 +333,7 @@ button{
     margin-top: 80px;
 }
 
+/*campos de entrada (modelo, placa, ano)*/
 .barra__modelo__carro{
     border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
     outline: none; /*remove a borda azul quando clica*/
@@ -357,6 +365,7 @@ button{
     font-size: 18px;
 }
 
+/*seção de data*/
 .alinhar__data{
     gap: 20px;
     margin-left: 0px;
@@ -364,18 +373,21 @@ button{
     font-size: 25px;
 }
 
+/*imagem do calendário*/
 .imagem__calendario{
     margin: 0%;
     margin-top: -10%;
 }
 
+/*calendário*/
 .calendario__agendamento{
-    justify-content: center;
+    justify-content: center; 
     height: 450px;
     width: 650px;
     margin-top: 150px;
 }
 
+/*inputs de data*/
 .dia__mes__ano{
     display: flex;
     justify-content: left;
@@ -386,6 +398,7 @@ button{
     margin-top: 80px;
 }
 
+/*campos de data e horário*/
 .barra__data{
     border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
     outline: none; /*remove a borda azul quando clica*/
@@ -406,6 +419,7 @@ button{
     font-size: 18px;      
 }
 
+/*botão de confirmar*/
 .barra__Confirmar{
     display: block;
     border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
@@ -418,6 +432,7 @@ button{
     border-radius: 5px;
 }
 
+/*botões da área de agendamento*/
 .botoes__agendamento{
     display: flex;
     justify-content: center; /*centralizar os botões na página*/
