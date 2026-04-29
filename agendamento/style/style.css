@@ -183,41 +183,6 @@ section{
     flex: 1; /*divide o espaço igualmente*/
 }
 
-/*edita o texto central*/
-.centro{
-    flex: 1;
-    display: flex;
-    flex-direction: column; /*organiza em coluna*/
-    justify-content: center; /*centraliza na vertical*/
-    align-items: center; /*centraliza na horizontal*/
-    height: 100%;
-    text-align: center; /*centraliza o texto*/
-    color: var(--cor-terciaria);
-    margin-top: 180px;
-}
-
-/*edita a primeira linha do título central*/
-.centro h1{
-    font-size: 70px;
-    font-weight: 600;
-    line-height: 1.1;
-    margin: 0;
-}
-
-/*segunda linha do títilo central*/
-.centro h2{
-    display: block; /* ocupa toda a largura disponível do seu elemento pai e força uma quebra de linha antes e depois de si*/
-    font-size: 61px;
-    font-weight: 500;
-    margin: 0;
-}
-
-/*última linha do título central*/
-.centro p{
-    font-size: 55px;
-    margin-top: 15px;
-    text-align: center;
-}
 
 /*edita os botões*/
 .botoes{
@@ -240,74 +205,6 @@ button{
     font-weight: 750;
     border-radius: 10px; /*bordas arredondadas*/
     font-size: 20px;
-}
-
-/*2 seção: parte do sobre*/
-.quem__somos{
-    display: grid; /*ativar o grid*/
-    grid-template-columns: 1fr 1fr; /*duas colunas iguais*/
-    gap: 30px; /*espaço entre linha/coluna*/
-    justify-content: space-between; 
-    align-items: flex-start; /*controla o alinhamento*/
-    padding: 50px;
-}
- /*edita a escrita QUEM*/
-.quem{
-    color: var(--cor-secundaria);
-    font-size: 70px;
-    margin-bottom: 20px;
-    margin-top: 50px;
-    margin-left: 20px;
-}
-
-/*edita a escrita SOMOS?*/
-.somos{
-    color: var(--cor-terciaria);
-    margin-left: 150px;
-    font-size: 70px;
-    margin-top: -20px;
-}
-
-/*edita o parágrafo*/
-.texto p{
-    color: var(--cor-terciaria);
-    font-size: 34px;
-    text-align: left;
-    margin-top: 100px;
-    width: 600px;
-    margin-left: 20px;
-}
-
-.imagens__oficina{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /*cria duas colunas*/
-    gap: 5px;
-    align-items: start;
-
-}
-
-.imagens__oficina img{
-    width: 60%;
-    height: auto;
-    object-fit: cover; /*preenche sem distorcer*/
-    border-radius: 10px;
-    display: block;
-}
-
-.img__1, .img__2{
-    height: 250px;
-}
-
-.img__1{
-    margin-top: 110px;
-}
-
-.img__2{
-    margin-top: 200px;
-}
-
-.img__3{
-    margin-top: -90px;
 }
 
 /*Seção 3: rodapé*/
