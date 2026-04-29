@@ -32,20 +32,6 @@ header {
     overflow: hidden; /*esconde qualquer conteúdo que ultrapasse*/
 }
 
-/* IMAGEM DE FUNDO (SEM MARGEM) */
-header::before /*pseudo-elemento*/ {
-    content: ""; /*obrigstório para o pseudo aparecer*/
-    position: absolute; /*posiciona livremente dentro do header*/
-    inset: 0; /*equivale a top, right, bottom e left: 0*/
-<<<<<<< HEAD
-=======
-
->>>>>>> agendamento
-    background: url('../imagens/Imagem de fundo.png') top/cover no-repeat; /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
-    opacity: 0.3; /*transparência*/
-}
-
-
 .conteudo__geral{
     margin: 0 20px;
     position: relative;
@@ -79,10 +65,6 @@ header::before /*pseudo-elemento*/ {
     display: flex; /*ativa layout flexível*/
     align-items: center; /*alinha verticalmente*/
     gap: 10px; /*espaço entre os itens filhos*/
-<<<<<<< HEAD
-=======
-
->>>>>>> agendamento
     margin-left: 40px; /*espaço depois da logo*/
 }
 
@@ -150,14 +132,9 @@ header::before /*pseudo-elemento*/ {
     border: none; /*remove todas as bordas*/
     border-bottom: 2px solid black; /*cria a linha inferior*/
     background: transparent; /*fundo transparênte*/
-<<<<<<< HEAD
-=======
-
->>>>>>> agendamento
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
     width: 500px; /*largura*/
-
 }
 
 /*  atingir o placeholder da barra de pesquisa */
@@ -262,13 +239,10 @@ button{
     font-size: 20px;
 }
 
-<<<<<<< HEAD
 button:hover{
     font-size: 25px;
 }
 
-=======
->>>>>>> agendamento
 /*2 seção: parte do sobre*/
 .quem__somos{
     display: grid; /*ativar o grid*/
@@ -278,10 +252,7 @@ button:hover{
     align-items: flex-start; /*controla o alinhamento*/
     padding: 50px;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> agendamento
  /*edita a escrita QUEM*/
 .quem{
     color: var(--cor-secundaria);
@@ -370,11 +341,8 @@ button:hover{
 .rodape__links{
     list-style: none; /*remove as bolinhas da lista*/
     display: flex;
-<<<<<<< HEAD
     gap: 40px; /*espaço entre os itens*/
-=======
     gap: 20px; /*espaço entre os itens*/
->>>>>>> agendamento
     padding: 0;
     margin: 0;
     margin-bottom: 30px; /*margem inferior extarna*/
@@ -388,13 +356,6 @@ button:hover{
     font-weight: 500;
 }
 
-<<<<<<< HEAD
-.rodape__links a:hover{
-    font-size: 30px;
-}
-
-=======
->>>>>>> agendamento
 /*edita o texto*/
 .rodape__principal p{
     color: var(--cor-terciaria);
@@ -417,14 +378,11 @@ button:hover{
     margin-bottom: 30px;
 }
 
-<<<<<<< HEAD
 .icones img:hover{
     width: auto;
     height: 70px;
 }
 
-=======
->>>>>>> agendamento
 /*última parte do rodapé*/
 .copyright{
     display: flex;
@@ -440,12 +398,6 @@ button:hover{
     color: var(--cor-terciaria);
     margin: 0;
     margin-left: 20px;
-<<<<<<< HEAD
-
-}
-=======
-    
-
 }
 
 /*agendamento*/
@@ -578,4 +530,3 @@ button:hover{
     font-size: 100px;
     height: -60px;
 }
->>>>>>> agendamento

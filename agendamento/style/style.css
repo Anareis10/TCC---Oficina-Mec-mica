@@ -32,17 +32,6 @@ header {
     overflow: hidden; /*esconde qualquer conteúdo que ultrapasse*/
 }
 
-/* IMAGEM DE FUNDO (SEM MARGEM) */
-header::before /*pseudo-elemento*/ {
-    content: ""; /*obrigstório para o pseudo aparecer*/
-    position: absolute; /*posiciona livremente dentro do header*/
-    inset: 0; /*equivale a top, right, bottom e left: 0*/
-
-    background: url('../imagens/Imagem de fundo.png') top/cover no-repeat; /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
-    opacity: 0.3; /*transparência*/
-}
-
-
 .conteudo__geral{
     margin: 0 20px;
     position: relative;
@@ -144,7 +133,6 @@ header::before /*pseudo-elemento*/ {
     border: none; /*remove todas as bordas*/
     border-bottom: 2px solid black; /*cria a linha inferior*/
     background: transparent; /*fundo transparênte*/
-
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
     width: 500px; /*largura*/
@@ -448,6 +436,7 @@ button{
     width: 1480px; /*largura*/
     margin-left: 20px;
     justify-content: left;
+    font-size: 18px;
     
 }
 
@@ -458,6 +447,7 @@ button{
     width: 1480px; /*largura*/
     margin-left: 20px;
     justify-content: left;
+    font-size: 18px;
 }
 
 .barra__ano__carro{
@@ -467,6 +457,7 @@ button{
     width: 1480px; /*largura*/
     margin-left: 20px;
     justify-content: left;
+    font-size: 18px;
 }
 
 .alinhar__data{
@@ -504,7 +495,8 @@ button{
     padding: 5px; /*espaço interno*/
     width: 1480px; /*largura*/
     margin-left: 20px;
-    justify-content: left;    
+    justify-content: left;
+    font-size: 18px;   
 }   
 
 .barra__horario{
@@ -513,7 +505,8 @@ button{
     padding: 5px; /*espaço interno*/
     width: 1480px; /*largura*/
     margin-left: 20px;
-    justify-content: left;      
+    justify-content: left;
+    font-size: 18px;      
 }
 
 .barra__Confirmar{
