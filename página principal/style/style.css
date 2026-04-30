@@ -19,7 +19,7 @@
     --fonte-primaria: Montserrat, sans-serif;
 }
 
-/*cor de fundo da o+página*/
+/*cor de fundo da página*/
 body{
     background-color: var(--cor-primaria);
 }
