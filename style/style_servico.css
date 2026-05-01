@@ -204,18 +204,12 @@ header::before /*pseudo-elemento*/ {
 /*edita a barra/linha de pesquisa*/
 
 input[type="text"] {
-    border: none;
-    /*remove todas as bordas*/
-    border-bottom: 2px solid black;
-    /*cria a linha inferior*/
-    background: transparent;
-    /*fundo transparênte*/
-    outline: none;
-    /*remove a borda azul quando clica*/
-    padding: 5px;
-    /*espaço interno*/
-    width: 20rem;
-    /*largura*/
+    border: none;/*remove todas as bordas*/
+    border-bottom: 2px solid black;/*cria a linha inferior*/
+    background: transparent;/*fundo transparênte*/
+    outline: none;/*remove a borda azul quando clica*/
+    padding: 5px;/*espaço interno*/
+    width: 500px;/*largura*/
     font-size: 20px;
 }
 
