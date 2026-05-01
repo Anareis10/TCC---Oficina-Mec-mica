@@ -52,7 +52,6 @@ header::before /*pseudo-elemento*/ {
 /*cor da barra superior com transparência*/
 .parte_superior{
     background-color: var(--cor-branco-transparente);
-
 }
 
 /*barra superior*/
@@ -82,6 +81,12 @@ header::before /*pseudo-elemento*/ {
 /*tamanho da logo*/
 .logo__PauloCar{
     height: 60px;
+}
+
+.escrita__paulo{
+    max-width: 200px;
+    width: 100%;
+    height: auto;
 }
 
 /*edita o texto que fica ao lado da logo*/
@@ -130,6 +135,7 @@ header::before /*pseudo-elemento*/ {
 .LupaPesquisa{
     height: 30px; /*tamanho*/
     margin-left: 80px; /*margem esquerda*/
+    justify-content: center;
     
 }
 
@@ -142,7 +148,7 @@ input[type="text"]{
     padding: 5px; /*espaço interno*/
     width: 500px; /*largura*/
     font-size: 20px;
-
+    justify-content: center;
 }
 
 /*para alterar a cor do cursor text (I) para preto através de uma imagem*/
