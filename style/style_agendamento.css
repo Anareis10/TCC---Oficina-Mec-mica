@@ -1,0 +1,448 @@
+/*importa a fonte Montsserat*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*zera a margem e os espaçamentos padrão*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Váriaveis de cores e fonte*/
+:root{
+    --cor-primaria: #000000;
+    --cor-secundaria: #FF9924;
+    --cor-terciaria: #FFFFFF;
+    --cor-quarternaria-cinza-claro: #D9D9D9;
+    --cor-quinquenaria-cinza: #212121;
+    --cor-sextenario-cinza: #3D3C3C;
+    --cor-branco-transparente: rgba(255, 255, 255, 0.5); /*cor com transparência*/
+    --fonte-primaria: Montserrat, sans-serif;
+}
+
+/*cor de fundo da o+página*/
+body{
+    background-color: var(--cor-primaria);
+}
+
+/*header ocupando a tela inteira*/
+header {
+    position: relative; /*posiciona elementos filhos*/
+    height: 100vh; /*altura*/
+    width: 100%; /*largura*/
+    overflow: hidden; /*esconde qualquer conteúdo que ultrapasse*/
+}
+
+.conteudo__geral{
+    margin: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/*cor da barra superior com transparência*/
+.parte_superior{
+    background-color: var(--cor-branco-transparente);
+
+}
+
+/*barra superior*/
+.parte_superior{
+    margin-top: 20px; /*margem de cima*/
+    display: flex; /*ativa layout flexível*/
+    align-items: center; /*alinha verticalmente*/
+    justify-content: space-between; /*distribui com espaço*/
+    padding: 10px 20px;  /*espaçamento interno*/
+
+}
+
+
+.superior__esquerda, .superior__direita{
+    display: flex; /*ativa layout flexível*/
+    align-items: center; /*alinha verticalmente*/
+}
+
+/*Gap entre elementos*/
+.superior__centro{
+    display: flex; /*ativa layout flexível*/
+    align-items: center; /*alinha verticalmente*/
+    gap: 10px; /*espaço entre os itens filhos*/
+
+    margin-left: 40px; /*espaço depois da logo*/
+}
+
+/*tamanho do carrinho de compras*/
+.Logo__Carrinho{
+    height: 45px;
+}
+
+/*tamanho da logo*/
+.logo__PauloCar{
+    height: 60px;
+}
+
+/*edita o texto que fica ao lado da logo*/
+.textos__logo {
+    display: flex; /*ativa layout flexível*/
+    flex-direction: column; /*coluna vertical*/
+    align-items: center; /* Centraliza o subtitulo em relação ao nome Paulo Car */
+    margin-left: 30px; /*margem esquerda*/
+    font-family: var(--fonte-primaria); /*chama a variável fonte Montserrat*/
+}
+ /*texto ao lado da logo*/
+.titulo__principal {
+    font-size: 2.5rem; /*tamanho da fonte*/
+    font-weight: 800; /*espessura da fonte*/
+    margin: 0; 
+    letter-spacing: 2px; /*espaço entre letras*/
+    color: var(--cor-primaria); /*chama a variável cor*/
+    line-height: 1; /*altura da linha*/
+}
+
+/*container flexível*/
+.subtitulo__container {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Faz o conjunto ocupar a largura do nome de cima */
+    gap: 10px;   /* Espaçamento entre a linha e o texto */
+    margin-top: 5px;
+}
+
+.subtitulo {
+    font-size: 0.9rem; /* Subtítulo menor */
+    font-weight: 400; /*espessura da  fonte*/
+    margin: 0; /*zera a margem*/
+    white-space: nowrap; /*impede a quebra de linha*/
+    letter-spacing: 5px; /* Espaçamento entre letras */
+    color: var(--cor-primaria);
+}
+
+/*edição da linha que fica no subtítulo*/
+.linha {
+    flex-grow: 1; /* Faz a linha esticar e ocupar o espaço vazio */
+    height: 1px;  /* espessura da linha */
+    background-color: var(--cor-primaria); /*cor da linha*/
+}
+
+/*edita a lupa de pesquisa*/
+.LupaPesquisa{
+    height: 30px; /*tamanho*/
+    margin-left: 150px; /*margem esquerda*/
+}
+
+/*edita a barra/linha de pesquisa*/
+.barra__pesquisa{
+    border: none; /*remove todas as bordas*/
+    border-bottom: 2px solid black; /*cria a linha inferior*/
+    background: transparent; /*fundo transparênte*/
+    outline: none; /*remove a borda azul quando clica*/
+    padding: 5px; /*espaço interno*/
+    width: 500px; /*largura*/
+    font-size: 20px;
+
+}
+
+.barra__pesquisa:hover{
+    cursor: url(../imagens/curso\ text\ 16px.png), auto;
+}
+
+/*  atingir o placeholder da barra de pesquisa */
+.barra__pesquisa::placeholder {
+    color: var(--cor-primaria); /* chama a variável Cor preta */
+    opacity: 1; /* Garante que a cor fique forte e não acinzentada */
+    font-size: 20px; /*tamanho da fonte*/
+}
+
+/*edita a parte da direita (carrinho, conta, entrar e o cadastrar*/
+.superior__direita{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-left: auto; /*joga tudo para a direita*/
+
+}
+
+/*edita a parte do cadastrar e entrar*/
+.Login__Cadastro{
+    text-decoration: none; /*retira o sublinhado*/
+    color: var(--cor-primaria); 
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+
+/*muda a cor da palavra quando coloca o mousse em cima*/
+.Login__Cadastro:hover{
+    color: var(--cor-secundaria);
+}
+
+/*tamanho do carrinho e conta*/
+.container__usuario, .Logo_Carrinho{
+    height: 50px;
+}
+
+/*edita a seção section*/
+section{
+    display: flex;
+    flex-direction: row; /*organiza os elementos em linha horizontal da esquerda para a direita*/
+    flex: 1; /*divide o espaço igualmente*/
+}
+
+
+/*edita os botões*/
+.botoes{
+    display: flex;
+    justify-content: center; /*centralizar os botões na página*/
+    gap: 64px;
+    position: relative;
+    z-index: 1; /*ordem de sobreposição*/
+    margin-top: 80px;
+    font-size: 100px;
+    
+}
+ /*botões*/
+button{
+    width: 250px;
+    padding: 30px 0; /*espaço interno vertical*/
+    background: var(--cor-secundaria);
+    border: none; /*remove as bordas*/
+    cursor: pointer; /*muda o cursor para a mão*/
+    font-weight: 750;
+    border-radius: 10px; /*bordas arredondadas*/
+    font-size: 20px;
+}
+
+/*Seção 3: rodapé*/
+.rodape__principal{
+    background-color: var(--cor-quinquenaria-cinza); /*cor de fundo*/
+    padding: 40px 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+/*edita o conteúdo*/
+.rodape__conteudo{
+    display: flex;
+    flex-direction: column; /*organiza em coluna*/
+    align-items: center; /*centraliza na horizontal*/
+    justify-content: center; /*centraliza na vertical*/
+    gap: 20px;
+    text-align: center;
+}
+
+/*edita a logo*/
+.logo__footer{
+    height: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/*lista de links na horizontal*/
+.rodape__links{
+    list-style: none; /*remove as bolinhas da lista*/
+    display: flex;
+    gap: 20px; /*espaço entre os itens*/
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px; /*margem inferior extarna*/
+}
+
+/*edita as palavras da lista*/
+.rodape__links a{
+    color: var(--cor-secundaria); /*cor*/
+    text-decoration: none; /*retira o sublinhado*/
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/*edita o texto*/
+.rodape__principal p{
+    color: var(--cor-terciaria);
+    font-size: 32px;
+    display: block;
+    margin-bottom: 30px;
+}
+
+/*coloca negrito em algumas palavras dentro de uma frase*/
+.rodape__principal span{
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+/*formata os icones das rededs sociais*/
+.logos__redes{
+    list-style: none; /*remove as bolinhas da lista*/
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/*última parte do rodapé*/
+.copyright{
+    display: flex;
+    align-items: center;
+    background-color: var(--cor-sextenario-cinza);
+    height: 80px;
+    width: 100%;
+}
+
+/*formata o texto dos direitos autorais*/
+.copyright p{
+    font-size: 30px;
+    color: var(--cor-terciaria);
+    margin: 0;
+    margin-left: 20px;
+    
+
+}
+
+/*agendamento*/
+/*fundo da área de agendamento*/
+.container__agendamento__fundo{
+    background-color: #000000;
+    margin: 0;
+}
+
+/*container principal do agendamento*/
+.container__agendamento{
+    background-color: #FF9924;
+    height: 1200px;
+    width: 84%;
+    font-size: 500;
+    text-align: center;
+    margin: 20%;
+    text-decoration: none;
+    justify-content: center; /*centraliza na vertical*/
+    gap: 20px;
+    margin-left: 150px;
+    margin-top: -40%;
+    margin-bottom: 5%;
+}
+
+/*alinhamento da seção de veículo*/
+.alinhar__carro{
+    gap: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+/*opções de veículo*/
+.opcoes__veiculo{
+    display: flex;
+    justify-content: left; 
+    gap: 20px;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 20px;
+    gap: 20px;
+    margin-top: 80px;
+}
+
+/*campos de entrada (modelo, placa, ano)*/
+.barra__modelo__carro{
+    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    outline: none; /*remove a borda azul quando clica*/
+    padding: 5px; /*espaço interno*/
+    width: 1100px; /*largura*/
+    margin-left: 20px;
+    justify-content: left;
+    font-size: 18px;
+    
+}
+
+.barra__placa__carro{
+    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    outline: none; /*remove a borda azul quando clica*/
+    padding: 5px; /*espaço interno*/
+    width: 1100px; /*largura*/
+    margin-left: 20px;
+    justify-content: left;
+    font-size: 18px;
+}
+
+.barra__ano__carro{
+    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    outline: none; /*remove a borda azul quando clica*/
+    padding: 5px; /*espaço interno*/
+    width: 1100px; /*largura*/
+    margin-left: 20px;
+    justify-content: left;
+    font-size: 18px;
+}
+
+/*seção de data*/
+.alinhar__data{
+    gap: 20px;
+    margin-left: 0px;
+    padding: 20px;
+    font-size: 25px;
+}
+
+/*imagem do calendário*/
+.imagem__calendario{
+    margin: 0%;
+    margin-top: -10%;
+}
+
+/*calendário*/
+.calendario__agendamento{
+    justify-content: center; 
+    height: 450px;
+    width: 650px;
+    margin-top: 150px;
+}
+
+/*inputs de data*/
+.dia__mes__ano{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 20px;
+    gap: 20px;
+    margin-top: 80px;
+}
+
+/*campos de data e horário*/
+.barra__data{
+    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    outline: none; /*remove a borda azul quando clica*/
+    padding: 5px; /*espaço interno*/
+    width: 1100px; /*largura*/
+    margin-left: 20px;
+    justify-content: left;
+    font-size: 18px;   
+}   
+
+.barra__horario{
+    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    outline: none; /*remove a borda azul quando clica*/
+    padding: 5px; /*espaço interno*/
+    width: 1100px; /*largura*/
+    margin-left: 20px;
+    justify-content: left;
+    font-size: 18px;      
+}
+
+/*botão de confirmar*/
+.barra__Confirmar{
+    display: block;
+    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    outline: none; /*remove a borda azul quando clica*/
+    padding: 5px; /*espaço interno*/
+    width: 200px; /*largura*/
+    margin-left: 930px;
+    justify-content: right; 
+    background-color: var(--cor-terciaria);
+    border-radius: 5px;
+}
+
+/*botões da área de agendamento*/
+.botoes__agendamento{
+    display: flex;
+    justify-content: center; /*centralizar os botões na página*/
+    gap: 64px;
+    margin-bottom: 190px;
+    font-size: 100px;
+    height: -60px;
+}
