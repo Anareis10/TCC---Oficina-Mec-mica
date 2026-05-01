@@ -1,7 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /*Não muda a posição caso seja alterado o padding ou margin*/
+    box-sizing: border-box;
+    /*Não muda a posição caso seja alterado o padding ou margin*/
     font-family: 'Arial', sans-serif;
 }
 
@@ -18,7 +19,8 @@
 
 body {
     display: flex;
-    justify-content: center; /*Nesse caso, centraliza os itens*/
+    justify-content: center;
+    /*Nesse caso, centraliza os itens*/
     align-items: center;
     height: 100vh;
     background: linear-gradient(180deg, var(--laranja_principal), var(--laranja_secundario));
@@ -70,7 +72,8 @@ h4 {
     color: var(--cor_texto_secundario);
     font-size: 15px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-    transition: 0.4s; /*suaviza as transições*/
+    transition: 0.4s;
+    /*suaviza as transições*/
 }
 
 .input-box input:focus {
@@ -84,9 +87,11 @@ h4 {
     left: 15px;
     color: rgba(0, 0, 0, 0.5);
     font-size: 16px;
-    pointer-events: none; /*faz com que seja possível clicar na área de input*/
+    pointer-events: none;
+    /*faz com que seja possível clicar na área de input*/
     transition: 0.4s;
-    transform: translateY(-50%); /*modifica as dimensões (nesse caso sobe o span)*/
+    transform: translateY(-50%);
+    /*modifica as dimensões (nesse caso sobe o span)*/
 }
 
 .input-box input:focus+span,
@@ -95,6 +100,7 @@ h4 {
     font-size: 12px;
     color: var(--preto_principal);
 }
+
 
 /*Estilização do Lembrar-me*/
 
@@ -128,7 +134,8 @@ h4 {
 }
 
 .submit-btn {
-    background: linear-gradient(90deg, #000, #222); /*vai mudando as cores de alguma coisa de forma mais suavizada*/
+    background: linear-gradient(90deg, #000, #222);
+    /*vai mudando as cores de alguma coisa de forma mais suavizada*/
     border: none;
     padding: 12px 30px;
     border-radius: 25px;
@@ -149,7 +156,8 @@ h4 {
     color: var(--background_color_branco);
 }
 
-.button-cadastro, .button-login {
+.button-cadastro,
+.button-login {
     margin-top: 1rem;
     font-size: 14px;
     margin-left: 0.8rem;
