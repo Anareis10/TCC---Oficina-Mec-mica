@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style_agendamento.css">
+    <title>Agendamento</title>
+</head>
+<body>
+    <header>
+      <!-- CONTAINER COM MARGEM -->
+      <div class="geral__conteudo">
+        <div class="parte_superior">
+          <div class="superior__esquerda">
+            <a href="./index.html">
+              <img class="Logo__PauloCar" src="./imagens/Logo Paulo Car.png"/>
+            </a>
+            <div class="textos__logo">
+              <p class="titulo__principal">PAULO CAR</p>
+              <div class="subtitulo__container">
+                <span class="linha"></span>
+                <p class="subtitulo">AUTO MECÂNICA</p>
+                <span class="linha"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="superior__centro">
+            <a href="#">
+              <img src="./imagens/Lupa.png" class="LupaPesquisa" />
+            </a>
+            <input class="barra__pesquisa" type="text" placeholder="Pesquisar..."/>
+          </div>
+
+          <div class="superior__direita">
+            <a class="Login__Cadastro" href="#">Cadastrar</a>
+            <a class="Login__Cadastro" href="#">Entrar</a>
+            
+            <a href="#">
+              <img src="./imagens/perfil icone.png" class="container__usuario" />
+            </a>
+          </div>
+      </div>
+    </header>
+    <main>
+
+      <!--PARTE DO AGENDAMENTO-->
+      <!-- Fundo da seção de agendamento -->
+      <div class="container__agendamento__fundo">
+
+        <!-- Container principal do agendamento -->
+        <div class="container__agendamento">
+          <h1>AGENDAR</h1>
+
+          <!-- Campos de informações do veículo -->
+          <div class="opcoes__veiculo">
+            <p class="alinhar__carro">CARRO</p>
+            <input class="barra__modelo__carro" type="text" placeholder="Modelo..."/>
+            <input class="barra__placa__carro" type="text" placeholder="Placa..."/>
+            <input class="barra__ano__carro" type="text" placeholder="Ano..."/>
+            <p class="alinhar__data">DATA</p>
+          </div>
+
+          <!-- Imagem ilustrativa de calendário -->
+          <div class="imagem__calendario">
+            <img class="calendario__agendamento" src="./imagens/calendario.webp">
+          </div>
+
+          <!-- Campos de data e horário -->
+          <div class="dia__mes__ano">
+            <input class="barra__data" type="text" placeholder="Data"/>
+            <input class="barra__horario" type="text" placeholder="Horário"/>
+            <!-- Botão para confirmar agendamento -->
+            <button class="barra__Confirmar">Confirmar</button>
+          </div>
+    </main>
+
+            <!-- Botões de navegação adicionais -->
+            <div class="botoes__agendamento">
+              <a href="#">
+                <button>LOJA</button>
+              </a>
+              <a href="#">
+                <button>SERVIÇOS</button>
+              </a>
+            </div>
+        </div>
+      </div>
+
+    <!-- Rodapé simples com direitos autorais -->
+    <div class="copyright">
+      <p>©2026 Paulo Car - Todos os direitos reservados.</p>
+    </div>
+</body>
+</html>
