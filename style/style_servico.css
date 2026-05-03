@@ -193,45 +193,6 @@ header::before /*pseudo-elemento*/ {
     /*cor da linha*/
 }
 
-
-/*edita a lupa de pesquisa*/
-.Lupa_Pesquisa{
-    height: 30px; /*tamanho*/
-    margin-left: 90px; /*margem esquerda*/
-}
-
-
-/*edita a barra/linha de pesquisa*/
-
-input[type="text"] {
-    border: none;/*remove todas as bordas*/
-    border-bottom: 2px solid black;/*cria a linha inferior*/
-    background: transparent;/*fundo transparênte*/
-    outline: none;/*remove a borda azul quando clica*/
-    padding: 5px;/*espaço interno*/
-    width: 500px;/*largura*/
-    font-size: 20px;
-}
-
-
-/*para alterar a cor do cursor text (I) para preto através de uma imagem*/
-input[type="text"]:hover{
-    cursor: url(../imagens/curso\ text\ 16px.png), auto;  
-}
-
-
-/*  atingir o placeholder da barra de pesquisa */
-
-.barra__pesquisa::placeholder {
-    color: var(--cor-primaria);
-    /* chama a variável Cor preta */
-    opacity: 1;
-    /* Garante que a cor fique forte e não acinzentada */
-    font-size: 18px;
-    /*tamanho da fonte*/
-}
-
-
 /*edita a parte da direita (carrinho, conta, entrar e o cadastrar*/
 
 .superior__direita {

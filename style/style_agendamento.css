@@ -65,7 +65,6 @@ header {
     display: flex; /*ativa layout flexível*/
     align-items: center; /*alinha verticalmente*/
     gap: 10px; /*espaço entre os itens filhos*/
-
     margin-left: 40px; /*espaço depois da logo*/
 }
 
@@ -120,35 +119,6 @@ header {
     flex-grow: 1; /* Faz a linha esticar e ocupar o espaço vazio */
     height: 1px;  /* espessura da linha */
     background-color: var(--cor-primaria); /*cor da linha*/
-}
-
-/*edita a lupa de pesquisa*/
-.LupaPesquisa{
-    height: 30px; /*tamanho*/
-    margin-left: 150px; /*margem esquerda*/
-}
-
-/*edita a barra/linha de pesquisa*/
-.barra__pesquisa{
-    border: none; /*remove todas as bordas*/
-    border-bottom: 2px solid black; /*cria a linha inferior*/
-    background: transparent; /*fundo transparênte*/
-    outline: none; /*remove a borda azul quando clica*/
-    padding: 5px; /*espaço interno*/
-    width: 500px; /*largura*/
-    font-size: 20px;
-
-}
-
-.barra__pesquisa:hover{
-    cursor: url(../imagens/curso\ text\ 16px.png), auto;
-}
-
-/*  atingir o placeholder da barra de pesquisa */
-.barra__pesquisa::placeholder {
-    color: var(--cor-primaria); /* chama a variável Cor preta */
-    opacity: 1; /* Garante que a cor fique forte e não acinzentada */
-    font-size: 20px; /*tamanho da fonte*/
 }
 
 /*edita a parte da direita (carrinho, conta, entrar e o cadastrar*/
