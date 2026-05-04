@@ -356,6 +356,7 @@ button {
 
 .rodape__links li:hover{
     transform: scale(1.2);
+    transition: 0.15s;
 }
 
 
@@ -388,7 +389,7 @@ button {
 }
 
 .icones img:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: 0.2s;
 }
 
