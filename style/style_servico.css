@@ -273,7 +273,6 @@ button {
     margin-top: 4rem;
 }
 
-
 /* é a classe de cada botão de serviço (cada um e o seu texto compartilha da mesma)*/
 
 .option {
@@ -356,6 +355,7 @@ button {
 
 .rodape__links li:hover{
     transform: scale(1.2);
+    transition: 0.15s;
 }
 
 
@@ -388,7 +388,7 @@ button {
 }
 
 .icones img:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: 0.2s;
 }
 
