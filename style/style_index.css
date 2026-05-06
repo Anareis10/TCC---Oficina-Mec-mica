@@ -39,7 +39,7 @@ header::before /*pseudo-elemento*/ {
     right: 0;
     bottom: 0;
     left: 0;
-    background: url('../imagens/Imagem de fundo.png') top/cover no-repeat; /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
+    background: url('../imagens/Imagem\ de\ fundo.png') top/cover no-repeat; /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
     opacity: 0.3; /*transparência*/
 }
 
