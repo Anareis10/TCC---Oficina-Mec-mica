@@ -61,7 +61,6 @@ header::before /*pseudo-elemento*/ {
     align-items: center; /*alinha verticalmente*/
     justify-content: space-between; /*distribui com espaço*/
     padding: 10px 20px;  /*espaçamento interno*/
-
 }
 
 .superior__esquerda, .superior__direita{
