@@ -364,6 +364,45 @@ button{
     margin-top: 80px;
 }
 
+label{
+    display: block;
+    margin-top: 20px 0 5px;
+    font-size: 1.2em;
+}
+
+input{
+    border: 2px solid black;
+    outline: none;
+    padding: 5px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+/* campos normais */
+input[type="text"]{
+    width: 1100px;
+}
+
+/* campo de data */
+input[type="date"]{
+    width: 1100px;
+    appearance: auto;
+    -webkit-appearance: auto;
+}
+
+/* campo de horário */
+input[type="time"]{
+    width: 1100px;
+    appearance: auto;
+    -webkit-appearance: auto;
+}
+
+.barra__data,
+.barra__horario{
+    width: 1100px;
+}
+
+
 /*campos de data e horário*/
 .barra__data{
     border: 2px solid black; /*cria a espessura, tipo da linha e cor*/

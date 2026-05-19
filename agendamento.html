@@ -61,13 +61,17 @@
 
 
                 <!-- Campos de data e horário -->
-                <div class="dia__mes__ano">
-                    <p class="alinhar__data">DATA</p>
-                    <input class="barra__data" type="text" placeholder="Data" />
-                    <input class="barra__horario" type="text" placeholder="Horário" />
-                    <!-- Botão para confirmar agendamento -->
-                    <button class="barra__Confirmar">Confirmar</button>
-                </div>
+                <form>
+                    <div class="dia__mes__ano">
+                        <p class="alinhar__data">DATA</p>
+
+                        <input class="barra__data" type="date" name="data">
+
+                        <input class="barra__horario" type="time" name="horario">
+
+                        <button class="barra__Confirmar" type="submit">Confirmar</button>
+                    </div>
+                </form>
     </main>
 <!-- Aqui começa o rodape -->
         <section class="rodape__principal">
