@@ -156,6 +156,7 @@ input[type="text"]:hover{
     color: var(--cor-primaria); 
     font-size: 25px;
     font-weight: 500;
+    transition: 0.2s;
 }
 
 
@@ -349,7 +350,8 @@ button:hover{
 }
 
 .rodape__links li:hover{
-    transform: scale(1.2);
+    transform: scale(1.15);
+    transition: 0.15s;
 }
 
 /*edita o texto*/
