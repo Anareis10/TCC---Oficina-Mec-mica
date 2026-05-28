@@ -207,7 +207,7 @@ input[type="text"]:hover{
 }
 
 .icones img:hover{
-    transform: scale(1.2);
+    transform: scale(1.0);
     transition: 0.2s;
 }
 
