@@ -324,7 +324,13 @@ button{
     margin-bottom: 3%;
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
+    border-radius: 60px;
+}
+
+h2{
+    font-family: var(--fonte-primaria);
+    text-align: center;
+    font-size: 50;
 }
 
 /*alinhamento da seção de veículo*/
@@ -350,33 +356,37 @@ button{
 
 /*campos de entrada (modelo, placa, ano)*/
 .barra__modelo__carro{
-    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
     width: 1100px; /*largura*/
     margin-left: 20px;
     justify-content: left;
     font-size: 18px;
+    border-radius: 8px;
 }
 
 .barra__placa__carro{
-    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
     width: 1100px; /*largura*/
     margin-left: 20px;
     justify-content: left;
     font-size: 18px;
+    border-radius: 8px;
 }
 
+
 .barra__ano__carro{
-    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
     width: 1100px; /*largura*/
     margin-left: 20px;
     justify-content: left;
     font-size: 18px;
+    border-radius: 8px;
 }
 
 /*seção de data*/
@@ -441,23 +451,25 @@ input[type="time"]{
 
 /*campos de data e horário*/
 .barra__data{
-    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
     width: 1100px; /*largura*/
     margin-left: 20px;
     justify-content: left;
     font-size: 18px;   
+    border-radius: 8px;
 }   
 
 .barra__horario{
-    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    border: 5px; /*cria a espessura*/
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
     width: 1100px; /*largura*/
     margin-left: 20px;
     justify-content: left;
-    font-size: 18px;      
+    font-size: 18px;   
+    border-radius: 8px;   
 }
 
 .barra__modelo__carro,
@@ -472,14 +484,15 @@ input[type="time"]{
 /*botão de confirmar*/
 .barra__Confirmar{
     display: block;
-    border: 2px solid black; /*cria a espessura, tipo da linha e cor*/
+    border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
-    width: 200px; /*largura*/
-    margin-left: 930px;
+    width: 1100px; /*largura*/
+    margin-left: 20px;
     justify-content: right; 
-    background-color: var(--cor-terciaria);
+    background-color: var(--cor-primaria);
     border-radius: 5px;
+    color: #D9D9D9;
 }
 
 /*botões da área de agendamento*/
