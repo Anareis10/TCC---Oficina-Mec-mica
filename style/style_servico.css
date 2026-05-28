@@ -17,7 +17,7 @@
     --cor-quarternaria-cinza-claro: #D9D9D9;
     --cor-quinquenaria-cinza: #212121;
     --cor-sextenario-cinza: #3D3C3C;
-    --cor-secundaria-laranja: #FF9764;
+    --cor-secundaria-laranja: #FF9754;
     --cor-branco-transparente: rgba(255, 255, 255, 0.5);
     /*cor com transparência*/
     --fonte-primaria: Montserrat, sans-serif;
@@ -27,7 +27,7 @@
 /*cor de fundo da o+página*/
 
 body {
-    background-color: var(--cor-primaria);
+    background: linear-gradient(90deg, #000000, #080808);
     margin: 0 20px;
     position: relative;
     margin-left: 0;
@@ -46,7 +46,7 @@ header {
     /*largura*/
     overflow: hidden;
     /*esconde qualquer conteúdo que ultrapasse*/
-    box-shadow: 0px 0px 128px rgba(119, 119, 119, 0.4);
+    box-shadow: 0px 0px 64px rgba(119, 119, 119, 0.4);
 }
 
 
@@ -287,14 +287,14 @@ button {
     max-height: 4rem;
     font-size: 25px;
     border-radius: 20%;
-    box-shadow: 4px 4px 12px rgba(70, 70, 70, 0.8);
+    box-shadow: 4px 4px 8px rgba(70, 70, 70, 0.8);
 }
 
 
 /*Seção 3: rodapé*/
 
 .rodape__principal {
-    background: linear-gradient(180deg, var(--cor-sextenario-cinza), var(--cor-quinquenaria-cinza));
+    background: linear-gradient(240deg, var(--cor-sextenario-cinza), var(--cor-quinquenaria-cinza));
     /*cor de fundo*/
     padding: 40px 0;
     width: 100%;
