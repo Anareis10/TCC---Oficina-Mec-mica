@@ -15,14 +15,9 @@
 /*cor da barra superior com transparência*/
 .parte_superior{
     background-color: var(--cor-branco-transparente);
-}
-
-/*barra superior*/
-.parte_superior{
     margin-top: 20px; /*margem de cima*/
     display: flex; /*ativa layout flexível*/
     align-items: center; /*alinha verticalmente*/
-    justify-content: space-between; /*distribui com espaço*/
     padding: 10px 20px;  /*espaçamento interno*/
 }
 
@@ -42,67 +37,6 @@
 /*tamanho da logo*/
 .logo__PauloCar{
     height: 60px;
-}
-
-.escrita__paulo{
-    max-width: 200px;
-    width: 100%;
-    height: auto;
-}
-
-/*edita o texto que fica ao lado da logo*/
-.textos__logo {
-    display: flex; /*ativa layout flexível*/
-    flex-direction: column; /*coluna vertical*/
-    align-items: center; /* Centraliza o subtitulo em relação ao nome Paulo Car */
-    margin-left: 30px; /*margem esquerda*/
-    font-family: var(--fonte-primaria); /*chama a variável fonte Montserrat*/
-}
- /*texto ao lado da logo*/
-.titulo__principal {
-    font-size: 2.5rem; /*tamanho da fonte*/
-    font-weight: 800; /*espessura da fonte*/
-    margin: 0; 
-    letter-spacing: 2px; /*espaço entre letras*/
-    color: var(--cor-primaria); /*chama a variável cor*/
-    line-height: 1; /*altura da linha*/
-}
-
-/*container flexível*/
-.subtitulo__container {
-    display: flex;
-    align-items: center;
-    width: 100%; /* Faz o conjunto ocupar a largura do nome de cima */
-    gap: 10px;   /* Espaçamento entre a linha e o texto */
-    margin-top: 5px;
-}
-
-.subtitulo {
-    font-size: 0.9rem; /* Subtítulo menor */
-    font-weight: 400; /*espessura da  fonte*/
-    margin: 0; /*zera a margem*/
-    letter-spacing: 5px; /* Espaçamento entre letras */
-    color: var(--cor-primaria);
-}
-
-/*edição da linha que fica no subtítulo*/
-.linha {
-    flex-grow: 1; /* Faz a linha esticar e ocupar o espaço vazio */
-    height: 1px;  /* espessura da linha */
-    background-color: var(--cor-primaria); /*cor da linha*/
-}
-
-/*edita a lupa de pesquisa*/
-.LupaPesquisa{
-    height: 30px; /*tamanho*/
-    margin-left: 80px; /*margem esquerda*/
-    justify-content: center;
-    
-}
-
-/*para alterar a cor do cursor text (I) para preto através de uma imagem*/
-input[type="text"]:hover{
-    cursor: url(../imagens/curso\ text\ 16px.png), auto;  
 }
 
 /*edita a parte da direita (carrinho, conta, entrar e o cadastrar*/
