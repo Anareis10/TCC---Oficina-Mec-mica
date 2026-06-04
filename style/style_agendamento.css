@@ -5,6 +5,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: arial, sans-serif;
 }
 
 /*Váriaveis de cores e fonte*/
@@ -303,10 +304,63 @@ button{
 
 /*agendamento*/
 /*fundo da área de agendamento*/
+.banner {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+.banner img{
+    height: 100px;
+    margin-right: 40px;
+    margin-bottom: 500px;
+}
+
+.texto_banner h1{
+    font-size: 60px;
+    color: var(--cor-terciaria);
+}
+
+.texto_banner span{
+    color:#FF9924;
+}
+
+.texto_banner p{
+    margin-top: 20px;
+    width: 350px;
+    color: var(--cor-terciaria);
+    font-size: 20px;
+}
+
+.beneficio{
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    margin-top: 40px;
+}
+
+.beneficio img{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1340px;
+}
+
+.beneficio h2{
+    margin: 0;
+    color: var(--cor-terciaria);
+    font-size: 25px;
+    width: 500px;
+    margin-left: -70px;
+    height: 1400px;
+}
+
+
 .container__agendamento__fundo{
     background-color: #000000;
     margin: 0;
 }
+
 
 /*container principal do agendamento*/
 .container__agendamento{
@@ -451,6 +505,8 @@ input[type="time"]{
 
 /*campos de data e horário*/
 .barra__data{
+    display: flex;
+    gap: 10px;
     border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
@@ -470,7 +526,9 @@ input[type="time"]{
     justify-content: left;
     font-size: 18px;   
     border-radius: 8px;   
+    flex: 1;
 }
+
 
 .barra__modelo__carro,
 .barra__placa__carro,
@@ -487,7 +545,7 @@ input[type="time"]{
     border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 5px; /*espaço interno*/
-    width: 1100px; /*largura*/
+    width: 1110px; /*largura*/
     margin-left: 20px;
     justify-content: right; 
     background-color: var(--cor-primaria);
