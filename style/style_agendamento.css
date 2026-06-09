@@ -305,21 +305,16 @@ button{
 /*agendamento*/
 /*fundo da área de agendamento*/
 .banner {
-    height: 400px;
+    height: 30vh;
     display: flex;
     align-items: center;
     padding-left: 80px;
 }
 
-.banner img{
-    height: 100px;
-    margin-right: 40px;
-    margin-bottom: 500px;
-}
-
 .texto_banner h1{
     font-size: 60px;
     color: var(--cor-terciaria);
+    margin-top: -150px;
 }
 
 .texto_banner span{
@@ -374,7 +369,7 @@ button{
     justify-content: center; /*centraliza na vertical*/
     gap: 20px;
     margin-left: 330px;
-    margin-top: -35%;
+    margin-top: -30%;
     margin-bottom: 3%;
     display: flex;
     flex-direction: column;
