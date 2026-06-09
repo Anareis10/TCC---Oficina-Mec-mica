@@ -17,19 +17,11 @@
     background-color: var(--cor-branco-transparente);
     margin-top: 20px; /*margem de cima*/
     display: flex; /*ativa layout flexível*/
-    align-items: center; /*alinha verticalmente*/
     padding: 10px 20px;  /*espaçamento interno*/
-}
-
-.superior__esquerda, .superior__direita{
-    display: flex; /*ativa layout flexível*/
-    align-items: center; /*alinha verticalmente*/
 }
 
 /*Gap entre elementos*/
 .superior__centro{
-    display: flex; /*ativa layout flexível*/
-    align-items: center; /*alinha verticalmente*/
     gap: 10px; /*espaço entre os itens filhos*/
     margin-left: 40px; /*espaço depois da logo*/
 }
@@ -39,7 +31,28 @@
     height: 60px;
 }
 
-/*edita a parte da direita (carrinho, conta, entrar e o cadastrar*/
+.superior__meio {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    gap: 8px;
+}
+
+.superior__meio a{
+    text-decoration: none;
+    color: var(--cor-primaria);
+    transition: 0.3s;
+}
+
+.superior__meio a:hover{
+    color: var(--cor-secundaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+    
+}
+
+
+/*edita a parte da direita (conta, entrar e o cadastrar*/
 .superior__direita{
     display: flex;
     align-items: center;
