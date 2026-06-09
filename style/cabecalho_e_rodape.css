@@ -35,19 +35,20 @@
     display: flex;
     align-items: center;
     margin-left: 30px;
-    gap: 8px;
+    gap: 5px;
 }
 
 .superior__meio a{
     text-decoration: none;
     color: var(--cor-primaria);
     transition: 0.3s;
+    
 }
 
 .superior__meio a:hover{
     color: var(--cor-secundaria);
-    border-bottom: 2px solid var(--cor-secundaria);
-    padding-bottom: 10px;
+    transform: translate(0, -0.3rem);
+    transition: 0.5s;
     
 }
 
@@ -64,16 +65,13 @@
 .Login__Cadastro{
     text-decoration: none; /*retira o sublinhado*/
     color: var(--cor-primaria); 
-    font-size: 25px;
-    font-weight: 500;
+    font-size: 20px;
     transition: 0.2s;
 }
 
-
-
-/*muda a cor da palavra quando coloca o mousse em cima*/
 .Login__Cadastro:hover{
-    color: var(--cor-secundaria);
+    transform: translate(0, -0.3rem);
+    transition: 0.5s;
 }
 
 /*tamanho do carrinho e conta*/
@@ -154,7 +152,7 @@
 }
 
 .icones img:hover{
-    transform: scale(1.0);
+    transform: scale(1.20);
     transition: 0.2s;
 }
 

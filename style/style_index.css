@@ -43,13 +43,10 @@ header::before /*pseudo-elemento*/ {
     opacity: 0.3; /*transparência*/
 }
 
-
 .conteudo__geral{
     margin: 0 20px;
     position: relative;
 }
-
-
 
 /*edita a seção section*/
 section{
@@ -66,7 +63,7 @@ section{
     height: 100%;
     text-align: center; /*centraliza o texto*/
     color: var(--cor-terciaria);
-    margin-top: 180px;
+    margin-top: 130px;
 }
 
 /*edita a primeira linha do título central*/
@@ -92,33 +89,6 @@ section{
     text-align: center;
 }
 
-/*edita os botões*/
-.botoes{
-    display: flex;
-    justify-content: center; /*centralizar os botões na página*/
-    gap: 64px;
-    position: relative;
-    margin-top: 30px;
-    font-size: 100px;
-    
-}
- /*botões*/
-button{
-    width: 250px;
-    padding: 30px 0; /*espaço interno vertical*/
-    background: var(--cor-secundaria);
-    border: none; /*remove as bordas*/
-    cursor: pointer; /*muda o cursor para a mão*/
-    font-weight: 750;
-    border-radius: 10px; /*bordas arredondadas*/
-    font-size: 20px;
-}
-
-button:hover{
-    transform: scale(1.1);
-    transition: 0.2s;
-}
-
 /*2 seção: parte do sobre*/
 .quem__somos{
     display: grid; /*ativar o grid*/
@@ -128,12 +98,13 @@ button:hover{
     align-items: flex-start; /*controla o alinhamento*/
     padding: 50px;
 }
+
  /*edita a escrita QUEM*/
 .quem{
     color: var(--cor-secundaria);
     font-size: 70px;
     margin-bottom: 20px;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-left: 20px;
 }
 
@@ -148,7 +119,7 @@ button:hover{
 /*edita o parágrafo*/
 .texto p{
     color: var(--cor-terciaria);
-    font-size: 34px;
+    font-size: 26px;
     text-align: left;
     margin-top: 100px;
     width: 600px;
