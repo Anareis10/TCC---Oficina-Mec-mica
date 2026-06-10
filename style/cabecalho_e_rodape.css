@@ -107,29 +107,6 @@
     margin-bottom: 50px;
 }
 
-/*lista de links na horizontal*/
-.rodape__links{
-    list-style: none; /*remove as bolinhas da lista*/
-    display: flex;
-    gap: 30px; /*espaço entre os itens*/
-    padding: 0;
-    margin: 0;
-    margin-bottom: 30px; /*margem inferior extarna*/
-}
-
-/*edita as palavras da lista*/
-.rodape__links a{
-    color: var(--cor-secundaria); /*cor*/
-    text-decoration: none; /*retira o sublinhado*/
-    font-size: 25px;
-    font-weight: 500;
-}
-
-.rodape__links li:hover{
-    transform: scale(1.15);
-    transition: 0.15s;
-}
-
 /*edita o texto*/
 .rodape__principal p{
     color: var(--cor-terciaria);
