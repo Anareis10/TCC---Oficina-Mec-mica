@@ -441,7 +441,7 @@ h2{
 .barra__modelo__carro{
     border: 5px;
     outline: none; /*remove a borda azul quando clica*/
-    padding: 8px; /*espaço interno*/
+    padding: 15px; /*espaço interno*/
     width: 1100px; /*largura*/
     margin-left: 20px;
     justify-content: left;
