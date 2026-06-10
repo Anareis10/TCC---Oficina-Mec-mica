@@ -300,6 +300,8 @@ button{
     margin-left: 20px;
 }
 
+
+
 /*agendamento*/
 /*fundo da área de agendamento*/
 .banner {
@@ -333,7 +335,7 @@ button{
     height: 700px;
     width: 85%;
     position: absolute;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 1), transparent 35%, transparent 10%, rgba(0, 0, 0, .9)), url(../imagens/carro3.png);
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 1), transparent 35%, transparent 10%, rgba(0, 0, 0, .9)), url(../imagens/carro\ com\ degrade.png);
     background-size: contain;
     background-position: center;
     z-index: -1;
@@ -374,7 +376,7 @@ button{
 
 /*container principal do agendamento*/
 .container__agendamento{
-    background-color: rgba(255, 153, 36, 0.85);
+    background-color: var(--cor-secundaria);
     height: 800px;
     width: 65%;
     font-size: 800;
@@ -428,12 +430,18 @@ h2{
     z-index: 1; /*coloca essa div (com os inputs) na frente da imagem*/
 }
 
+.barras{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
 /*campos de entrada (modelo, placa, ano)*/
 .barra__modelo__carro{
     border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 15px; /*espaço interno*/
-    width: 1100px; /*largura*/
     margin-left: 20px;
     justify-content: left;
     font-size: 18px;
@@ -445,7 +453,6 @@ h2{
     border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 15px; /*espaço interno*/
-    width: 1100px; /*largura*/
     margin-left: 20px;
     justify-content: left;
     font-size: 18px;
@@ -458,7 +465,6 @@ h2{
     border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 15px; /*espaço interno*/
-    width: 1100px; /*largura*/
     margin-left: 20px;
     justify-content: left;
     font-size: 18px;
@@ -495,6 +501,11 @@ h2{
     margin-top: 80px;
 }
 
+.input-horario{
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+}
 
 
 label{
@@ -513,26 +524,21 @@ input{
 
 /* campos normais */
 input[type="text"]{
-    width: 1100px;
+    width: 950px;
 }
 
 /* campo de data */
 input[type="date"]{
-    width: 1100px;
+    width: 450px;
     appearance: auto;
     -webkit-appearance: auto;
 }
 
 /* campo de horário */
 input[type="time"]{
-    width: 1100px;
+    width: 400px;
     appearance: auto;
     -webkit-appearance: auto;
-}
-
-.barra__data,
-.barra__horario{
-    width: 1100px;
 }
 
 
@@ -543,7 +549,7 @@ input[type="time"]{
     border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 15px; /*espaço interno*/
-    width: 1100px; /*largura*/
+    width: 500px; /*largura*/
     margin-left: 20px;
     justify-content: left;
     font-size: 18px;   
@@ -555,8 +561,7 @@ input[type="time"]{
     border: 5px; /*cria a espessura*/
     outline: none; /*remove a borda azul quando clica*/
     padding: 15px; /*espaço interno*/
-    width: 1100px; /*largura*/
-    margin-left: 20px;
+    width: 500px; /*largura*/
     justify-content: left;
     font-size: 18px;   
     border-radius: 8px;   
@@ -580,7 +585,7 @@ input[type="time"]{
     border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 10px; /*espaço interno*/
-    width: 1130px; /*largura*/
+    width: 980px; /*largura*/
     margin-left: 20px;
     justify-content: right; 
     background-color: var(--cor-primaria);
