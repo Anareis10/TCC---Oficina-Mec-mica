@@ -73,9 +73,11 @@
                 <div class="opcoes__veiculo">
                     <i class="fa-solid fa-car"></i>
                     <p class="alinhar__carro">VEÍCULO</p>
-                    <input class="barra__modelo__carro" type="text" placeholder="Modelo do veículo" />
-                    <input class="barra__placa__carro" type="text" placeholder="Placa do veículo" />
-                    <input class="barra__ano__carro" type="text" placeholder="Ano do veículo" />
+                    <div class="barras">
+                            <input class="barra__modelo__carro" type="text" placeholder="Modelo do veículo" />
+                            <input class="barra__placa__carro" type="text" placeholder="Placa do veículo" />
+                            <input class="barra__ano__carro" type="text" placeholder="Ano do veículo" />
+                    </div>
                 </div>
 
 
@@ -85,11 +87,15 @@
                         <i class="fa-solid fa-car"></i>
                         <p class="alinhar__data">DATA E HORÁRIO</p>
 
-                        <input class="barra__data" type="date" name="data">
+                        <div class="barras">
+                            <div class="input-horario">
+                                <input class="barra__data" type="date" name="data">
 
-                        <input class="barra__horario" type="time" name="horario">
+                                <input class="barra__horario" type="time" name="horario">
+                            </div>
 
-                        <button class="barra__Confirmar" type="submit">AGENDAR SERVIÇO</button>
+                            <button class="barra__Confirmar" type="submit">AGENDAR SERVIÇO</button>
+                        </div>
                     </div>
 
                 </form>
@@ -129,7 +135,7 @@
 
     <!-- Rodapé simples com direitos autorais -->
     <div class="copyright">
-        <p>©2026 Paulo Car - Todos os direitos reservados.</p>
+        <p>&copy;2026 Paulo Car - Todos os direitos reservados.</p>
     </div>
     <script>
     document.querySelector('.barra__data').onclick = function () {
