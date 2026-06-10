@@ -505,7 +505,6 @@ h2{
 .input-horario{
     display: flex;
     flex-direction: row;
-    width: 1000px;
 }
 
 
@@ -525,19 +524,19 @@ input{
 
 /* campos normais */
 input[type="text"]{
-    width: 950px;
+    width: 550px;
 }
 
 /* campo de data */
 input[type="date"]{
-    width: 450px;
+    width: 240px;
     appearance: auto;
     -webkit-appearance: auto;
 }
 
 /* campo de horário */
 input[type="time"]{
-    width: 400px;
+    width: 240px;
     appearance: auto;
     -webkit-appearance: auto;
 }
@@ -586,7 +585,7 @@ input[type="time"]{
     border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 10px; /*espaço interno*/
-    width: 980px; /*largura*/
+    width: 560px; /*largura*/
     margin-left: 20px;
     justify-content: right; 
     background-color: var(--cor-primaria);
