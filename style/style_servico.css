@@ -259,6 +259,11 @@ button {
     font-size: 20px;
 }
 
+/* Pespectiva - Teste !! */ 
+
+.perspectiva {
+    perspective: 1000px;
+}
 
 /* todos os botoes de serviços*/
 
@@ -271,6 +276,15 @@ button {
     /* Distribui o espaço vazio de forma igual entre as linhas, acima delas e abaixo delas; funciona quando você tem múltiplas linhas (ou seja, quando o wrap está ativo) e sobra espaço vertical no container.*/
     justify-content: center;
     margin-top: 4rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease; /* Tempo da animação */
+    cursor: pointer;
+}
+
+.quadradinhos__servicos.flipped {
+    transform: rotateY(180deg);
+
 }
 
 /* é a classe de cada botão de serviço (cada um e o seu texto compartilha da mesma)*/
@@ -280,6 +294,7 @@ button {
     background: linear-gradient(90deg, var(--cor-secundaria), var(--cor-secundaria-laranja));
     text-align: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 3rem 4.5rem;
     justify-content: center;
@@ -290,6 +305,9 @@ button {
     box-shadow: 4px 4px 8px rgba(70, 70, 70, 0.8);
 }
 
+.card__back {
+    transform: rotateY(180deg); /* Começa virado de costas */
+}
 
 /*Seção 3: rodapé*/
 
