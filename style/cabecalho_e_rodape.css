@@ -126,6 +126,7 @@
 .rodape__principal span{
     font-weight: 800;
     margin-bottom: 30px;
+    color: var(--cor-terciaria);
 }
 
 /*formata os icones das rededs sociais*/
