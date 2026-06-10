@@ -326,6 +326,23 @@ button{
     font-size: 21px;
 }
 
+.banner::after{
+    content: "";
+    top: 0;
+    right: 0;
+    height: 700px;
+    width: 85%;
+    position: absolute;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 1), transparent 35%, transparent 10%, rgba(0, 0, 0, .9)), url(../imagens/carro3.png);
+    background-size: contain;
+    background-position: center;
+    z-index: -1;
+    background-repeat: no-repeat;
+    margin-right: -290px;
+    top: 100px;
+}
+
+
 .beneficio{
     display: flex;
     align-items: center;
