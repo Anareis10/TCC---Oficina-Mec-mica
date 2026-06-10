@@ -89,6 +89,10 @@ section{
     text-align: center;
 }
 
+p span{
+    color: #FF9924;
+}
+
 /*2 seção: parte do sobre*/
 .quem__somos{
     display: grid; /*ativar o grid*/
