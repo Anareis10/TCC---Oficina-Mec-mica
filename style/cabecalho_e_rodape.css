@@ -18,7 +18,8 @@
     margin-top: 20px; /*margem de cima*/
     display: flex; /*ativa layout flexível*/
     padding: 10px 20px;  /*espaçamento interno*/
-    
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /*Gap entre elementos*/
