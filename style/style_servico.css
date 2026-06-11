@@ -44,7 +44,6 @@ header {
     /*altura*/
     width: 100%;
     /*esconde qualquer conteúdo que ultrapasse*/
-    box-shadow: 0px 0px 64px rgba(119, 119, 119, 0.4);
 }
 
 
@@ -65,6 +64,10 @@ header::before
     opacity: 0.3;
     /*transparência*/
     margin-top: 115px;
+}
+
+main {
+    background: linear-gradient(180deg, var(--cor-primaria), var(--cor-quinquenaria-cinza)) no-repeat;
 }
 
 .texto__principal {
@@ -117,7 +120,7 @@ button {
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    perspective: 2500px;
+    justify-content: center;
 }
 
 
@@ -130,7 +133,6 @@ button {
     /* Distribui o espaço vazio de forma igual entre as linhas, acima delas e abaixo delas; funciona quando você tem múltiplas linhas (ou seja, quando o wrap está ativo) e sobra espaço vertical no container.*/
     justify-content: center;
     gap: 5rem;
-    margin-top: 1rem;
     width: 100%;
     height: 20%;
     margin: 5rem auto 20% auto;
@@ -146,7 +148,7 @@ button {
     cursor: pointer;
 }
 
-.cards:hover {
+.cards.flipped {
     transform: rotateY(180deg);
 }
 
@@ -164,7 +166,7 @@ button {
     justify-content: center;
     width: 12rem;
     height: 12rem;
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 10%;
     box-shadow: 4px 4px 8px rgba(70, 70, 70, 0.8);
     position: absolute;
