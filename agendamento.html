@@ -73,9 +73,11 @@
                 <div class="opcoes__veiculo">
                     <i class="fa-solid fa-car"></i>
                     <p class="alinhar__carro">VEÍCULO</p>
-                    <input class="barra__modelo__carro" type="text" placeholder="Modelo do veículo" />
-                    <input class="barra__placa__carro" type="text" placeholder="Placa do veículo" />
-                    <input class="barra__ano__carro" type="text" placeholder="Ano do veículo" />
+                    <div class="barras">
+                            <input class="barra__modelo__carro" type="text" placeholder="Modelo do veículo" />
+                            <input class="barra__placa__carro" type="text" placeholder="Placa do veículo" />
+                            <input class="barra__ano__carro" type="text" placeholder="Ano do veículo" />
+                    </div>
                 </div>
 
 
@@ -85,13 +87,42 @@
                         <i class="fa-solid fa-car"></i>
                         <p class="alinhar__data">DATA E HORÁRIO</p>
 
-                        <input class="barra__data" type="date" name="data">
+                        <div class="barras">
+                            <div class="input-horario">
+                                <input class="barra__data" type="date" name="data">
 
-                        <input class="barra__horario" type="time" name="horario">
+                                <input class="barra__horario" type="time" name="horario">
+                            </div>
 
-                        <button class="barra__Confirmar" type="submit">AGENDAR SERVIÇO</button>
+                            <button class="barra__Confirmar" type="submit">AGENDAR SERVIÇO</button>
+                        </div>
                     </div>
                 </form>
+            </div>
+            <section class="avaliacoes">
+                    <h2>O QUE NOSSOS <span>CLIENTES DIZEM</span></h2>
+
+                    <div class="container_avaliacoes">
+                        <div class="card_avaliacao">
+                            <div class="estrelas">★★★★★</div>
+                            <p>"Fiz serviço no meu Stilo 2005 1.8 16w, depois de 5 meses parado só o Paulo Car conseguiu resolver, trabalho de qualidade e preço justo. Obrigada Paulo!"</p>
+                            <span>Jessica Aguiar Aguiar</span>
+                        </div>
+
+                        <div class="card_avaliacao">
+                            <div class="estrelas">★★★★★</div>
+                            <p>"Fui muito bem atendido, e o principal, o problema do meu carro foi resolvido. Só tenho a agradecer e recomendo a todos a Paulo Car."</p>
+                            <span>Luís Rodrigo de Godói</span>
+                        </div>
+
+                        <div class="card_avaliacao">
+                            <div class="estrelas">★★★★★</div>
+                            <p>"A minha experiência foi a melhor. Comprei a ideia de um modelo de módulo para meu carro e fui muito bem atendido e o melhor, eles não escondem informações, são rápidos e atenciosos. Gratidão a todos da Paulo Car!!!"</p>
+                            <span>Alec</span>
+                        </div>
+                    </div>
+                </section>
+        </div>
     </main>
 <!-- Aqui começa o rodape -->
         <div class="rodape__principal">
@@ -134,7 +165,7 @@
         </div>
     </div>
     <div class="copyright">
-        <p>©2026 Paulo Car - Todos os direitos reservados.</p>
+        <p>&copy;2026 Paulo Car - Todos os direitos reservados.</p>
     </div>
     <script>
     document.querySelector('.barra__data').onclick = function () {
