@@ -27,7 +27,7 @@
 /*cor de fundo da o+página*/
 
 body {
-    background: linear-gradient(90deg, #000000, #080808);
+    background-color: #000000;
     margin: 0 20px;
     position: relative;
     margin-left: 0;
@@ -119,7 +119,7 @@ button {
 .fileira__cards {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 12rem;
     justify-content: center;
 }
 
@@ -139,8 +139,8 @@ button {
 }
 
 .cards {
-    width: 15rem;
-    height: 15rem;
+    width: 12rem;
+    height: 12rem;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s ease;
@@ -157,6 +157,7 @@ button {
 
 .card__front,
 .card__back {
+    inset: 0;
     margin: 0 2rem;
     background: linear-gradient(90deg, var(--cor-secundaria), var(--cor-secundaria-laranja));
     display: flex;
@@ -164,10 +165,8 @@ button {
     text-align: center;
     padding: 1rem 2rem;
     justify-content: center;
-    width: 12rem;
-    height: 12rem;
     font-size: 20px;
-    border-radius: 10%;
+    border-radius: 15%;
     box-shadow: 4px 4px 8px rgba(70, 70, 70, 0.8);
     position: absolute;
     backface-visibility: hidden;
@@ -175,5 +174,16 @@ button {
 
 .card__back {
     transform: rotateY(180deg);
+}
+
+.card__front h4 {
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 2px 2px 4px rgba(61, 60, 60, .7);
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, .6);
+}
+
+.card__back p {
     font-size: 16px;
+    font-weight: lighter;
 }
