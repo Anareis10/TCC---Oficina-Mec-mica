@@ -70,7 +70,7 @@ header {
     height: 700px;
     width: 85%;
     position: absolute;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 1), transparent 35%, transparent 10%, rgba(0, 0, 0, .9)), url(../imagens/carro\ com\ degrade.png);
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 1), transparent 35%, transparent 10%, rgba(0, 0, 0, .9)), url(../imagens/carro\ com\ degrade1.png);
     background-size: contain;
     background-position: center;
     z-index: -1;
