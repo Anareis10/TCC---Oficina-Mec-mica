@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Váriaveis de cores e fonte*/
+:root{
+    --cor-primaria: #000000;
+    --cor-secundaria: #FF9924;
+    --cor-terciaria: #FFFFFF;
+    --cor-quarternaria-cinza-claro: #D9D9D9;
+    --cor-quinquenaria-cinza: #212121;
+    --cor-sextenario-cinza: #3D3C3C;
+    --cor-branco-transparente: rgba(255, 255, 255, 0.8); /*cor com transparência*/
+    --fonte-primaria: Montserrat, sans-serif;
+}
+
+/*cor da barra superior com transparência*/
+.parte_superior{
+    background-color: var(--cor-branco-transparente);
+    margin-top: 20px; /*margem de cima*/
+    display: flex; /*ativa layout flexível*/
+    padding: 10px 20px;  /*espaçamento interno*/
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*Gap entre elementos*/
+.superior__centro{
+    gap: 10px; /*espaço entre os itens filhos*/
+    margin-left: 40px; /*espaço depois da logo*/
+}
+
+/*tamanho da logo*/
+.Logo__PauloCar{
+    height: 80px;
+    width: 140px;
+}
+
+.superior__meio {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    gap: 5px;
+}
+
+.superior__meio a{
+    text-decoration: none;
+    color: var(--cor-primaria);
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.superior__meio a:hover{
+    color: var(--cor-secundaria);
+    transform: translate(0, -0.3rem);
+    transition: 0.5s;
+    
+}
+
+
+/*edita a parte da direita (conta, entrar e o cadastrar*/
+.superior__direita{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto; /*joga tudo para a direita*/
+}
+
+/*edita a parte do cadastrar e entrar*/
+.Login__Cadastro{
+    text-decoration: none; /*retira o sublinhado*/
+    color: var(--cor-primaria); 
+    font-size: 26px;
+    transition: 0.2s;
+}
+
+.Login__Cadastro:hover{
+    transform: translate(0, -0.3rem);
+    transition: 0.5s;
+}
+
+/*tamanho do carrinho e conta*/
+.container__usuario{
+    height: 50px;
+}
+
+.container__usuario:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+
+
+/* RODAPÉ */
+.rodape__principal{
+    background-color: var(--cor-quinquenaria-cinza); /*cor de fundo*/
+    padding: 40px 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+/*edita o conteúdo*/
+.rodape__conteudo{
+    display: flex;
+    flex-direction: column; /*organiza em coluna*/
+    align-items: center; /*centraliza na horizontal*/
+    justify-content: center; /*centraliza na vertical*/
+    gap: 20px;
+    text-align: center;
+}
+
+/*edita a logo*/
+.logo__footer{
+    height: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+/*edita o texto*/
+.rodape__principal p{
+    color: var(--cor-terciaria);
+    font-size: 32px;
+    display: block;
+    margin-bottom: 30px;
+}
+
+/*coloca negrito em algumas palavras dentro de uma frase*/
+.rodape__principal span{
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: var(--cor-terciaria);
+}
+
+/*formata os icones das rededs sociais*/
+.logos__redes{
+    list-style: none; /*remove as bolinhas da lista*/
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.icones img:hover{
+    transform: scale(1.20);
+    transition: 0.2s;
+}
+
+/*última parte do rodapé*/
+.copyright{
+    display: flex;
+    align-items: center;
+    background-color: var(--cor-sextenario-cinza);
+    height: 80px;
+    width: 100%;
+}
+
+/*formata o texto dos direitos autorais*/
+.copyright p{
+    font-size: 20px;
+    color: var(--cor-terciaria);
+    margin: 0;
+    margin-left: 20px;
+    
+
+}
