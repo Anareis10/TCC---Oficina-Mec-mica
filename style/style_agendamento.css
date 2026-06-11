@@ -209,58 +209,6 @@ button{
     margin-bottom: 50px;
 }
 
-.rodape__links{
-    list-style: none; /*remove as bolinhas da lista*/
-    display: flex;
-    gap: 30px; /*espaço entre os itens*/
-    padding: 0;
-    margin: 0;
-    margin-bottom: 30px; /*margem inferior extarna*/
-}
-
-.rodape__links{
-    list-style: none; /*remove as bolinhas da lista*/
-    display: flex;
-    gap: 30px; /*espaço entre os itens*/
-    padding: 0;
-    margin: 0;
-    margin-bottom: 30px; /*margem inferior extarna*/
-}
-
-/*edita as palavras da lista*/
-.rodape__links a{
-    color: var(--cor-secundaria); /*cor*/
-    text-decoration: none; /*retira o sublinhado*/
-    font-size: 25px;
-    font-weight: 500;
-}
-
-.rodape__links li:hover{
-    transform: scale(1.2);
-}
-
-
-/*edita as palavras da lista*/
-.rodape__links a{
-    color: var(--cor-secundaria); /*cor*/
-    text-decoration: none; /*retira o sublinhado*/
-    font-size: 25px;
-    font-weight: 500;
-}
-
-.rodape__links li:hover{
-    transform: scale(1.2);
-}
-
-
-/*edita as palavras da lista*/
-.rodape__links a{
-    color: var(--cor-secundaria); /*cor*/
-    text-decoration: none; /*retira o sublinhado*/
-    font-size: 25px;
-    font-weight: 500;
-}
-
 /*edita o texto*/
 .rodape__principal p{
     color: var(--cor-terciaria);
@@ -378,7 +326,7 @@ button{
 .container__agendamento{
     background-color: var(--cor-secundaria);
     height: 800px;
-    width: 65%;
+    width: 60%;
     font-size: 800;
     font-family: var(--fonte-primaria);
     text-align: center;
@@ -402,7 +350,7 @@ h2{
 /*alinhamento da seção de veículo*/
 .alinhar__carro{
     gap: 20px;
-    margin-left: 20px;
+    margin-left: 50px;
     font-size: 25px;
     align-items: center;
     display: flex;
@@ -428,6 +376,8 @@ h2{
     margin-top: 80px;
     position: relative; /*cria um "contexto de posicionamento" pra poder usar z-index*/
     z-index: 1; /*coloca essa div (com os inputs) na frente da imagem*/
+    background: url(../imagens/carro-compacto.png) no-repeat;
+    background-size: 35px;
 }
 
 .barras{
@@ -476,7 +426,7 @@ h2{
 /*seção de data*/
 .alinhar__data{
     gap: 20px;
-    margin-left: 20px;
+    margin-left: 50px;
     font-size: 25px;
     align-items: center;
     display: flex;
@@ -500,6 +450,9 @@ h2{
     margin-left: 20px;
     gap: 10px;
     margin-top: 80px;
+    background: url(../imagens/calendario.png) no-repeat;
+    background-size: 35px;
+    
 }
 
 .input-horario{
@@ -629,7 +582,59 @@ input[type="time"]{
     color: var(--cor-terciaria);
     margin: 0;
     margin-left: 20px;
-    
-
 }
 
+.avaliacoes{
+    width: 90%;
+    margin: 50px auto;
+    margin-top: 10px;
+    margin-left: 70px;
+}
+
+.avaliacoes h2{
+    color: white;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
+.avaliacoes span{
+    color: #ff8c00;
+    margin-bottom: 50px;
+}
+
+.container_avaliacoes{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card_avaliacao{
+    flex: 1;
+    min-width: 200px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    transition: 0.3s;
+}
+
+.card_avaliacao:hover{
+    transform: translateY(-5px);
+}
+
+.estrelas{
+    color: #ff8c00;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.card_avaliacao p{
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card_avaliacao span{
+    color: #999;
+}
