@@ -43,8 +43,6 @@ header {
     height: 100vh;
     /*altura*/
     width: 100%;
-    /*largura*/
-    overflow: hidden;
     /*esconde qualquer conteúdo que ultrapasse*/
     box-shadow: 0px 0px 64px rgba(119, 119, 119, 0.4);
 }
@@ -62,7 +60,7 @@ header::before
     /*posiciona livremente dentro do header*/
     inset: 0;
     /*equivale a top, right, bottom e left: 0*/
-    background: url('../imagens/Imagem\ de\ fundo.png') top/cover no-repeat;
+    background: url('../imagens/fundoindex.png') top/cover no-repeat;
     /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
     opacity: 0.3;
     /*transparência*/
@@ -176,93 +174,4 @@ button {
 .card__back {
     transform: rotateY(180deg);
     font-size: 16px;
-}
-
-
-/*Seção 3: rodapé*/
-
-.rodape__principal {
-    background: linear-gradient(240deg, var(--cor-sextenario-cinza), var(--cor-quinquenaria-cinza));
-    /*cor de fundo*/
-    padding: 40px 0;
-    width: 100%;
-    margin-top: 50px;
-}
-
-
-/*edita o conteúdo*/
-
-.rodape__conteudo {
-    display: flex;
-    flex-direction: column;
-    /*organiza em coluna*/
-    align-items: center;
-    /*centraliza na horizontal*/
-    justify-content: center;
-    /*centraliza na vertical*/
-    gap: 20px;
-    text-align: center;
-}
-
-
-/*edita a logo*/
-
-.logo__footer {
-    height: 200px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-/*edita o texto*/
-
-.rodape__principal p {
-    color: var(--cor-terciaria);
-    font-size: 32px;
-    display: block;
-    margin-bottom: 30px;
-}
-
-
-/*coloca negrito em algumas palavras dentro de uma frase*/
-
-.rodape__principal span {
-    font-weight: 800;
-    margin-bottom: 30px;
-}
-
-
-/*formata os icones das rededs sociais*/
-
-.logos__redes {
-    list-style: none;
-    /*remove as bolinhas da lista*/
-    display: flex;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.icones img:hover {
-    transform: scale(1.0);
-    transition: 0.2s;
-}
-
-
-/*última parte do rodapé*/
-
-.copyright {
-    display: flex;
-    align-items: center;
-    background-color: var(--cor-sextenario-cinza);
-    height: 80px;
-    width: 100%;
-}
-
-
-/*formata o texto dos direitos autorais*/
-
-.copyright p {
-    font-size: 20px;
-    color: var(--cor-terciaria);
-    margin: 0;
-    margin-left: 20px;
 }
