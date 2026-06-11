@@ -51,12 +51,21 @@ header {
 
 
 /* IMAGEM DE FUNDO (SEM MARGEM) */
-header::before /*pseudo-elemento*/ {
-    content: ""; /*obrigstório para o pseudo aparecer*/
-    position: absolute; /*posiciona livremente dentro do header*/
-    inset: 0; /*equivale a top, right, bottom e left: 0*/
-     background: url('../imagens/Imagem\ de\ fundo.png') top/cover no-repeat; /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
-    opacity: 0.3; /*transparência*/
+
+header::before
+/*pseudo-elemento*/
+
+{
+    content: "";
+    /*obrigstório para o pseudo aparecer*/
+    position: absolute;
+    /*posiciona livremente dentro do header*/
+    inset: 0;
+    /*equivale a top, right, bottom e left: 0*/
+    background: url('../imagens/Imagem\ de\ fundo.png') top/cover no-repeat;
+    /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
+    opacity: 0.3;
+    /*transparência*/
     margin-top: 115px;
 }
 
@@ -193,6 +202,7 @@ header::before /*pseudo-elemento*/ {
     /*cor da linha*/
 }
 
+
 /*edita a parte da direita (carrinho, conta, entrar e o cadastrar*/
 
 .superior__direita {
@@ -259,13 +269,16 @@ button {
     font-size: 20px;
 }
 
-/* Pespectiva - Teste !! */ 
+
+/* Pespectiva - Teste !! */
 
 .fileira__cards {
     display: flex;
     flex-direction: row;
-    gap: 25rem;
+    gap: 2rem;
+    perspective: 2500px;
 }
+
 
 /* todos os botoes de serviços*/
 
@@ -275,57 +288,53 @@ button {
     flex-direction: column;
     /* Distribui o espaço vazio de forma igual entre as linhas, acima delas e abaixo delas; funciona quando você tem múltiplas linhas (ou seja, quando o wrap está ativo) e sobra espaço vertical no container.*/
     justify-content: center;
-    gap: 15rem;
-    margin-top: 4rem;
-    perspective: 100px;
+    gap: 5rem;
+    margin-top: 1rem;
     width: 100%;
     height: 20%;
     margin: 5rem auto 20% auto;
-    
 }
 
 .cards {
-    width: 100%;
-    height: 100%;
+    width: 15rem;
+    height: 15rem;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.6s ease; /* Tempo da animação */
+    transition: transform 0.6s ease;
+    /* Tempo da animação */
     cursor: pointer;
 }
 
-.cards.flipped {
+.cards:hover {
     transform: rotateY(180deg);
-
 }
+
 
 /* é a classe de cada botão de serviço (cada um e o seu texto compartilha da mesma)*/
 
-.card__front, .card__back {
-    margin: 2rem;
+.card__front,
+.card__back {
+    margin: 0 2rem;
     background: linear-gradient(90deg, var(--cor-secundaria), var(--cor-secundaria-laranja));
     display: flex;
     flex-direction: column;
     text-align: center;
     padding: 1rem 2rem;
     justify-content: center;
-    width: 15rem;
-    height: 15rem;
-    max-height: 10rem;
+    width: 12rem;
+    height: 12rem;
     font-size: 25px;
     border-radius: 10%;
     box-shadow: 4px 4px 8px rgba(70, 70, 70, 0.8);
     position: absolute;
-    box-sizing: border-box;
+    backface-visibility: hidden;
 }
 
 .card__back {
-    transform: rotateY(180deg); /* Começa virado de costas */
+    transform: rotateY(180deg);
     font-size: 16px;
 }
 
-.flipped {
-    transform: rotateY(180deg);
-}
 
 /*Seção 3: rodapé*/
 
@@ -389,7 +398,7 @@ button {
     cursor: pointer;
 }
 
-.rodape__links li:hover{
+.rodape__links li:hover {
     transform: scale(1.15);
     transition: 0.15s;
 }
@@ -423,7 +432,7 @@ button {
     margin-bottom: 30px;
 }
 
-.icones img:hover{
+.icones img:hover {
     transform: scale(1.0);
     transition: 0.2s;
 }
