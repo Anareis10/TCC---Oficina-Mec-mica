@@ -19,6 +19,10 @@
     --fonte-primaria: Montserrat, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth; /*muda a página para onde queremos é instantâneo*/
+}
+
 /*cor de fundo da página*/
 body{
     background-color: var(--cor-primaria);
