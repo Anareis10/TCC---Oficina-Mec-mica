@@ -14,12 +14,15 @@
 
 /*cor da barra superior com transparência*/
 .parte_superior{
-    background-color: var(--cor-branco-transparente);
-    margin-top: 20px; /*margem de cima*/
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    position: fixed;
     display: flex; /*ativa layout flexível*/
     padding: 10px 20px;  /*espaçamento interno*/
-    margin-left: 20px;
-    margin-right: 20px;
+    left: 0;
+    box-sizing: border-box; /*retira a margem da direita*/
+    border-bottom: 1px solid rgba(255, 153, 36, 0.7);
+    backdrop-filter: blur(6px);
 }
 
 /*Gap entre elementos*/
@@ -43,7 +46,7 @@
 
 .superior__meio a{
     text-decoration: none;
-    color: var(--cor-primaria);
+    color: var(--cor-terciaria);
     transition: 0.3s;
     font-size: 20px;
 }
@@ -67,7 +70,7 @@
 /*edita a parte do cadastrar e entrar*/
 .Login__Cadastro{
     text-decoration: none; /*retira o sublinhado*/
-    color: var(--cor-primaria); 
+    color: var(--cor-terciaria); 
     font-size: 26px;
     transition: 0.2s;
 }
@@ -75,6 +78,7 @@
 .Login__Cadastro:hover{
     transform: translate(0, -0.3rem);
     transition: 0.5s;
+    color: var(--cor-secundaria);
 }
 
 /*tamanho do carrinho e conta*/
