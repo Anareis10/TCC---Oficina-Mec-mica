@@ -144,6 +144,10 @@
     margin-bottom: 30px;
 }
 
+.icones img{
+    filter: invert(69%) sepia(30%) saturate(2436%) hue-rotate(340deg) brightness(100%) contrast(102%);
+}
+
 .icones img:hover{
     transform: scale(1.20);
     transition: 0.2s;
