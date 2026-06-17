@@ -136,6 +136,7 @@ section{
     font-size: 55px;
     margin-bottom: 20px;
     margin-top: 75px;
+    display: block;
 }
 
 /*edita a escrita SOMOS?*/
@@ -144,6 +145,7 @@ section{
     margin-left: 150px;
     font-size: 55px;
     margin-top: -20px;
+    display: block;
 }
 
 .imagens__oficina{
