@@ -101,14 +101,15 @@
     padding: 40px 0;
     width: 100%;
     margin-top: 50px;
-    display: grid;
-    justify-content: space-between;
+
 
 }
 
 /*edita o conteúdo*/
 .rodape__conteudo{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
     align-items: center; /*centraliza na horizontal*/
     text-align: center;
 }
@@ -119,6 +120,7 @@
     margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 10px;
+    margin-left: 30%;
 }
 
 /*edita o texto*/
@@ -146,7 +148,26 @@
     margin-bottom: 30px;
 }
 
+.terceira-coluna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.terceira-coluna p {
+    color: var(--cor-terciaria);
+    font-family: var(--fonte-primaria);
+    font-size: 22px;
+    display: block;
+    margin-bottom: 30px;
+    min-width: 50%;
+}
+
 .icones img{
+    height: 30px;
+    width: auto;
     filter: invert(69%) sepia(30%) saturate(2436%) hue-rotate(340deg) brightness(100%) contrast(102%);
 }
 
