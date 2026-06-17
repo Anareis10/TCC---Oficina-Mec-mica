@@ -23,7 +23,7 @@
     padding: 10px 20px;  /*espaçamento interno*/
     left: 0;
     box-sizing: border-box; /*retira a margem da direita*/
-    border-bottom: 0.1px solid rgba(255, 153, 36, 0.5);
+    border-bottom: 1px solid rgba(255, 153, 36, 0.7);
     backdrop-filter: blur(6px);
 }
 
@@ -101,21 +101,21 @@
     padding: 40px 0;
     width: 100%;
     margin-top: 50px;
-    display: grid;
-    justify-content: space-between;
-
 }
 
 /*edita o conteúdo*/
 .rodape__conteudo{
     display: flex;
+    flex-direction: column; /*organiza em coluna*/
     align-items: center; /*centraliza na horizontal*/
+    justify-content: center; /*centraliza na vertical*/
+    gap: 20px;
     text-align: center;
 }
 
 /*edita a logo*/
 .logo__footer{
-    height: 180px;
+    height: 200px;
     margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 10px;
@@ -124,16 +124,14 @@
 /*edita o texto*/
 .rodape__principal p{
     color: var(--cor-terciaria);
-    font-family: var(--fonte-primaria);
-    font-size: 22px;
+    font-size: 32px;
     display: block;
     margin-bottom: 30px;
-    min-width: 50%;
 }
 
 /*coloca negrito em algumas palavras dentro de uma frase*/
 .rodape__principal span{
-    font-weight: 600;
+    font-weight: 800;
     margin-bottom: 30px;
     color: var(--cor-terciaria);
 }
@@ -144,10 +142,6 @@
     display: flex;
     gap: 30px;
     margin-bottom: 30px;
-}
-
-.icones img{
-    filter: invert(69%) sepia(30%) saturate(2436%) hue-rotate(340deg) brightness(100%) contrast(102%);
 }
 
 .icones img:hover{
@@ -162,7 +156,6 @@
     background-color: #010101;
     height: 80px;
     width: 100%;
-    border-top: 0.1px solid rgba(255, 153, 36, 0.5);
 }
 
 /*formata o texto dos direitos autorais*/
