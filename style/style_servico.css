@@ -142,40 +142,24 @@ button {
     width: 15rem;
     height: 15rem;
     position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-    /* Tempo da animação */
     cursor: pointer;
-}
-
-.cards:hover {
-    transform: rotateY(180deg);
 }
 
 
 /* é a classe de cada botão de serviço (cada um e o seu texto compartilha da mesma)*/
 
-.card__front,
-.card__back {
+.card__front {
     margin: 0 2rem;
     background: linear-gradient(90deg, var(--cor-secundaria), var(--cor-secundaria-laranja));
     display: flex;
     flex-direction: column;
     text-align: center;
     padding: 1rem 2rem;
-    justify-content: center;
-    width: 12rem;
-    height: 12rem;
+    width: 18rem;
+    height: 23rem;
     font-size: 25px;
-    border-radius: 10%;
     box-shadow: 4px 4px 8px rgba(70, 70, 70, 0.8);
     position: absolute;
-    backface-visibility: hidden;
-}
-
-.card__back {
-    transform: rotateY(180deg);
-    font-size: 16px;
 }
 
 
