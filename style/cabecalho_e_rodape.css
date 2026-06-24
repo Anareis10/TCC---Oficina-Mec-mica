@@ -126,7 +126,7 @@
 /*edita o texto*/
 .rodape__principal p{
     color: var(--cor-terciaria);
-    font-size: 32px;
+    font-size: 21px;
     display: block;
     margin-bottom: 30px;
 }
@@ -161,14 +161,13 @@
 .terceira-coluna p {
     color: var(--cor-terciaria);
     font-family: var(--fonte-primaria);
-    font-size: 22px;
     display: block;
     margin-bottom: 30px;
     min-width: 50%;
 }
 
-.telefone{
-    font-size: 22px;
+.telefone p{
+    font-size: 21px;
 }
 
 .icones img{
@@ -193,10 +192,8 @@
 
 /*formata o texto dos direitos autorais*/
 .copyright p{
-    font-size: 20px;
+    font-size: 21px;
     color: var(--cor-terciaria);
     margin: 0;
     margin-left: 20px;
-    
-
 }
