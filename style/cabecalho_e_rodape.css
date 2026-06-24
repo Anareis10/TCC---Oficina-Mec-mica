@@ -99,9 +99,7 @@
 /* RODAPÉ */
 .rodape__principal{
     background-color: #040404; /*cor de fundo*/
-    padding: 40px 0;
     width: 100%;
-    margin-top: 50px;
 }
 
 /*edita o conteúdo*/
@@ -118,8 +116,6 @@
 /*edita a logo*/
 .logo__footer{
     height: 200px;
-    margin-top: 50px;
-    margin-bottom: 50px;
     border-radius: 10px;
     margin-left: 30%;
 }
@@ -129,13 +125,11 @@
     color: var(--cor-terciaria);
     font-size: 21px;
     display: block;
-    margin-bottom: 30px;
 }
 
 /*coloca negrito em algumas palavras dentro de uma frase*/
 .negrito{
     font-weight: 700;
-    margin-bottom: 30px;
     color: var(--cor-terciaria);
 }
 
@@ -144,7 +138,6 @@
     list-style: none; /*remove as bolinhas da lista*/
     display: flex;
     gap: 15px;
-    margin-bottom: 30px;
 }
 
 .segunda-coluna p{
@@ -169,7 +162,6 @@
     color: var(--cor-terciaria);
     font-family: var(--fonte-primaria);
     display: block;
-    margin-bottom: 30px;
     min-width: 50%;
 }
 

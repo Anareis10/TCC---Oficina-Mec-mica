@@ -164,3 +164,86 @@ header::before /*pseudo-elemento*/ {
 #sobre{
     scroll-margin-top: 120px;
 }
+
+
+/* NOSSOS SERVIÇOS */
+.servicos{
+    background-color: #070707;
+    height: 100vh; /*altura*/
+    width: 100%; /*largura*/
+}
+
+.titulo-servico{
+    margin-top: 40px;
+    color: var(--cor-secundaria);
+    margin-left: 50px;
+    text-align: center;
+    font-size: 60px;
+}
+
+/* todos os botoes de serviços*/
+.quadradinhos__servicos {
+    display: flex;
+    /*controlam como os itens se comportam quando não cabem mais em uma única linha dentro de um container Flex*/
+    justify-content: center;
+    margin-top: 1rem;
+    margin: 5rem auto 20% auto;
+    gap: 50px;
+
+}
+
+/* é a classe de cada botão de serviço (cada um e o seu texto compartilha da mesma)*/
+.card__front {
+    background: #111;
+    width: 270px;
+    height: 460px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    text-align: center;
+    gap: 20px;
+    font-family: var(--fonte-primaria);
+    border: 1px solid #222;
+}
+
+.card__front p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 100%;
+    text-align: center;
+    gap: 15px;
+    color: #F7F7F7;
+}
+
+
+.card__front a {
+    margin-top: auto;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: left;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+}
+
+.card__front h4{
+    font-size: 23px;
+    color: var(--cor-terciaria);
+}
+
+.card__front img{
+    height: 106px;
+    width: 106px;
+    display: block;
+    margin: 0 auto;
+    filter: invert(53%) sepia(62%) saturate(583%) hue-rotate(349deg) brightness(111%) contrast(101%);
+}
+
+.option {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+#servicos{
+    scroll-margin-top: 120px;
+}
