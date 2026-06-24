@@ -142,7 +142,7 @@
 .logos__redes{
     list-style: none; /*remove as bolinhas da lista*/
     display: flex;
-    gap: 30px;
+    gap: 15px;
     margin-bottom: 30px;
 }
 
@@ -172,7 +172,7 @@
 }
 
 .icones img{
-    height: 30px;
+    height: 50px;
     width: auto;
     filter: invert(69%) sepia(30%) saturate(2436%) hue-rotate(340deg) brightness(100%) contrast(102%);
 }
