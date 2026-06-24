@@ -38,7 +38,7 @@ header {
 
 /* IMAGEM DE FUNDO (SEM MARGEM) */
 header::before /*pseudo-elemento*/ {
-    content: ""; /*obrigstório para o pseudo aparecer*/
+    content: ""; /*obrigatório para o pseudo aparecer*/
     position: absolute; /*posiciona livremente dentro do header*/
     top: 0;
     right: 0;
