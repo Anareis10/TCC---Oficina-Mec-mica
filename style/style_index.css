@@ -160,3 +160,8 @@ header::before /*pseudo-elemento*/ {
 .img_sobre:hover{
     opacity: 0.7;
 }
+
+/* para não cobrir o quem do quem somos */
+#sobre{
+    scroll-margin-top: 120px;
+}
