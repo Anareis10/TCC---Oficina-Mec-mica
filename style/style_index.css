@@ -38,7 +38,7 @@ header {
 
 /* IMAGEM DE FUNDO (SEM MARGEM) */
 header::before /*pseudo-elemento*/ {
-    content: ""; /*obrigstório para o pseudo aparecer*/
+    content: ""; /*obrigatório para o pseudo aparecer*/
     position: absolute; /*posiciona livremente dentro do header*/
     top: 0;
     right: 0;
@@ -51,11 +51,6 @@ header::before /*pseudo-elemento*/ {
 .conteudo__geral{
     margin: 0 20px;
     position: relative;
-}
-
-/*edita a seção section*/
-section{
-    display: flex;
 }
 
 .container-center{
@@ -94,22 +89,42 @@ section{
     text-align: center;
 }
 
-p span{
+.laranja{
     color: #FF9924;
 }
 
+
 /*2 seção: parte do sobre*/
 .quem__somos{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
     display: grid; /*ativar o grid*/
     grid-template-columns: 1fr 1fr; /*duas colunas iguais*/
-    gap: 30px; /*espaço entre linha/coluna*/
+    gap: 80px; /*espaço entre linha/coluna*/
     justify-content: space-between; 
     align-items: flex-start; /*controla o alinhamento*/
     padding: 50px;
+    margin-top: 80px;
+}
+
+.negrito{
+    font-weight: 900;
+}
+
+.primero_paragrafo, .segundo_paragrafo{
+    color: var(--cor-terciaria);
+    font-size: 21px;
+    text-align: left;
+    margin-top: 30px;
+    max-width: 100%;
+    text-align: justify;
 }
 
 .texto{
-    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
  /*edita a escrita QUEM*/
@@ -117,7 +132,6 @@ p span{
     color: var(--cor-secundaria);
     font-size: 55px;
     margin-bottom: 20px;
-    margin-top: 10px;
 }
 
 /*edita a escrita SOMOS?*/
@@ -128,45 +142,117 @@ p span{
     margin-top: -20px;
 }
 
-/*edita o parágrafo*/
-.texto p{
-    color: var(--cor-terciaria);
-    font-size: 24px;
-    text-align: left;
-    margin-top: 100px;
-   max-width: 90%;
-    text-align: justify;
-    word-spacing: -3px;
-}
-
 .imagens__oficina{
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /*cria duas colunas*/
-    gap: 5px;
-    align-items: start;
-
+    grid-template-columns: repeat(3, 1fr); /*cria duas colunas*/
+    gap: 10px;
+    width: 450px;
+    justify-content: left;
 }
 
 .imagens__oficina img{
-    width: 60%;
+    width: 200px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 15px;
+}
+
+.img_sobre:hover{
+    opacity: 0.7;
+}
+
+/* para não cobrir o quem do quem somos */
+#sobre{
+    scroll-margin-top: 120px;
+}
+
+
+/* NOSSOS SERVIÇOS */
+.servicos{
+    background-color: #070707;
+    height: 100vh; /*altura*/
+    width: 100%; /*largura*/
+}
+
+.titulo-servico{
+    margin-top: 40px;
+    color: var(--cor-secundaria);
+    margin-left: 50px;
+    text-align: center;
+    font-size: 60px;
+}
+
+/* todos os botoes de serviços*/
+.quadradinhos__servicos {
+    display: flex;
+    /*controlam como os itens se comportam quando não cabem mais em uma única linha dentro de um container Flex*/
+    justify-content: center;
+    margin-top: 1rem;
+    margin: 5rem auto 20% auto;
+    gap: 50px;
+
+}
+
+/* é a classe de cada botão de serviço (cada um e o seu texto compartilha da mesma)*/
+.card__front {
+    background: #111;
+    width: 270px;
+    height: 460px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    text-align: center;
+    gap: 20px;
+    font-family: var(--fonte-primaria);
+    border: 1px solid #222;
+}
+
+.card__front:hover{
+    transform: scale(1.1);
+    transition: 1.5s;
+}
+
+.card__front p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 100%;
+    text-align: center;
+    gap: 15px;
+    color: #F7F7F7;
+}
+
+
+.card__front a {
+    margin-top: auto;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: left;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+}
+
+.card__front a:hover{
+    color: var(--cor-terciaria);
+}
+
+.card__front h4{
+    font-size: 23px;
+    color: var(--cor-terciaria);
+}
+
+.card__front img{
+    height: 106px;
+    width: 106px;
     display: block;
+    margin: 0 auto;
+    filter: invert(53%) sepia(62%) saturate(583%) hue-rotate(349deg) brightness(111%) contrast(101%);
 }
 
-.img__1, .img__2{
-    height: 250px;
+.option {
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
-.img__1{
-    margin-top: 110px;
+#servicos{
+    scroll-margin-top: 120px;
 }
-
-.img__2{
-    margin-top: 200px;
-}
-
-.img__3{
-    margin-top: -90px;
-}
-

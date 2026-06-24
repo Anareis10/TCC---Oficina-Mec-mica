@@ -3,98 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/cabecalho_e_rodape.css">
-    <link rel="stylesheet" href="./style/style_perfil_usuario.css">
-    <title>Perfil Do Usuário</title>
+    <link rel="stylesheet" href="./style/style_diagnostico.css">
+    <title>Manutenção Geral do Veículo</title>
 </head>
 <body>
-    <!--Parte do cabeçalho que fica o botão de voltar-->
-    <div class="cabecalho">
-        <a href="./index.html">
-            <img src="./imagens/seta para esquerda.png" alt="imagem da seta para retornar a página anterior">
-        </a>
-        <span>Voltar</span>
-    </div>
-    
-    <h1>Olá, Usuário!</h1>
+    <header>
+        <div class="conteudo__geral">
+            <div class="parte_superior">
+                <div class="superior__esquerda">
+                    <a href="./index.html">
+                        <img class="Logo__PauloCar" src="./imagens/logo sem fundo.png" />
+                    </a>
+                </div>
 
-    <div class="barra__editar">
-            <img src="./imagens/editar perfil.png" alt="icone para editar perfil"> Editar perfil
-    </div>
+                <div class="superior__meio">
+                    <a class="superior__meio" href="./index.html">INÍCIO</a>
+                    <a class="superior__meio" href="./nossos_servicos.html">SERVIÇOS</a>
+                    <a class="superior__meio" href="./agendamento.html">AGENDAMENTO</a>
+                    <a class="superior__meio" href="#sobre">SOBRE</a>
+                </div>
 
-    <!--Seção que fica todo o restante da página-->
-    <div class="formulario">
+                
 
-        <p><span>Nome de Usuário:</span> ...</p>
-        <hr>
+                <div class="superior__direita">
 
-        <p><span>Cliente:</span> ...</p>
-        <hr>
+                    <a class="Login__Cadastro" href="./cadastro.html">LOGIN</a>
 
-        <p><span>E-mail:</span> email@exemple.com</p>
-        <hr>
+                    <a href="./perfil_usuario.html">
+                        <img src="./imagens/user.png" class="container__usuario" />
+                    </a>
+                </div>
+            </div>
 
-        <p><span>Senha:</span> ****</p>
-        <hr>
+            <div class="titulo">
+                <h1>Manutenção Geral do Veículo</h1>
+                <img src="./imagens/icone_manutençao.png" class="icone">
+            </div>
 
-        <p><span>Confirmar Senha:</span> ****</p>
-        <hr>
+            <div class="segunda__parte">
+                <h2>Manutenção Preventiva</h2>
 
-        <p><span>Contato:</span> +55 (99) 99999-9999</p>
-    </div>
+                <p>Realizamos serviços de manutenção preventiva, realizando inspeções e verificações nos principais sistemas do veículo para identificar possíveis desgastes ou falhas antes que se tornem problemas maiores. Avaliamos componentes mecânicos e eletrônicos, seguindo procedimentos técnicos para manter o bom funcionamento do automóvel. Nosso objetivo é proporcionar mais segurança, eficiência, durabilidade e tranquilidade, contribuindo para o melhor desempenho do veículo.</p>
+            </div>
 
-    <!--PARTE DO HISTÓRICO DO VEÍCULO-->
-    <div class="barra__editar">
-       <img src="./imagens/icone historico.png" alt="icone para editar perfil"> Histórico do Veículo
-    </div>
+            <div class="terceira__parte">
+                <h2>Manutenção Corretiva</h2>
+                
+                <p>Realizamos serviços de manutenção corretiva, identificando falhas e realizando os reparos necessários para recuperar o funcionamento adequado do veículo. Analisamos os sistemas mecânicos e eletrônicos, buscando a origem dos problemas e aplicando soluções eficientes para cada situação. Trabalhamos com precisão e conhecimento técnico para garantir mais segurança, desempenho e confiabilidade, devolvendo ao automóvel suas melhores condições de funcionamento.</p>
+            </div>
 
-    <div class="formulario">
+        </div>
+    </header>
 
-        <p><span>Último agendamento:</span> dd/mm/aaaa - hh:mm</p>
-        <hr>
-
-        <p><span>Próximo agendamento:</span> dd/mm/aaaa - hh:mm</p>
-        <hr>
-
-        <a class="link__historico" href="./historico_veiculo.html">Histórico de Serviço</a>
-    </div>
-
-    <!--PARTE DO DADOS DO VEÍCULO-->
-    <div class="barra__editar">
-        <img src="./imagens/dados veículo.png" alt="icone para editar perfil"> Dados do Veículo
-    </div>
-
-    <div class="formulario">
-
-        <p><span>Marca:</span> ...</p>
-        <hr>
-
-        <p><span>Modelo:</span> ...</p>
-        <hr>
-
-        <p><span>Placa:</span> ...</p>
-        <hr>
-
-        <p><span>Ano:</span> ... </p>
-        <hr>
-
-        <p><span>Cor:</span> ... </p>
-        <hr>
-
-        <p><span>Carroceria: </span>...</p>
-        <hr>
-
-        <p><span>Chassi: </span>...</p>
-        <hr>
-
-        <p><span>Motor: </span>...</p>
-        <hr>
-
-        <p><span>Combustível: </span>...</p>
-
-    </div>
-    <hr>
-    <!--RODAPÉ-->
     <div class="rodape__principal">
         <div class="rodape__conteudo">
             <img src="./imagens/logo sem fundo.png" alt="Logo" class="logo__footer" />
@@ -144,7 +104,6 @@
     <div class="copyright">
         <p>©2026 Paulo Car - Todos os direitos reservados.</p>
     </div>
-
-
+    
 </body>
 </html>
