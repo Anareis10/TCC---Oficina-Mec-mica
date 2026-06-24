@@ -53,11 +53,6 @@ header::before /*pseudo-elemento*/ {
     position: relative;
 }
 
-/*edita a seção section*/
-section{
-    display: flex;
-}
-
 .container-center{
     height: 100vh;
     display: flex;
@@ -98,15 +93,19 @@ section{
     color: #FF9924;
 }
 
+
 /*2 seção: parte do sobre*/
 .quem__somos{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
     display: grid; /*ativar o grid*/
     grid-template-columns: 1fr 1fr; /*duas colunas iguais*/
-    gap: 30px; /*espaço entre linha/coluna*/
+    gap: 80px; /*espaço entre linha/coluna*/
     justify-content: space-between; 
     align-items: flex-start; /*controla o alinhamento*/
     padding: 50px;
-    margin-left: 110px;
+    margin-top: 80px;
 }
 
 .negrito{
@@ -115,16 +114,14 @@ section{
 
 .primero_paragrafo, .segundo_paragrafo{
     color: var(--cor-terciaria);
-    font-size: 22px;
+    font-size: 21px;
     text-align: left;
     margin-top: 30px;
     max-width: 100%;
     text-align: justify;
-    hyphens: auto;
 }
 
 .texto{
-    margin-left: 100px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -135,7 +132,6 @@ section{
     color: var(--cor-secundaria);
     font-size: 55px;
     margin-bottom: 20px;
-    margin-top: 75px;
 }
 
 /*edita a escrita SOMOS?*/
@@ -150,7 +146,6 @@ section{
     display: grid;
     grid-template-columns: repeat(3, 1fr); /*cria duas colunas*/
     gap: 10px;
-    margin-top: 100px;
     width: 450px;
     justify-content: left;
 }
@@ -160,4 +155,8 @@ section{
     height: auto;
     border-radius: 15px;
     
+}
+
+.img_sobre:hover{
+    opacity: 0.7;
 }

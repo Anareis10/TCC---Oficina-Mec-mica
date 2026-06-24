@@ -146,6 +146,10 @@
     margin-bottom: 30px;
 }
 
+.segunda-coluna p{
+    font-size: 21px;
+}
+
 .terceira-coluna {
     display: flex;
     flex-direction: column;
@@ -161,6 +165,10 @@
     display: block;
     margin-bottom: 30px;
     min-width: 50%;
+}
+
+.telefone{
+    font-size: 22px;
 }
 
 .icones img{
