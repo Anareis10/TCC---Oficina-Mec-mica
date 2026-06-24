@@ -207,6 +207,11 @@ header::before /*pseudo-elemento*/ {
     border: 1px solid #222;
 }
 
+.card__front:hover{
+    transform: scale(1.1);
+    transition: 1.5s;
+}
+
 .card__front p {
     font-size: 16px;
     line-height: 1.6;
@@ -224,6 +229,10 @@ header::before /*pseudo-elemento*/ {
     text-align: left;
     font-size: 16px;
     color: var(--cor-secundaria);
+}
+
+.card__front a:hover{
+    color: var(--cor-terciaria);
 }
 
 .card__front h4{
