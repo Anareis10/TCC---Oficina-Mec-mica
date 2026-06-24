@@ -154,7 +154,6 @@ header::before /*pseudo-elemento*/ {
     width: 200px;
     height: auto;
     border-radius: 15px;
-    
 }
 
 .img_sobre:hover{
