@@ -158,18 +158,22 @@ header::before /*pseudo-elemento*/ {
 
 .img_sobre{
     filter: brightness(120%);
+    transition: .2s;
 }
 
 .sobre{
     filter: brightness(200%);
+    transition: .2s;
 }
 
 .sobre:hover{
     opacity: 0.8;
+    transition: .2s;
 }
 
 .img_sobre:hover{
     opacity: 0.8;
+    transition: .2s;
 }
 
 /* para não cobrir o quem do quem somos */
@@ -217,6 +221,7 @@ header::before /*pseudo-elemento*/ {
     gap: 20px;
     font-family: var(--fonte-primaria);
     border: 1px solid #222;
+    transition: 1s;
 }
 
 .card__front:hover{
@@ -241,10 +246,12 @@ header::before /*pseudo-elemento*/ {
     text-align: left;
     font-size: 16px;
     color: var(--cor-secundaria);
+    transition: .3s;
 }
 
 .card__front a:hover{
     color: var(--cor-terciaria);
+    transition: .3s;
 }
 
 .card__front h4{

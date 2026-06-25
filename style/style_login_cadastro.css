@@ -23,7 +23,7 @@ body {
     /*Nesse caso, centraliza os itens*/
     align-items: center;
     height: 100vh;
-
+    background-color: #ddd;
 }
 
 body::after {
@@ -45,10 +45,11 @@ main{
     padding: 2.5rem;
     border-radius: 5%;
     transition: .7s;
+    box-shadow: 0px 0px 10px rgba(65, 65, 65, .2);
 }
 
 main:hover {
-    box-shadow: 0px 0px 10px rgba(255, 145, 0, .15);
+    box-shadow: 0px 0px 25px rgba(65, 65, 65, .2);
     transform: translateY(-5px);
     transition: .7s;
 }
@@ -58,7 +59,7 @@ main:hover {
 h2 {
     color: var(--background_color_branco);
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     padding: 0 75px;
     text-align: center;
 }
@@ -67,20 +68,11 @@ h2 {
     color: var(--laranja_principal);
 }
 
-h4 {
-    color: var(--background_color_branco);
-    font-weight: 200;
-    text-align: left;
-    font-size: 15px;
-    text-shadow: 0px 1px 1px rgba(65, 65, 65, 0.5);
-}
-
-
 /*Estilização das caixas de texto*/
 
 .input-box {
     position: relative;
-    margin: 15px 0 10px 0;
+    margin: 20px 0 10px 0;
 }
 
 .input-box input {
@@ -185,12 +177,8 @@ h4 {
 .button-login {
     margin-top: 1rem;
     font-size: 14px;
-    margin-left: 0.8rem;
     text-align: center;
-}
-
-.button-cadastro{
-    color: #ffffff;
+    color: #f5f5f5;
 }
 
 /*Estilização do textinho lá embaixo que eu não sei qual seria o nome*/
