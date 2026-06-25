@@ -23,34 +23,54 @@ body {
     /*Nesse caso, centraliza os itens*/
     align-items: center;
     height: 100vh;
-    background: url(../imagens/imagem-login.jpg) top/cover no-repeat;
 
 }
 
-main {
-    background-color: #000000;
+body::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 1), transparent 15%, transparent 85%, rgba(0, 0, 0, 0.6)), linear-gradient(180deg, rgba(0, 0, 0, 1), transparent 15%, transparent 85%, rgba(0, 0, 0, 0.6)), url(../imagens/imagem-login-transparencia2.png);
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .9;
+    z-index: -1;
+}
+
+main{
+    background-color: #101010;
     width: 23rem;
     height: auto;
     padding: 2.5rem;
-    border-radius: 10%;
-    box-shadow: 0 6px 16px rgba(10, 10, 10, 0.75);
+    border-radius: 5%;
+    transition: .7s;
 }
 
+main:hover {
+    box-shadow: 0px 0px 10px rgba(255, 145, 0, .15);
+    transform: translateY(-5px);
+    transition: .7s;
+}
 
 /*Estilização dos Textos*/
 
 h2 {
-    color: var(--preto_principal);
+    color: var(--background_color_branco);
     font-weight: 600;
     margin-bottom: 15px;
     padding: 0 75px;
     text-align: center;
 }
 
+.laranja{
+    color: var(--laranja_principal);
+}
+
 h4 {
-    color: var(--cor_texto_secundario);
+    color: var(--background_color_branco);
     font-weight: 200;
-    text-align: center;
+    text-align: left;
     font-size: 15px;
     text-shadow: 0px 1px 1px rgba(65, 65, 65, 0.5);
 }
@@ -66,19 +86,23 @@ h4 {
 .input-box input {
     width: 100%;
     padding: 12px 15px;
-    background-color: var(--background_color_cinza);
+    background-color: var(--preto_principal);
     border: none;
     border-radius: 1.5rem;
     outline: none;
-    color: var(--cor_texto_secundario);
+    color: var(--background_color_branco);
     font-size: 15px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     transition: 0.4s;
     /*suaviza as transições*/
 }
 
+.input-box input[type='password']::-ms-reveal {
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(110deg) brightness(98%) contrast(108%);
+}
+
 .input-box input:focus {
-    border-color: #222222;
+    border-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0px 5px 15px rgba(15, 15, 15, 0.75);
 }
 
@@ -86,7 +110,7 @@ h4 {
     position: absolute;
     top: 50%;
     left: 15px;
-    color: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
     font-size: 16px;
     pointer-events: none;
     /*faz com que seja possível clicar na área de input*/
@@ -97,9 +121,9 @@ h4 {
 
 .input-box input:focus+span,
 .input-box input:not(:placeholder-shown)+span {
-    top: 6px;
-    font-size: 12px;
-    color: var(--preto_principal);
+    top: 7px;
+    font-size: 10px;
+    color: var(--background_color_branco);
 }
 
 
@@ -111,7 +135,7 @@ h4 {
 
 .lembrar-me label {
     font-size: 15px;
-    color: var(--cor_texto_secundario);
+    color: var(--background_color_branco);
     font-weight: 200;
 }
 
@@ -135,12 +159,12 @@ h4 {
 }
 
 .submit-btn {
-    background: linear-gradient(90deg, #000, #222);
+    background: #ff9924;
     /*vai mudando as cores de alguma coisa de forma mais suavizada*/
     border: none;
     padding: 12px 30px;
     border-radius: 25px;
-    color: var(--background_color_branco);
+    color: #040404;
     font-weight: bold;
     cursor: pointer;
     transition: 0.4s;
@@ -148,7 +172,7 @@ h4 {
 }
 
 .submit-btn:hover {
-    background: linear-gradient(90deg, #222, #000);
+    background: rgb(255, 255, 255);
     box-shadow: 0 5px 15px #111;
 }
 
@@ -165,16 +189,19 @@ h4 {
     text-align: center;
 }
 
+.button-cadastro{
+    color: #ffffff;
+}
 
 /*Estilização do textinho lá embaixo que eu não sei qual seria o nome*/
 
 p a {
     text-decoration: none;
-    color: rgba(35, 35, 255, 0.8);
+    color: #ff9924;
     transition: 0.3s;
 }
 
 p a:hover {
-    color: var(--laranja_hover);
+    color: #f5f5f5;
     text-decoration: underline;
 }
