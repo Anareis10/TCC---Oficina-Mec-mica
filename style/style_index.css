@@ -156,8 +156,20 @@ header::before /*pseudo-elemento*/ {
     border-radius: 15px;
 }
 
+.img_sobre{
+    filter: brightness(120%);
+}
+
+.sobre{
+    filter: brightness(200%);
+}
+
+.sobre:hover{
+    opacity: 0.8;
+}
+
 .img_sobre:hover{
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 /* para não cobrir o quem do quem somos */

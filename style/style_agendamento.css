@@ -1,11 +1,11 @@
 /*importa a fonte Montsserat*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 /*zera a margem e os espaçamentos padrão*/
 *{
     margin: 0;
     padding: 0;
-    font-family: arial, sans-serif;
 }
 
 /*Váriaveis de cores e fonte*/
@@ -17,7 +17,7 @@
     --cor-quinquenaria-cinza: #212121;
     --cor-sextenario-cinza: #3D3C3C;
     --cor-branco-transparente: rgba(255, 255, 255, 0.5); /*cor com transparência*/
-    --fonte-primaria: Montserrat, sans-serif;
+    --fonte-primaria: Poppins, sans-serif;
 }
 
 /*cor de fundo da o+página*/
@@ -33,11 +33,9 @@ header {
     overflow: hidden; /*esconde qualquer conteúdo que ultrapasse*/
 }
 
-
-.parte_superior{
-    background-color: rgba(0, 0, 0, 0.8);
+main{
+    font-family: var(--fonte-primaria);
 }
-
 
 /*agendamento*/
 /*fundo da área de agendamento*/
@@ -61,6 +59,7 @@ header {
 .texto_banner p{
     margin-top: 20px;
     width: 350px;
+    font-family: Arial, Helvetica, sans-serif;
     color: var(--cor-terciaria);
     font-size: 21px;
 }
@@ -128,7 +127,7 @@ header {
     display: flex;
     flex-direction: column;
     border-radius: 60px;
-}
+} 
 
 h2{
     font-family: var(--fonte-primaria);
@@ -174,6 +173,7 @@ h2{
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    font-family: var(--fonte-primaria);
 }
 
 /*campos de entrada (modelo, placa, ano)*/
@@ -232,7 +232,7 @@ h2{
 
 /*inputs de data*/
 .dia__mes__ano{
-    display: flex;
+    display: flex; 
     justify-content: left;
     flex-direction: column;
     text-align: left;
@@ -241,12 +241,13 @@ h2{
     margin-top: 80px;
     background: url(../imagens/calendario.png) no-repeat;
     background-size: 35px;
-    
+    font-family: var(--fonte-primaria);
 }
 
 .input-horario{
     display: flex;
     flex-direction: row;
+    font-family: var(--fonte-primaria);
 }
 
 
@@ -274,6 +275,8 @@ input[type="date"]{
     width: 240px;
     appearance: auto;
     -webkit-appearance: auto;
+    font-family: var(--fonte-primaria);
+    font-size: 16px;
 }
 
 /* campo de horário */
@@ -281,8 +284,14 @@ input[type="time"]{
     width: 240px;
     appearance: auto;
     -webkit-appearance: auto;
+    font-family: var(--fonte-primaria);
+    font-size: 16px;
 }
 
+
+.opcoes__veiculo, .dia__mes__ano{
+    font-family: var(--fonte-primaria);
+}
 
 /*campos de data e horário*/
 .barra__data{
@@ -318,7 +327,6 @@ input[type="time"]{
 .barra__data,
 .barra__horario{
     position: relative;
-    z-index: 10;
 }
 
 /*botão de confirmar*/
@@ -350,6 +358,7 @@ input[type="time"]{
     margin: 50px auto;
     margin-top: 10px;
     margin-left: 70px;
+    font-family: var(--fonte-primaria);
 }
 
 .avaliacoes h2{
