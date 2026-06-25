@@ -23,7 +23,7 @@ body {
     /*Nesse caso, centraliza os itens*/
     align-items: center;
     height: 100vh;
-    background: linear-gradient(180deg, #ef9924, #ef8234);
+    background: linear-gradient(180deg, #000000, #000000);
 }
 
 main {
