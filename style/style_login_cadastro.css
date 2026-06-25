@@ -23,11 +23,12 @@ body {
     /*Nesse caso, centraliza os itens*/
     align-items: center;
     height: 100vh;
-    background: linear-gradient(180deg, #ef9924, #ef8234);
+    background: url(../imagens/imagem-login.jpg) top/cover no-repeat;
+
 }
 
 main {
-    background-color: #fff;
+    background-color: #000000;
     width: 23rem;
     height: auto;
     padding: 2.5rem;
