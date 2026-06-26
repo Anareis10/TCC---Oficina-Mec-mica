@@ -41,6 +41,7 @@ main{
 /*fundo da área de agendamento*/
 .banner {
     height: 30vh;
+    width: auto;
     display: flex;
     align-items: center;
     padding-left: 80px;
@@ -66,17 +67,15 @@ main{
 
 .banner::after{
     content: "";
-    top: 0;
     right: 0;
     height: 700px;
     width: 85%;
     position: absolute;
     background-image: linear-gradient(to left, rgba(0, 0, 0, 1), transparent 35%, transparent 10%, rgba(0, 0, 0, .9)), url(../imagens/carro\ com\ degrade1.png);
     background-size: contain;
-    background-position: center;
+    background-position: right;
     z-index: -1;
     background-repeat: no-repeat;
-    margin-right: -290px;
     top: 100px;
 }
 
@@ -295,7 +294,7 @@ input[type="time"]{
 
 /*campos de data e horário*/
 .barra__data{
-    display: flex;
+    flex: 1;
     gap: 10px;
     border: 5px;
     outline: none; /*remove a borda azul quando clica*/
@@ -306,6 +305,7 @@ input[type="time"]{
     font-size: 18px;   
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
 }   
 
 .barra__horario{
@@ -318,6 +318,7 @@ input[type="time"]{
     border-radius: 8px;   
     flex: 1;
     background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
 }
 
 
@@ -341,6 +342,7 @@ input[type="time"]{
     background-color: var(--cor-primaria);
     border-radius: 5px;
     color: #D9D9D9;
+    cursor: pointer;
 }
 
 /*botões da área de agendamento*/
