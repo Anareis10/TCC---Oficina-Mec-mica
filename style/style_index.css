@@ -185,12 +185,11 @@ header::before /*pseudo-elemento*/ {
 /* NOSSOS SERVIÇOS */
 .servicos{
     background-color: #070707;
-    height: 100vh; /*altura*/
+    height: 80vh; /*altura*/
     width: 100%; /*largura*/
 }
 
 .titulo-servico{
-    margin-top: 40px;
     color: var(--cor-secundaria);
     margin-left: 50px;
     text-align: center;
