@@ -211,3 +211,69 @@
     margin-left: 20px;
     font-family: var(--fonte-primaria);
 }
+
+/* TABLET */
+@media (max-width: 1024px){
+
+    .parte_superior{
+        padding: 15px;
+    }
+
+    .superior__meio{
+        gap: 15px;
+    }
+
+    .superior__meio a{
+        font-size:18px;
+    }
+
+}
+
+/* CELULAR */
+
+@media (max-width:768px){
+
+    .parte_superior{
+        flex-direction: column;
+        align-items:center;
+        position: relative;
+        gap:20px;
+    }
+
+    .superior__meio{
+        margin-left:0;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .superior__direita{
+        margin-left:0;
+    }
+
+    .Logo__PauloCar{
+        width:120px;
+        height:auto;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .rodape__conteudo{
+
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:40px;
+
+    }
+
+    .logo__footer{
+        margin:auto;
+    }
+
+    .logos__redes{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+}
