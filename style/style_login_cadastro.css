@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +16,7 @@
     --preto_principal: #222222;
     --cor_texto_secundario: #414141;
     --laranja_hover: #ff9100;
-    --fonte_primaria: 'Arial', sans-serif;
+    --fonte_primaria: Inter, sans-serif;
 }
 
 body {
