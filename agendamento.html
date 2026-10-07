@@ -74,9 +74,18 @@
                         <i class="fa-solid fa-car"></i>
                         <p class="alinhar__carro">VEÍCULO</p>
                         <div class="barras">
-                                <input class="barra__modelo__carro" type="text" placeholder="Modelo do veículo" required/>
-                                <input class="barra__placa__carro" type="text" placeholder="Placa do veículo" required/>
-                                <input class="barra__ano__carro" type="text" placeholder="Ano do veículo" required/>
+                                <input id="carModel" name="carModel" class="barra__modelo__carro" type="text" placeholder="Modelo do veículo" required/>
+                                <input id="carPlate" name="carPlate" class="barra__placa__carro" type="text" placeholder="Placa do veículo" required/>
+                                <input id="carYear" name="carYear" class="barra__ano__carro" type="text" placeholder="Ano do veículo" required/>
+                                <select name="carService" id="carService" class="barra__servico__carro" required>
+                                    <option value="">Escolha um serviço</option>
+                                    <option value="Modulo">Módulo</option>
+                                    <option value="ABS">ABS</option>
+                                    <option value="airbag">Airbag</option>
+                                    <option value="injecaoEletronica">Injeção Eletrônica</option>
+                                    <option value="motores">Motores</option>
+                                    <option value="others">Outros</option>
+                                </select>
                         </div>
                     </div>
 
