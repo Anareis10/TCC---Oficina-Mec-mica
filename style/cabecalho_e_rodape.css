@@ -35,8 +35,8 @@
 
 /*tamanho da logo*/
 .Logo__PauloCar{
-    height: 80px;
-    width: 140px;
+    height: 70px;
+    width: 130px;
 }
 
 .superior__meio {
@@ -76,6 +76,7 @@
     color: var(--cor-terciaria); 
     font-size: 20px;
     transition: 0.2s;
+    font-family: var(--fonte-primaria);
 }
 
 .Login__Cadastro:hover{
@@ -127,11 +128,6 @@
     display: block;
 }
 
-/*coloca negrito em algumas palavras dentro de uma frase*/
-.negrito{
-    font-weight: 700;
-    color: var(--cor-terciaria);
-}
 
 /*formata os icones das rededs sociais*/
 .logos__redes{
@@ -170,6 +166,10 @@
     font-size: 21px;
     color: var(--cor-terciaria);
     font-family: var(--fonte-primaria);
+    font-weight: normal;
+}
+.segunda-coluna span{
+    font-weight: 600;
 }
 
 .icone_endereco{
@@ -179,7 +179,8 @@
 
 }
 
-.telefone p{
+.telefone{
+    font-family: var(--fonte-primaria);
     font-size: 21px;
 }
 

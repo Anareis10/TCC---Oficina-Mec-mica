@@ -102,7 +102,7 @@ header::before /*pseudo-elemento*/ {
 .quem__somos{
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
+    height: 75vh;
     display: grid; /*ativar o grid*/
     grid-template-columns: 1fr 1fr; /*duas colunas iguais*/
     gap: 80px; /*espaço entre linha/coluna*/
@@ -118,9 +118,9 @@ header::before /*pseudo-elemento*/ {
 
 .primero_paragrafo, .segundo_paragrafo{
     color: var(--cor-terciaria);
-    font-size: 21px;
+    font-size: 20px;
     text-align: left;
-    margin-top: 30px;
+    margin-top: 10px;
     max-width: 100%;
     font-family: var(--fonte-secundaria);
     line-height: 1.5rem;
@@ -136,7 +136,7 @@ header::before /*pseudo-elemento*/ {
  /*edita a escrita QUEM*/
 .quem{
     color: var(--cor-secundaria);
-    font-size: 55px;
+    font-size: 52px;
     margin-bottom: 20px;
     font-family: var(--fonte-primaria);
 }
@@ -145,8 +145,8 @@ header::before /*pseudo-elemento*/ {
 .somos{
     color: var(--cor-terciaria);
     margin-left: 150px;
-    font-size: 55px;
-    margin-top: -20px;
+    font-size: 52px;
+    margin-top: -10px;
     font-family: var(--fonte-primaria);
 }
 
@@ -193,7 +193,7 @@ header::before /*pseudo-elemento*/ {
 /* NOSSOS SERVIÇOS */
 .servicos{
     background-color: #070707;
-    height: 80vh; /*altura*/
+    height: 90vh; /*altura*/
     width: 100%; /*largura*/
 }
 
