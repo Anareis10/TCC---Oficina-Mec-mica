@@ -69,28 +69,29 @@
                 <h1>AGENDAR SERVIÇO</h1>
                 <h2>Preencha os dados do veículo e escolha a data.</h2>
                 <!-- Campos de informações do veículo -->
-                <div class="opcoes__veiculo">
-                    <i class="fa-solid fa-car"></i>
-                    <p class="alinhar__carro">VEÍCULO</p>
-                    <div class="barras">
-                            <input class="barra__modelo__carro" type="text" placeholder="Modelo do veículo" />
-                            <input class="barra__placa__carro" type="text" placeholder="Placa do veículo" />
-                            <input class="barra__ano__carro" type="text" placeholder="Ano do veículo" />
+                <form>
+                    <div class="opcoes__veiculo">
+                        <i class="fa-solid fa-car"></i>
+                        <p class="alinhar__carro">VEÍCULO</p>
+                        <div class="barras">
+                                <input class="barra__modelo__carro" type="text" placeholder="Modelo do veículo" required/>
+                                <input class="barra__placa__carro" type="text" placeholder="Placa do veículo" required/>
+                                <input class="barra__ano__carro" type="text" placeholder="Ano do veículo" required/>
+                        </div>
                     </div>
-                </div>
 
 
                 <!-- Campos de data e horário -->
-                <form>
+                
                     <div class="dia__mes__ano">
                         <i class="fa-solid fa-car"></i>
                         <p class="alinhar__data">DATA E HORÁRIO</p>
 
                         <div class="barras">
                             <div class="input-horario">
-                                <input class="barra__data" type="date" name="data">
+                                <input class="barra__data" type="date" name="data" id="data" required>
 
-                                <input class="barra__horario" type="time" name="horario">
+                                <input class="barra__horario" type="time" name="horario" id="horario" required>
                             </div>
 
                             <button class="barra__Confirmar" type="submit">AGENDAR SERVIÇO</button>
