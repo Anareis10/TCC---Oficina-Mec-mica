@@ -1,6 +1,6 @@
 /*importa a fonte Montsserat*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /*zera a margem e os espaçamentos padrão*/
 *{
@@ -17,7 +17,8 @@
     --cor-quinquenaria-cinza: #212121;
     --cor-sextenario-cinza: #3D3C3C;
     --cor-branco-transparente: rgba(255, 255, 255, 0.5); /*cor com transparência*/
-    --fonte-primaria: Poppins, sans-serif;
+    --fonte-primaria: Montserrat, sans-serif;
+    --fonte-secundaria: Inter, sans-serif;
 }
 
 html {
@@ -72,6 +73,7 @@ header::before /*pseudo-elemento*/ {
     font-weight: 600;
     line-height: 1.1;
     margin: 0;
+    font-family: var(--fonte-primaria);
 }
 
 /*segunda linha do títilo central*/
@@ -80,6 +82,7 @@ header::before /*pseudo-elemento*/ {
     font-size: 61px;
     font-weight: 500;
     margin: 0;
+    font-family: var(--fonte-primaria);
 }
 
 /*última linha do título central*/
@@ -87,6 +90,7 @@ header::before /*pseudo-elemento*/ {
     font-size: 55px;
     margin-top: 15px;
     text-align: center;
+    font-family: var(--fonte-secundaria);
 }
 
 .laranja{
@@ -98,14 +102,14 @@ header::before /*pseudo-elemento*/ {
 .quem__somos{
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
+    height: 75vh;
     display: grid; /*ativar o grid*/
     grid-template-columns: 1fr 1fr; /*duas colunas iguais*/
     gap: 80px; /*espaço entre linha/coluna*/
-    justify-content: space-between; 
     align-items: flex-start; /*controla o alinhamento*/
     padding: 50px;
     margin-top: 80px;
+    justify-self: center;
 }
 
 .negrito{
@@ -114,11 +118,13 @@ header::before /*pseudo-elemento*/ {
 
 .primero_paragrafo, .segundo_paragrafo{
     color: var(--cor-terciaria);
-    font-size: 21px;
+    font-size: 20px;
     text-align: left;
-    margin-top: 30px;
+    margin-top: 10px;
     max-width: 100%;
-    text-align: justify;
+    font-family: var(--fonte-secundaria);
+    line-height: 1.5rem;
+    letter-spacing: 1px;
 }
 
 .texto{
@@ -130,16 +136,18 @@ header::before /*pseudo-elemento*/ {
  /*edita a escrita QUEM*/
 .quem{
     color: var(--cor-secundaria);
-    font-size: 55px;
+    font-size: 52px;
     margin-bottom: 20px;
+    font-family: var(--fonte-primaria);
 }
 
 /*edita a escrita SOMOS?*/
 .somos{
     color: var(--cor-terciaria);
     margin-left: 150px;
-    font-size: 55px;
-    margin-top: -20px;
+    font-size: 52px;
+    margin-top: -10px;
+    font-family: var(--fonte-primaria);
 }
 
 .imagens__oficina{
@@ -185,7 +193,7 @@ header::before /*pseudo-elemento*/ {
 /* NOSSOS SERVIÇOS */
 .servicos{
     background-color: #070707;
-    height: 80vh; /*altura*/
+    height: 90vh; /*altura*/
     width: 100%; /*largura*/
 }
 
@@ -194,6 +202,7 @@ header::before /*pseudo-elemento*/ {
     margin-left: 50px;
     text-align: center;
     font-size: 60px;
+    font-family: var(--fonte-primaria);
 }
 
 /* todos os botoes de serviços*/
@@ -210,13 +219,12 @@ header::before /*pseudo-elemento*/ {
 /* é a classe de cada botão de serviço (cada um e o seu texto compartilha da mesma)*/
 .card__front {
     background: #111;
-    width: 270px;
+    width: 280px;
     height: 460px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
-    text-align: center;
     gap: 20px;
     font-family: var(--fonte-primaria);
     border: 1px solid #222;
@@ -229,12 +237,16 @@ header::before /*pseudo-elemento*/ {
 }
 
 .card__front p {
-    font-size: 16px;
+    font-size: 19px;
     line-height: 1.6;
     max-width: 100%;
-    text-align: center;
     gap: 15px;
     color: #F7F7F7;
+    font-family: var(--fonte-secundaria);
+}
+
+.alinhamento{
+    margin-top: 25px;
 }
 
 
@@ -269,6 +281,7 @@ header::before /*pseudo-elemento*/ {
 .option {
     font-size: 1.4rem;
     font-weight: 700;
+    font-family: var(--fonte-primaria);
 }
 
 #servicos{

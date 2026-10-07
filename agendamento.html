@@ -21,7 +21,6 @@
                 </div>
 
                 <div class="superior__meio">
-                    <a class="superior__meio" href="./index.html">HOME</a>
                     <a class="superior__meio" href="index.html#sobre">SOBRE</a>
                     <a class="superior__meio" href="index.html#servicos">SERVIÇOS</a>
                     <a class="superior__meio" href="./agendamento.html">AGENDAMENTO</a>
@@ -70,28 +69,38 @@
                 <h1>AGENDAR SERVIÇO</h1>
                 <h2>Preencha os dados do veículo e escolha a data.</h2>
                 <!-- Campos de informações do veículo -->
-                <div class="opcoes__veiculo">
-                    <i class="fa-solid fa-car"></i>
-                    <p class="alinhar__carro">VEÍCULO</p>
-                    <div class="barras">
-                            <input class="barra__modelo__carro" type="text" placeholder="Modelo do veículo" />
-                            <input class="barra__placa__carro" type="text" placeholder="Placa do veículo" />
-                            <input class="barra__ano__carro" type="text" placeholder="Ano do veículo" />
+                <form>
+                    <div class="opcoes__veiculo">
+                        <i class="fa-solid fa-car"></i>
+                        <p class="alinhar__carro">VEÍCULO</p>
+                        <div class="barras">
+                                <input id="carModel" name="carModel" class="barra__modelo__carro" type="text" placeholder="Modelo do veículo" required/>
+                                <input id="carPlate" name="carPlate" class="barra__placa__carro" type="text" placeholder="Placa do veículo" required/>
+                                <input id="carYear" name="carYear" class="barra__ano__carro" type="text" placeholder="Ano do veículo" required/>
+                                <select name="carService" id="carService" class="barra__servico__carro" required>
+                                    <option value="">Escolha um serviço</option>
+                                    <option value="Modulo">Módulo</option>
+                                    <option value="ABS">ABS</option>
+                                    <option value="airbag">Airbag</option>
+                                    <option value="injecaoEletronica">Injeção Eletrônica</option>
+                                    <option value="motores">Motores</option>
+                                    <option value="others">Outros</option>
+                                </select>
+                        </div>
                     </div>
-                </div>
 
 
                 <!-- Campos de data e horário -->
-                <form>
+                
                     <div class="dia__mes__ano">
                         <i class="fa-solid fa-car"></i>
                         <p class="alinhar__data">DATA E HORÁRIO</p>
 
                         <div class="barras">
                             <div class="input-horario">
-                                <input class="barra__data" type="date" name="data">
+                                <input class="barra__data" type="date" name="data" id="data" required>
 
-                                <input class="barra__horario" type="time" name="horario">
+                                <input class="barra__horario" type="time" name="horario" id="horario" required>
                             </div>
 
                             <button class="barra__Confirmar" type="submit">AGENDAR SERVIÇO</button>
@@ -133,7 +142,7 @@
             <div class="segunda-coluna">
                 <div class="linha_endereco">
                     <img class="icone_endereco" src="./imagens/Localização.png">
-                    <span class="endereco">R. Conchas, 426 - Jardim São Jorge, Piracicaba - SP</span>
+                    <p class="endereco">R. Conchas, 426 - Jardim São Jorge, Piracicaba - SP</p>
                 </div>
                 <p><span class="negrito">Segunda à quinta:</span> 8h00 às 12h30 - 14h00 às 18h00<br><span class="negrito">Sexta:</span> 7h00 às 12h30 - 14h00 às 17h00</p>
             </div>

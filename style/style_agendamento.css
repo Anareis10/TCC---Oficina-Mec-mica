@@ -1,6 +1,6 @@
 /*importa a fonte Montsserat*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /*zera a margem e os espaçamentos padrão*/
 *{
@@ -17,7 +17,7 @@
     --cor-quinquenaria-cinza: #212121;
     --cor-sextenario-cinza: #3D3C3C;
     --cor-branco-transparente: rgba(255, 255, 255, 0.5); /*cor com transparência*/
-    --fonte-primaria: Poppins, sans-serif;
+    --fonte-primaria: Inter, sans-serif;
 }
 
 /*cor de fundo da o+página*/
@@ -180,7 +180,7 @@ h2{
     border: 5px;
     outline: none; /*remove a borda azul quando clica*/
     padding: 15px; /*espaço interno*/
-    width: 1100px; /*largura*/
+    width: 550px; /*largura*/
     margin-left: 20px;
     justify-content: left;
     font-size: 18px;
@@ -287,6 +287,37 @@ input[type="time"]{
     font-size: 16px;
 }
 
+select{
+    border: 2px solid black;
+    outline: none;
+    padding: 5px;
+    margin-left: 20px;
+    font-size: 18px;
+    width: 550px;
+}
+
+.barra__servico__carro{
+    border: 5px;
+    outline: none; /*remove a borda azul quando clica*/
+    padding: 15px; /*espaço interno*/
+    margin-left: 20px;
+    justify-content: left;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+select option{
+    border: 5px;
+    outline: none; /*remove a borda azul quando clica*/
+    padding: 15px; /*espaço interno*/
+    margin-left: 20px;
+    justify-content: left;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
 
 .opcoes__veiculo, .dia__mes__ano{
     font-family: var(--fonte-primaria);
@@ -326,7 +357,8 @@ input[type="time"]{
 .barra__placa__carro,
 .barra__ano__carro,
 .barra__data,
-.barra__horario{
+.barra__horario,
+.barra__servico__carro{
     position: relative;
 }
 
