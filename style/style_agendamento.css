@@ -410,3 +410,26 @@ input[type="time"]{
 .card_avaliacao span{
     color: #999;
 }
+
+@media(max-width:768px){
+
+    .container__agendamento{
+
+        width:95%;
+        margin:auto;
+        border-radius:20px;
+        height:auto;
+        padding:30px 0;
+
+    }
+
+    .barra__modelo__carro,
+    .barra__placa__carro,
+    .barra__ano__carro{
+
+        width:90%;
+        margin:auto;
+
+    }
+
+}
