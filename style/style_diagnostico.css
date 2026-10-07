@@ -23,7 +23,8 @@ body{
     --cor-quinquenaria-cinza: #212121;
     --cor-sextenario-cinza: #3D3C3C;
     --cor-branco-transparente: rgba(255, 255, 255, 0.8); /*cor com transparência*/
-    --fonte-primaria: Inter, sans-serif;
+    --fonte-primaria: Montserrat, sans-serif;
+    --fonte-secundaria: Inter, sans-serif;
 }
 
 /*tamanho do carrinho e conta*/
@@ -40,6 +41,7 @@ body{
     background-color: #000000;
     height: 330px;
     display: flex;
+
 }
 
 .titulo h1{
@@ -48,6 +50,7 @@ body{
     margin: 40px;
     padding-top: 150px;
     margin-left: 70px;
+    font-family: var(--fonte-primaria);
 }
 
 .titulo img{
@@ -77,6 +80,7 @@ body{
     display: flex;
     flex-direction: row;
     white-space: nowrap;
+    font-family: var(--fonte-primaria);
 }
 
 .segunda__parte p{
@@ -88,6 +92,7 @@ body{
     margin-right: 700px;
     color: #FFFFFF;
     margin: 20px;
+    font-family: var(--fonte-secundaria);
 }
 
 .terceira__parte{
@@ -110,6 +115,7 @@ body{
     display: flex;
     flex-direction: row;
     white-space: nowrap;
+    font-family: var(--fonte-primaria);
 }
 
 .terceira__parte p{
@@ -121,6 +127,7 @@ body{
     margin-right: 700px;
     color: #FFFFFF;
     margin: 20px;
+    font-family: var(--fonte-secundaria);
 }
 
 .quarta__parte{
