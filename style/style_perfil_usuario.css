@@ -1,111 +1,407 @@
 /*importa a fonte Montsserat e Inter*/
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /*zera a margem e os espaçamentos padrão*/
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
 
+
 /*Váriaveis de cores e fonte*/
-:root{
+
+:root {
     --cor-primaria: #000000;
     --cor-secundaria: #FF9924;
     --cor-terciaria: #FFFFFF;
     --cor-quarternaria-cinza-claro: #D9D9D9;
     --cor-quinquenaria-cinza: #212121;
     --cor-sextenario-cinza: #3D3C3C;
-    --cor-branco-transparente: rgba(255, 255, 255, 0.5); /*cor com transparência*/
+    --cor-branco-transparente: rgba(255, 255, 255, 0.5);
+    /*cor com transparência*/
     --fonte-primaria-Montserrat: Montserrat, sans-serif;
-    --fonte-secundaria-Inter: Inter, sans-serif; 
+    --fonte-secundaria-Inter: Inter, sans-serif;
 }
 
-body{
+body {
     background-color: #070707;
+    min-width: 100vh;
+    min-height: 100vh;
 }
 
-.cabecalho{
-    margin: 20px;
-    font-family: var(--fonte-secundaria-Inter);
-    color: var(--cor-terciaria);
-    font-size: 32px;
-    font-weight: 800;
+
+/* ===========================================
+                    MAIN
+=========================================== */
+
+main {
     display: flex;
+    flex-direction: column;
+    font-family: var(--fonte-secundaria-Inter);
+    background-color: var(--cor-primaria);
+    padding: 20vh 100px 50px 100px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.perfil__voltar {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--fonte-primaria-Montserrat);
+    font-size: 18px;
+    font-weight: 500;
+    transition: transform 0.3s ease-in-out;
+}
+
+.perfil__voltar:hover {
+    transform: translateX(-5px);
+}
+
+.voltar__seta {
+    width: 20px;
+    height: 20px;
+    color: var(--cor-secundaria);
+}
+
+.perfil__voltar a {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+}
+
+.container__perfil {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+    border-radius: 10px;
+    position: relative;
+}
+
+.perfil__cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.perfil__imagem {
+    display: block;
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--cor-secundaria);
+}
+
+.perfil__informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.perfil__nome {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    text-align: left;
+    font-family: var(--fonte-primaria-Montserrat);
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 100px;
+    max-width: 100%;
+    color: var(--cor-terciaria);
+}
+
+.perfil__nome span {
+    color: var(--cor-secundaria);
+}
+
+.perfil__dados {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+    font-family: var(--fonte-secundaria-Inter);
+    font-size: 16px;
+    color: var(--cor-quarternaria-cinza-claro);
+}
+
+.perfil__editar {
+    display: flex;
+    align-self: center;
+    padding: 10px 20px;
+    right: 20px;
+    margin-top: 10px;
+    font-family: var(--fonte-primaria-Montserrat);
+    font-size: 14px;
+    font-weight: 600;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container__informacoes {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    padding: 20px 0;
+    border-radius: 10px;
+    position: relative;
+}
+
+.informacoes__usuario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    font-family: var(--fonte-secundaria-Inter);
+    background-color: #33333350;
+    font-size: 16px;
+    color: var(--cor-terciaria);
+    min-height: 150px;
+    max-height: 100%;
+    width: 60%;
+    min-width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #3d3d3d50;
+}
+
+.informacoes__usuario div {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
 }
 
-.cabecalho a:hover {
-    transform: scale(1.2);
-    transition: 0.3s;
+.informacoes__icone {
+    display: block;
+    width: 50px;
+    height: 50px;
 }
 
-h1{
-    font-family: var(--fonte-secundaria-Inter);
+.informacoes__usuario h3 {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    font-family: var(--fonte-primaria-Montserrat);
+    font-size: 18px;
     color: var(--cor-terciaria);
-    margin: 30px;
-    margin-left: 80px;
-    font-size: 64px;
+    margin-bottom: 5px;
 }
 
-.barra__editar{
+.informacoes__detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.informacoes__detalhes .detalhes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.informacoes__detalhes nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     width: 100%;
-    background-color: var(--cor-secundaria);
-    color: var(--cor-primaria);
-    font-size: 32px;
-    padding: 5px 20px;
+    height: auto;
+}
+
+.informacoes__detalhes nav h6 {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    font-family: var(--fonte-primaria-Montserrat);
+    font-size: 16px;
+    color: #4e4e4e;
+}
+
+.informacoes__detalhes i {
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: #3d3d3d50;
+}
+
+.informacoes__detalhes nav p {
+    display: block;
+    text-align: left;
     font-weight: 400;
-    margin-left: 0px;
-}
-
-.formulario{
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 20px;
-    color: var(--cor-terciaria);
-    font-size: 32px;
     font-family: var(--fonte-secundaria-Inter);
-    line-height: 2.5;
+    font-size: 16px;
+    color: var(--cor-terciaria);
+    padding: 5px 0 10px 0;
+    border-bottom: 1px solid #3d3d3d50;
 }
 
-.formulario span{
-    font-weight: 700;
+.historico__veiculo {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: left;
+    font-family: var(--fonte-secundaria-Inter);
+    background-color: #33333350;
+    font-size: 16px;
+    color: var(--cor-terciaria);
+    width: 30%;
+    min-width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #3d3d3d50;
 }
 
-.formulario hr{
-    border-bottom: 1px solid var(--cor-terciaria);
+.historico__veiculo div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
-.link__historico{
-    color: var(--cor-secundaria);
-    font-weight: 700;
-    font-size: 32px;
-    text-decoration: none;
+.historico__veiculo i {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #3d3d3d50;
 }
 
-.link__historico:hover{
-    color: #FFAD4D;
+.historico__veiculo img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
-@media(max-width:768px){
+.historico__agenda {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
 
-    .formulario{
+.historico__detalhes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    font-family: var(--fonte-secundaria-Inter);
+    font-size: 16px;
+    color: var(--cor-terciaria);
+    min-width: 100%;
+}
 
-        margin:25px;
+.historico__detalhes div {
+    align-items: left;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
 
-    }
+.historico__detalhes h6 {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    font-family: var(--fonte-primaria-Montserrat);
+    font-size: 18px;
+    color: #4e4e4e;
+    margin-bottom: 5px;
+}
 
-    h1{
+.historico__detalhes p {
+    display: block;
+    text-align: left;
+    font-weight: 400;
+    font-family: var(--fonte-secundaria-Inter);
+    font-size: 16px;
+    color: var(--cor-terciaria);
+}
 
-        font-size:40px;
+.informacoes__section {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    text-align: left;
+    justify-content: space-between;
+}
 
-    }
+.dados__veiculo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+    font-family: var(--fonte-secundaria-Inter);
+    background-color: #33333350;
+    font-size: 16px;
+    color: var(--cor-terciaria);
+    max-width: 100%;
+    min-width: 450px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #3d3d3d50;
+}
 
-    .barra__editar{
+.dados__veiculo div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
 
-        font-size:22px;
+.informacoes__detalhes {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    text-align: left;
+}
 
-    }
+.informacoes__detalhes div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
 
+.informacoes__detalhes nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.informacoes__detalhes i {
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: #3d3d3d50;
+}
+
+.informacoes__detalhes nav h6 {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    font-family: var(--fonte-primaria-Montserrat);
+    font-size: 16px;
+    color: #4e4e4e;
+}
+
+footer {
+    border-top: 1px solid #3d3d3d50;
 }
