@@ -4,7 +4,7 @@ const banco =
 mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Oficina0713",
+    password: "123abc",
     database: "oficinamecanica"
 });
 
