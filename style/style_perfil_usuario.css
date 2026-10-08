@@ -188,7 +188,9 @@ main {
     display: block;
     width: 50px;
     height: 50px;
+    filter: invert(68%) sepia(8%) saturate(4446%) hue-rotate(343deg) brightness(202%) contrast(102%);
 }
+
 
 .informacoes__usuario h3 {
     display: block;
@@ -201,15 +203,16 @@ main {
 }
 
 .informacoes__detalhes {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     text-align: left;
+    position: relative;
 }
 
 .informacoes__detalhes .detalhes {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 15px;
 }
@@ -361,6 +364,14 @@ main {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+}
+
+.carro__icone {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
 .informacoes__detalhes {
