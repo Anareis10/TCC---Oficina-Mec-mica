@@ -1,135 +1,131 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/cabecalho_e_rodape.css">
     <link rel="stylesheet" href="./style/style_perfil_usuario.css">
-    <title>Perfil Do Usuário</title>
+    <title>Perfil do Usuário</title>
 </head>
 
 <body>
+
     <header>
-        <!-- CONTAINER COM MARGEM -->
-         <div class="geral__conteudo">
+        <div class="conteudo__geral">
+
             <div class="parte_superior">
+
                 <div class="superior__esquerda">
                     <a href="./index.html">
-                        <img class="Logo__PauloCar" src="./imagens/logo sem fundo.png"/>
+                        <img class="Logo__PauloCar"
+                            src="./imagens/logo sem fundo.png"
+                            alt="Logo Paulo Car">
                     </a>
                 </div>
 
                 <div class="superior__meio">
-                    <a class="superior__meio" href="index.html#sobre">SOBRE</a>
-                    <a class="superior__meio" href="index.html#servicos">SERVIÇOS</a>
+                    <a class="superior__meio" href="./index.html#sobre">SOBRE</a>
+                    <a class="superior__meio" href="./index.html#servicos">SERVIÇOS</a>
                     <a class="superior__meio" href="./agendamento.html">AGENDAMENTO</a>
                 </div>
 
-                
-
                 <div class="superior__direita">
-
                     <a class="Login__Cadastro" href="./login.html">LOGIN</a>
 
                     <a href="./perfil_usuario.html">
-                        <img src="./imagens/user.png" class="container__usuario" />
+                        <img src="./imagens/user.png"
+                            class="container__usuario"
+                            alt="Perfil do usuário">
                     </a>
                 </div>
+
             </div>
-          </div>
-      </div>
+        </div>
     </header>
 
     <main class="perfil__usuario">
+
         <div class="perfil__voltar">
             <span class="voltar__seta">&#8592;</span>
             <a href="./index.html">Voltar</a>
         </div>
 
         <section class="container__perfil">
+
             <section class="perfil__cabecalho">
-                <img class="perfil__imagem" src="./imagens/user.png" alt="Imagem do Usuário">
+
+                <img class="perfil__imagem"
+                    src="./imagens/user.png"
+                    alt="Imagem do usuário">
 
                 <div class="perfil__informacoes">
-                    <h2 class="perfil__nome">Olá, <span class="perfil__nome">Usuário!</span></h2>
+                    <h2 class="perfil__nome">
+                        Olá, <span id="nome-cabecalho">Usuário!</span>
+                    </h2>
 
-                    <p class="perfil__dados">Aqui estão seus dados e informações de seu veículo.</p>
+                    <p class="perfil__dados">
+                        Aqui estão os dados da sua conta e do seu veículo.
+                    </p>
                 </div>
+
             </section>
 
-            <button class="perfil__editar">Editar Perfil</button>
+            <button type="button" class="perfil__editar"
+                onclick="alert('A edição do perfil ainda está em desenvolvimento.')">
+                Editar Perfil
+            </button>
+
         </section>
 
         <section class="container__informacoes">
+
             <div class="informacoes__section">
+
                 <div class="informacoes__usuario">
+
                     <div>
-                        <img class="informacoes__icone" src="./imagens/user.png" alt="Ícone de usuário">
+                        <img class="informacoes__icone"
+                            src="./imagens/user.png"
+                            alt="Ícone de usuário">
+
                         <h3>Dados da conta</h3>
                     </div>
 
                     <section class="informacoes__detalhes">
-                        
+
                         <div class="detalhes">
 
                             <nav>
                                 <h6>Nome:</h6>
-                                <p id="nome-usuario">Raphael Cavalcante Veiga</p>
+                                <p id="nome-usuario">Carregando...</p>
                             </nav>
+
+                            <i></i>
+
                             <nav>
                                 <h6>Cliente:</h6>
                                 <p id="cliente-usuario">-</p>
                             </nav>
-                            <nav>
-                                <h6>Email:</h6>
-                                <p id="email-usuario">raphaelVeiga.palmeiras@email.com</p>
-                            </nav>
 
                         </div>
-                        
-                        <i></i>
 
                         <div class="detalhes">
+
+                            <nav>
+                                <h6>Email:</h6>
+                                <p id="email-usuario">Carregando...</p>
+                            </nav>
+
+                            <i></i>
+
                             <nav>
                                 <h6>Contato:</h6>
-                                <p id="contato-usuario">+55 (14) 91914-2015</p>
+                                <p id="contato-usuario">Carregando...</p>
                             </nav>
-                            <nav>
-                                <h6>Senha:</h6>
-                                <p id="senha-usuario">********</p>
-                            </nav>
-                            <nav>
-                                <h6>Confirmar Senha:</h6>
-                                <p id="confirmar-senha-usuario">********</p>
-                            </nav>
+
                         </div>
-                        
-                    
-                </div>
 
-                <div class="historico__veiculo">
-                    <div>
-                        <img class="historico__icone" src="" alt="Ícone de histórico de veículos">
-                        <h3>Histórico de Veículos</h3>
-                    </div>
-
-                    <i></i>
-
-                    <section class="historico__detalhes">
-                        <img class="historico__agenda" src="./imagens/agenda.png" alt="Ícone de histórico de agendamentos">
-                        <div>
-                            <h6>Último Agendamento:</h6>
-                            <p> <span id="ultimo-agendamento-data">dd/mm/yyyy</span> - <span id="ultimo-agendamento-hora">hh:mm</span></p>
-                        </div>
-                    </section>
-
-                    <section class="historico__detalhes">
-                        <img class="historico__agenda" src="./imagens/agenda.png" alt="Ícone de histórico de agendamentos">
-                        <div>
-                            <h6>Próximo Agendamento:</h6>
-                            <p> <span id="proximo-agendamento-data">dd/mm/yyyy</span> - <span id="proximo-agendamento-hora">hh:mm</span></p>
-                        </div>
                     </section>
 
                 </div>
@@ -137,73 +133,93 @@
             </div>
 
             <div class="dados__veiculo">
+
                 <div>
-                    <img class="carro__icone" src="./imagens/car.png" alt="Ícone de Veículo">
+                    <img class="carro__icone"
+                        src="./imagens/car.png"
+                        alt="Ícone de veículo">
+
                     <h3>Dados do Veículo</h3>
                 </div>
 
                 <section class="informacoes__detalhes">
+
                     <div>
+
                         <nav>
                             <h6>Marca:</h6>
                             <p id="marca-veiculo">-</p>
                         </nav>
+
                         <nav>
                             <h6>Modelo:</h6>
                             <p id="modelo-veiculo">-</p>
                         </nav>
+
                         <nav>
                             <h6>Placa:</h6>
                             <p id="placa-veiculo">-</p>
                         </nav>
+
                     </div>
 
                     <i></i>
 
                     <div>
+
                         <nav>
                             <h6>Ano:</h6>
                             <p id="ano-veiculo">-</p>
                         </nav>
+
                         <nav>
                             <h6>Cor:</h6>
                             <p id="cor-veiculo">-</p>
                         </nav>
+
                         <nav>
                             <h6>Carroceria:</h6>
                             <p id="carroceria-veiculo">-</p>
                         </nav>
+
                     </div>
 
                     <i></i>
 
                     <div>
+
                         <nav>
                             <h6>Chassi:</h6>
                             <p id="chassi-veiculo">-</p>
                         </nav>
+
                         <nav>
                             <h6>Motor:</h6>
                             <p id="motor-veiculo">-</p>
                         </nav>
+
                         <nav>
                             <h6>Combustível:</h6>
                             <p id="combustivel-veiculo">-</p>
                         </nav>
+
                     </div>
+
                 </section>
+
             </div>
 
         </section>
+
     </main>
-
-
 
     <footer>
         <div class="copyright">
             <p>©2026 Paulo Car - Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script src="./js/perfil_usuario.js"></script>
 
 </body>
 

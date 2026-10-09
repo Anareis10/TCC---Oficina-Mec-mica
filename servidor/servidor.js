@@ -1,5 +1,5 @@
-const express =
-require("express");
+
+const express = require("express");
 const cors = require("cors");
 
 const banco = require("./banco");
@@ -9,29 +9,43 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-//CADASTRAR CLIENTE
+// CADASTRAR CLIENTE
 app.post("/clientes", function(req, res) {
+
     const nome = req.body.nome;
     const ddd = req.body.ddd;
     const telefone = req.body.telefone;
     const email = req.body.email;
     const senha = req.body.senha;
 
-    const sql = 'INSERT INTO Cliente (nome, DDD, telefone, email, senha) VALUES (?, ?, ?, ?, ?)';
+    const sql = `
+        INSERT INTO Cliente
+        (nome, DDD, telefone, email, senha)
+        VALUES (?, ?, ?, ?, ?)
+    `;
 
     banco.query(sql, [nome, ddd, telefone, email, senha],
         function(erro, resultado) {
+
             if (erro) {
                 console.log(erro);
-                res.status(500).json({ mensagem: "Erro ao cadastrar cliente."});
+
+                res.status(500).json({
+                    mensagem: "Erro ao cadastrar cliente."
+                });
+
                 return;
             }
+
             res.json({
                 mensagem: "Cliente cadastrado com sucesso!"
             });
+
         }
     );
+
 });
+
 
 // LOGIN
 app.post("/login", function(req, res) {
@@ -40,44 +54,98 @@ app.post("/login", function(req, res) {
     const senha = req.body.senha;
 
     const sql = `
-        SELECT * FROM cliente
+        SELECT id_cliente, nome, email, DDD, telefone
+        FROM Cliente
         WHERE email = ? AND senha = ?
     `;
 
-    banco.query(
-        sql,
-        [email, senha],
-        function(erro, resultado) {
+    banco.query(sql, [email, senha], function(erro, resultado) {
 
-            if (erro) {
-                console.log(erro);
+        if (erro) {
+            console.log(erro);
 
-                res.status(500).json({
-                    mensagem: "Erro ao fazer login"
-                });
-
-                return;
-            }
-
-            if (resultado.length == 0) {
-
-                res.json({
-                    sucesso: false,
-                    mensagem: "E-mail ou senha incorretos!"
-                });
-
-                return;
-            }
-
-            res.json({
-                sucesso: true,
-                mensagem: "Login realizado com sucesso!"
+            res.status(500).json({
+                sucesso: false,
+                mensagem: "Erro ao fazer login."
             });
 
+            return;
         }
-    );
+
+        if (resultado.length == 0) {
+            res.json({
+                sucesso: false,
+                mensagem: "E-mail ou senha incorretos!"
+            });
+
+            return;
+        }
+
+        res.json({
+            sucesso: true,
+            mensagem: "Login realizado com sucesso!",
+            cliente: resultado[0]
+        });
+
+    });
 
 });
+
+
+// PERFIL DO USUÁRIO
+app.get("/perfil/:id_cliente", function(req, res) {
+
+    const id_cliente = req.params.id_cliente;
+
+    const sql = `
+        SELECT
+            Cliente.id_cliente,
+            Cliente.nome,
+            Cliente.email,
+            Cliente.DDD,
+            Cliente.telefone,
+            Veiculo.marca,
+            Veiculo.modelo,
+            Veiculo.placa,
+            Veiculo.Ano AS ano,
+            Veiculo.cor,
+            Veiculo.carroceria,
+            Veiculo.chassi,
+            Veiculo.versao
+        FROM Cliente
+        LEFT JOIN Veiculo
+            ON Cliente.id_cliente = Veiculo.id_cliente
+        WHERE Cliente.id_cliente = ?
+        ORDER BY Veiculo.id_veiculo DESC
+        LIMIT 1
+    `;
+
+    banco.query(sql, [id_cliente], function(erro, resultado) {
+
+        if (erro) {
+            console.log("Erro ao buscar perfil:", erro);
+
+            res.status(500).json({
+                mensagem: "Erro ao buscar perfil."
+            });
+
+            return;
+        }
+
+        if (resultado.length == 0) {
+            res.status(404).json({
+                mensagem: "Cliente não encontrado."
+            });
+
+            return;
+        }
+
+        res.json(resultado[0]);
+
+    });
+
+});
+
 
 // HISTÓRICO DO VEÍCULO
 app.get("/historico", function(req, res) {
@@ -106,16 +174,18 @@ app.get("/historico", function(req, res) {
             console.log(erro);
 
             res.status(500).json({
-                mensagem: "Erro ao buscar histórico"
+                mensagem: "Erro ao buscar histórico."
             });
 
             return;
         }
 
         res.json(resultado);
+
     });
 
 });
+
 
 // AGENDAMENTO
 app.post("/agendamento", function(req, res) {
@@ -130,8 +200,11 @@ app.post("/agendamento", function(req, res) {
     // Cliente de teste
     const id_cliente = 1;
 
-    // Primeiro procura o serviço escolhido
-    const sqlServico = "SELECT id_servico FROM Servico WHERE nome = ?";
+    const sqlServico = `
+        SELECT id_servico
+        FROM Servico
+        WHERE nome = ?
+    `;
 
     banco.query(sqlServico, [servico], function(erro, resultado) {
 
@@ -146,7 +219,6 @@ app.post("/agendamento", function(req, res) {
         }
 
         if (resultado.length == 0) {
-
             res.status(400).json({
                 mensagem: "Serviço não encontrado."
             });
@@ -156,10 +228,10 @@ app.post("/agendamento", function(req, res) {
 
         const id_servico = resultado[0].id_servico;
 
-        // Cadastra o veículo
         const sqlVeiculo = `
             INSERT INTO Veiculo
-            (id_cliente, placa, marca, modelo, ano, cor, carroceria, chassi, versao)
+            (id_cliente, placa, marca, modelo, ano, cor,
+             carroceria, chassi, versao)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
 
@@ -190,7 +262,6 @@ app.post("/agendamento", function(req, res) {
 
                 const id_veiculo = resultado.insertId;
 
-                // Cadastra o agendamento
                 const sqlAgendamento = `
                     INSERT INTO Agendamento
                     (id_veiculo, id_servico, data_agendamento, data_horario)
@@ -218,10 +289,14 @@ app.post("/agendamento", function(req, res) {
 
                     }
                 );
+
             }
         );
+
     });
+
 });
+
 
 app.listen(3000, function() {
     console.log("Servidor funcionando!");
