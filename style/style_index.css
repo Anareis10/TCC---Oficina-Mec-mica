@@ -305,3 +305,323 @@ header::before /*pseudo-elemento*/ {
     }
 
 }
+
+
+/* ========================================
+   RESPONSIVIDADE - PÁGINA INICIAL
+   ======================================== */
+
+/* Evita que padding e bordas aumentem a largura */
+* {
+    box-sizing: border-box;
+}
+
+/* Banner principal */
+header {
+    min-height: 650px;
+    height: 100vh;
+    height: 100svh;
+}
+
+.conteudo__geral {
+    margin: 0;
+}
+
+.container-center {
+    min-height: 650px;
+    height: 100vh;
+    height: 100svh;
+    padding: 120px 24px 40px;
+}
+
+.centro {
+    width: 100%;
+}
+
+.centro h1 {
+    font-size: clamp(2rem, 4.5vw, 70px);
+    overflow-wrap: break-word;
+}
+
+.centro h2 {
+    font-size: clamp(1.7rem, 4vw, 61px);
+}
+
+.centro p {
+    font-size: clamp(1.1rem, 3.2vw, 55px);
+    line-height: 1.4;
+}
+
+/* Seção Quem Somos */
+.quem__somos {
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+    padding: 60px 32px;
+    margin: 0 auto;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: center;
+}
+
+.texto {
+    min-width: 0;
+}
+
+.primero_paragrafo,
+.segundo_paragrafo {
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+    overflow-wrap: break-word;
+}
+
+.quem {
+    font-size: clamp(2rem, 4vw, 52px);
+    margin-bottom: 12px;
+}
+
+.somos {
+    font-size: clamp(2rem, 4vw, 52px);
+    margin-left: clamp(30px, 8vw, 150px);
+    margin-top: -10px;
+}
+
+/* Galeria de imagens */
+.imagens__oficina {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.imagens__oficina img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Serviços */
+.servicos {
+    width: 100%;
+    height: auto;
+    padding: 60px 24px;
+}
+
+.titulo-servico {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 60px);
+    text-align: center;
+}
+
+.quadradinhos__servicos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 48px auto 0;
+}
+
+.cards {
+    min-width: 0;
+}
+
+.card__front {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    padding: 24px 18px;
+    gap: 18px;
+}
+
+.card__front h4 {
+    font-size: clamp(17px, 1.5vw, 23px);
+    overflow-wrap: break-word;
+}
+
+.card__front p {
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+.card__front:hover {
+    transform: translateY(-4px);
+}
+
+/* ========================================
+   TABLETS E TELAS MÉDIAS
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .quem__somos {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 48px 28px;
+    }
+
+    .imagens__oficina {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .imagens__oficina img {
+        height: 160px;
+    }
+
+    .quadradinhos__servicos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .card__front {
+        min-height: 390px;
+    }
+}
+
+/* ========================================
+   CELULARES
+   ======================================== */
+
+@media (max-width: 600px) {
+    header {
+        min-height: 580px;
+        height: 85svh;
+    }
+
+    .container-center {
+        min-height: 580px;
+        height: 85svh;
+        padding: 30px 20px;
+    }
+
+    .centro h1 {
+        font-size: clamp(28px, 7vw, 40px);
+        line-height: 1.2;
+    }
+
+    .centro h2 {
+        font-size: clamp(24px, 6vw, 35px);
+        line-height: 1.25;
+        margin-top: 8px;
+    }
+
+    .centro p {
+        font-size: clamp(16px, 4.5vw, 22px);
+        margin-top: 18px;
+    }
+
+    .quem__somos {
+        padding: 40px 20px;
+        margin-top: 0;
+        gap: 28px;
+    }
+
+    .quem,
+    .somos {
+        font-size: 36px;
+    }
+
+    .somos {
+        margin-left: 55px;
+    }
+
+    .primero_paragrafo,
+    .segundo_paragrafo {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .imagens__oficina {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .imagens__oficina img {
+        height: 125px;
+    }
+
+    .servicos {
+        padding: 40px 18px;
+    }
+
+    .titulo-servico {
+        font-size: 30px;
+        line-height: 1.3;
+    }
+
+    .quadradinhos__servicos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 32px;
+    }
+
+    .card__front {
+        min-height: 0;
+        height: auto;
+        padding: 24px;
+    }
+
+    .card__front img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card__front h4 {
+        font-size: 20px;
+    }
+
+    .card__front p {
+        font-size: 15px;
+    }
+
+    .alinhamento {
+        margin-top: 0;
+    }
+}
+
+/* Celulares muito estreitos */
+@media (max-width: 360px) {
+    .centro h1 {
+        font-size: 27px;
+    }
+
+    .centro h2 {
+        font-size: 23px;
+    }
+
+    .quem,
+    .somos {
+        font-size: 30px;
+    }
+
+    .servicos {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+}
+
+/* =================================
+   CORREÇÃO DO BANNER - CELULAR/TABLET
+   ================================= */
+@media (max-width: 768px) {
+    /* o header passa a crescer conforme o conteúdo (menu + banner) */
+    header {
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    /* o banner não tem mais altura fixa, então a imagem cobre tudo */
+    .container-center {
+        height: auto;
+        min-height: 55svh;
+        padding: 60px 20px 70px;
+    }
+
+    .quem__somos {
+        margin-top: 0;
+        padding-top: 40px;
+    }
+}

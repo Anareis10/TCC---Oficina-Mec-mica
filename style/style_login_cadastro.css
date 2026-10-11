@@ -195,3 +195,129 @@ p a:hover {
     color: #f5f5f5;
     text-decoration: underline;
 }
+
+/* =================================
+   LOGIN / CADASTRO - RESPONSIVO
+   (responsividade + letras maiores + inputs maiores)
+   ================================= */
+
+/* ---------- Estrutura ---------- */
+
+/* O body cresce se o conteúdo for maior que a tela */
+body {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 24px 16px;
+}
+
+/* O fundo fica fixo na tela e não rola junto com a página */
+body::after {
+    position: fixed;
+}
+
+/* O card nunca passa da largura da tela */
+main {
+    width: min(23rem, 100%);
+    padding: 2.5rem;
+}
+
+/* ---------- Textos ---------- */
+
+h2 {
+    padding: 0;
+    font-size: 30px;
+}
+
+/* ---------- Campos ---------- */
+
+.input-box input {
+    font-size: 19px;
+    padding: 18px 18px 10px;
+}
+
+.input-box span {
+    left: 18px;
+    font-size: 19px;
+}
+
+/* texto flutuante quando o campo está em foco ou preenchido */
+.input-box input:focus + span,
+.input-box input:not(:placeholder-shown) + span {
+    top: 8px;
+    font-size: 12px;
+}
+
+.lembrar-me label {
+    font-size: 16px;
+}
+
+/* ---------- Botões ---------- */
+
+/* centralizados sem depender de margin-left fixa */
+.btn__login,
+.btn__cadastro {
+    display: block;
+    margin: 10px auto 0;
+}
+
+.submit-btn {
+    font-size: 16px;
+    padding: 13px 34px;
+}
+
+.button-cadastro,
+.button-login {
+    font-size: 15px;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 480px) {
+    body {
+        padding: 16px 12px;
+    }
+
+    main {
+        padding: 1.75rem 1.25rem;
+        border-radius: 20px;
+    }
+
+    h2 {
+        margin-bottom: 18px;
+        font-size: 27px;
+    }
+
+    /* 18px evita o zoom automático do iOS ao tocar no campo */
+    .input-box input,
+    .input-box span {
+        font-size: 18px;
+    }
+
+    .input-box input:focus + span,
+    .input-box input:not(:placeholder-shown) + span {
+        font-size: 12px;
+    }
+
+    .lembrar-me label {
+        font-size: 15px;
+    }
+
+    .button-cadastro,
+    .button-login {
+        font-size: 14px;
+    }
+}
+
+/* ---------- Celulares muito estreitos ---------- */
+@media (max-width: 340px) {
+    main {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* ---------- Telas baixas (celular deitado) ---------- */
+@media (max-height: 600px) {
+    body {
+        align-items: flex-start;
+    }
+}

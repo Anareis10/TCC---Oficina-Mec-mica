@@ -12,6 +12,7 @@ body{
     padding: 0;
     width: 100%;
     overflow-x: hidden;
+    background-color: var(--cor-primaria);
 }
 
 /*Váriaveis de cores e fonte*/
@@ -205,17 +206,141 @@ body{
 
 }
 
-@media(max-width:768px){
+
+/* =================================
+   RESPONSIVIDADE - DIAGNÓSTICO
+   ================================= */
+
+/* Título da página (a altura fixa de 330px é removida) */
+.titulo {
+    height: auto;
+    min-height: 330px;
+    align-items: flex-end;
+    gap: 15px;
+    padding: 0 6% 40px;
+}
+
+.titulo h1 {
+    margin: 0;
+    padding-top: 150px;
+    font-size: clamp(26px, 4.5vw, 45px);
+    line-height: 1.2;
+}
+
+.titulo img {
+    flex-shrink: 0;
+    margin-top: 0;
+    margin-bottom: 4px;
+    width: clamp(28px, 4vw, 40px);
+    height: clamp(28px, 4vw, 40px);
+}
+
+/* Seções de texto (altura automática, títulos que quebram linha) */
+.segunda__parte,
+.terceira__parte,
+.quarta__parte,
+.quinta__parte {
+    height: auto;
+    padding: 50px 6%;
+}
+
+.segunda__parte h2,
+.terceira__parte h2,
+.quarta__parte h2,
+.quinta__parte h2 {
+    display: block;
+    white-space: normal;
+    margin: 0 0 20px;
+    padding: 0;
+    font-size: clamp(24px, 3.2vw, 40px);
+    line-height: 1.2;
+}
+
+.segunda__parte p,
+.terceira__parte p,
+.quarta__parte p,
+.quinta__parte p {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0;
+    font-size: clamp(16px, 2vw, 24px);
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+    .titulo {
+        min-height: 280px;
+        padding-bottom: 32px;
+    }
+
+    .titulo h1 {
+        padding-top: 120px;
+    }
+
+    .segunda__parte,
+    .terceira__parte,
+    .quarta__parte,
+    .quinta__parte {
+        padding: 40px 6%;
+    }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+    .titulo {
+        min-height: 0;
+        padding: 0 20px 28px;
+        align-items: center;
+    }
+
+    .titulo h1 {
+        padding-top: 40px;
+        font-size: 26px;
+    }
+
+    .titulo img {
+        margin-top: 40px;
+        margin-bottom: 0;
+        width: 28px;
+        height: 28px;
+    }
+
+    .segunda__parte,
+    .terceira__parte,
+    .quarta__parte,
+    .quinta__parte {
+        padding: 32px 20px;
+    }
+
+    .segunda__parte h2,
+    .terceira__parte h2,
+    .quarta__parte h2,
+    .quinta__parte h2 {
+        margin-bottom: 14px;
+        font-size: 24px;
+    }
 
     .segunda__parte p,
     .terceira__parte p,
     .quarta__parte p,
-    .quinta__parte p{
+    .quinta__parte p {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+}
 
-        font-size:20px;
-        margin:20px 0;
-        width:100%;
-
+/* ---------- Celulares muito estreitos ---------- */
+@media (max-width: 360px) {
+    .titulo h1 {
+        font-size: 23px;
     }
 
+    .segunda__parte h2,
+    .terceira__parte h2,
+    .quarta__parte h2,
+    .quinta__parte h2 {
+        font-size: 21px;
+    }
 }

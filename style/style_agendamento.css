@@ -245,6 +245,9 @@ h2 {
     background-color: rgba(255, 255, 255, 0.6);
 }
 
+input::placeholder{
+    color: var(--cor-primaria);
+}
 
 /*seção de data*/
 
@@ -363,6 +366,8 @@ select option {
     font-size: 18px;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.6);
+    
+    
 }
 
 .opcoes__veiculo,
@@ -506,25 +511,313 @@ select option {
     color: #999;
 }
 
-@media(max-width:768px){
+/* =================================
+   RESPONSIVIDADE - AGENDAMENTO
+   ================================= */
 
-    .container__agendamento{
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-        width:95%;
-        margin:auto;
-        border-radius:20px;
-        height:auto;
-        padding:30px 0;
+body {
+    min-width: 0;
+    max-width: 100%;
+    max-height: none;
+    overflow-x: hidden;
+}
 
+/* corrige o espaço preto: o header não ocupa mais 100vh */
+header {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+}
+
+.container__agendamento__fundo {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ---------- Banner ---------- */
+.banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 380px;
+    padding: 180px 6% 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* imagem do carro volta a aparecer (z-index 0 em vez de -1) */
+.banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right center;
+    pointer-events: none;
+}
+
+.texto_banner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.texto_banner h1 {
+    max-width: 600px;
+    margin-top: 0;
+    font-size: clamp(32px, 4vw, 60px);
+    line-height: 1.1;
+}
+
+.texto_banner p {
+    width: 350px;
+    max-width: 100%;
+    font-size: clamp(16px, 2vw, 21px);
+    line-height: 1.5;
+}
+
+.beneficio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.beneficio img {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+}
+
+.beneficio h2 {
+    width: auto;
+    height: auto;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* ---------- Formulário ---------- */
+.container__agendamento {
+    width: min(90%, 800px);
+    height: auto;
+    margin: 0 auto 50px;
+    padding: 35px;
+    gap: 10px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container__agendamento > h1 {
+    font-size: clamp(25px, 3vw, 36px);
+    line-height: 1.2;
+}
+
+.container__agendamento > h2 {
+    font-size: clamp(15px, 2vw, 20px);
+    line-height: 1.5;
+}
+
+.opcoes__veiculo,
+.dia__mes__ano {
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 0;
+    background: none; /* remove ícone de fundo que atrapalhava o layout */
+}
+
+.alinhar__carro,
+.alinhar__data {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 12px;
+    font-size: clamp(16px, 2vw, 22px);
+}
+
+.barras {
+    width: 100%;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.barra__modelo__carro,
+.barra__placa__carro,
+.barra__ano__carro,
+.barra__servico__carro,
+input[type="text"],
+select {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 48px;
+    margin: 0;
+    padding: 0 14px;
+    font-size: 16px;
+}
+
+/* ---------- Data e hora (compactos, lado a lado) ---------- */
+.input-horario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+}
+
+.barra__data,
+.barra__horario,
+input[type="date"],
+input[type="time"] {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: 48px;
+    margin: 0;
+    padding: 0 12px;
+    font-size: 16px;
+}
+
+.barra__Confirmar {
+    width: 100%;
+    max-width: 100%;
+    height: 48px;
+    margin: 5px 0 0;
+    padding: 0 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* ---------- Avaliações ---------- */
+.avaliacoes {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.avaliacoes h2 {
+    display: block;
+    margin-bottom: 25px;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.4;
+}
+
+.container_avaliacoes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.card_avaliacao {
+    min-width: 0;
+    padding: 18px;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+    .container__agendamento {
+        width: 92%;
+        padding: 28px;
+        border-radius: 24px;
+    }
+
+    .container_avaliacoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+    .banner {
+        min-height: 330px;
+        padding: 35px 22px;
+    }
+
+    /* escurece a imagem para o texto continuar legível */
+    .banner::after {
+        background-size: cover;
+        background-position: center;
+        opacity: 0.45;
+    }
+
+    .texto_banner h1 {
+        font-size: clamp(30px, 8vw, 42px);
+    }
+
+    .texto_banner p {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .beneficio {
+        align-items: flex-start;
+    }
+
+    .beneficio h2 {
+        font-size: 15px;
+    }
+
+    .container__agendamento {
+        width: calc(100% - 24px);
+        margin: 0 auto 35px;
+        padding: 24px 16px;
+        border-radius: 20px;
+    }
+
+    .alinhar__carro,
+    .alinhar__data {
+        margin-left: 0;
+        font-size: 16px;
     }
 
     .barra__modelo__carro,
     .barra__placa__carro,
-    .barra__ano__carro{
-
-        width:90%;
-        margin:auto;
-
+    .barra__ano__carro,
+    .barra__servico__carro,
+    input[type="text"],
+    select,
+    .barra__data,
+    .barra__horario,
+    input[type="date"],
+    input[type="time"] {
+        height: 44px;
+        font-size: 14px;
+        padding: 0 10px;
     }
 
+    .barra__Confirmar {
+        height: 44px;
+        font-size: 13px;
+    }
+
+    .avaliacoes {
+        width: calc(100% - 32px);
+        margin: 35px auto;
+    }
+
+    .avaliacoes h2 {
+        margin-bottom: 20px;
+        font-size: 23px;
+    }
+
+    .container_avaliacoes {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 }
+

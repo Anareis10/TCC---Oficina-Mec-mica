@@ -24,7 +24,7 @@
     box-sizing: border-box; /*retira a margem da direita*/
     border-bottom: 1px solid rgba(255, 153, 36, 0.7);
     backdrop-filter: blur(6px);
-    z-index: 1;
+    z-index: 9999;
 }
 
 /*Gap entre elementos*/
@@ -277,4 +277,154 @@
         flex-wrap:wrap;
     }
 
+}
+
+/* =================================
+   RODAPÉ - RESPONSIVO
+   ================================= */
+
+.rodape__principal,
+.copyright {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+.rodape__conteudo img,
+.rodape__conteudo p {
+    max-width: 100%;
+}
+
+/* ---------- Tablet e celular ---------- */
+@media (max-width: 768px) {
+    .rodape__principal {
+        height: auto;
+        padding: 35px 20px 25px;
+    }
+
+    .rodape__conteudo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .logo__footer {
+        width: 180px;
+        height: auto;
+        margin: 0;
+    }
+
+    /* endereço + horários */
+    .segunda-coluna {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .segunda-coluna p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .linha_endereco {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .icone_endereco {
+        width: 40px;
+        height: auto;
+        flex-shrink: 0;
+        margin: 0;
+    }
+
+    .endereco {
+        margin: 0;
+        text-align: center;
+    }
+
+    /* telefone + redes sociais */
+    .terceira-coluna {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .telefone {
+        margin: 0;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .logos__redes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .logos__redes .icones {
+        margin: 0;
+        padding: 0;
+    }
+
+    .logos__redes .icones img {
+        width: 40px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* copyright */
+    .copyright {
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .copyright p {
+        margin: 0;
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+/* ---------- Celulares pequenos ---------- */
+@media (max-width: 400px) {
+    .logo__footer {
+        width: 150px;
+    }
+
+    .segunda-coluna p,
+    .telefone {
+        font-size: 14px;
+    }
+
+    .logos__redes {
+        gap: 28px;
+    }
 }
