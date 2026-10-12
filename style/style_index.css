@@ -307,9 +307,9 @@ header::before /*pseudo-elemento*/ {
 }
 
 
-/* ========================================
+/*
    RESPONSIVIDADE - PÁGINA INICIAL
-   ======================================== */
+*/
 
 /* Evita que padding e bordas aumentem a largura */
 * {
@@ -451,9 +451,9 @@ header {
     transform: translateY(-4px);
 }
 
-/* ========================================
+/*
    TABLETS E TELAS MÉDIAS
-   ======================================== */
+*/
 
 @media (max-width: 1024px) {
     .quem__somos {
@@ -480,9 +480,9 @@ header {
     }
 }
 
-/* ========================================
+/*
    CELULARES
-   ======================================== */
+*/
 
 @media (max-width: 600px) {
     header {
@@ -602,9 +602,9 @@ header {
     }
 }
 
-/* =================================
+/*
    CORREÇÃO DO BANNER - CELULAR/TABLET
-   ================================= */
+*/
 @media (max-width: 768px) {
     /* o header passa a crescer conforme o conteúdo (menu + banner) */
     header {

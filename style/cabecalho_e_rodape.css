@@ -302,11 +302,137 @@
         flex-wrap: wrap;
     }
 
+
+
+/*                  CABEÇALHO - RESPONSIVO
+
+/* ---------- Tablet (menu fixo, uma linha) ---------- */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .parte_superior {
+        align-items: center;
+    }
+
+    .Logo__PauloCar {
+        width: 110px;
+        height: auto;
+    }
+
+    .superior__meio {
+        margin-left: 15px;
+        gap: 12px;
+    }
+
+    .Login__Cadastro {
+        font-size: 18px;
+    }
 }
 
-/* =================================
+/* ---------- Celular (3 linhas) ---------- */
+@media (max-width: 768px) {
+    .parte_superior {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 14px 16px;
+        z-index: 9999;
+    }
+
+    /* 1ª linha: logo */
+    .superior__esquerda {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .Logo__PauloCar {
+        display: block;
+        width: 110px;
+        height: auto;
+    }
+
+    /* 2ª linha: SOBRE, SERVIÇOS, AGENDAMENTO */
+    div.superior__meio {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 6px 18px;
+        width: 100%;
+        margin: 0;
+    }
+
+    /* os links também têm a classe superior__meio: zera a margem duplicada */
+    a.superior__meio {
+        margin: 0;
+        text-decoration: none;
+        color: var(--cor-terciaria);
+        font-size: 15px;
+        white-space: nowrap;
+        transition: 0.3s;
+    }
+
+    a.superior__meio:hover {
+        color: var(--cor-secundaria);
+        transform: none;
+    }
+
+    /* 3ª linha: LOGIN + ícone do perfil */
+    .superior__direita {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .Login__Cadastro {
+        font-size: 16px;
+    }
+
+    .container__usuario {
+        display: block;
+        height: 34px;
+        width: auto;
+    }
+}
+
+/* ---------- Celulares pequenos ---------- */
+@media (max-width: 400px) {
+    .parte_superior {
+        gap: 10px;
+        padding: 12px 10px;
+    }
+
+    .Logo__PauloCar {
+        width: 95px;
+    }
+
+    div.superior__meio {
+        gap: 6px 12px;
+    }
+
+    a.superior__meio {
+        font-size: 13px;
+    }
+
+    .Login__Cadastro {
+        font-size: 14px;
+    }
+
+    .container__usuario {
+        height: 30px;
+    }
+}}
+
+/*
    RODAPÉ - RESPONSIVO
-   ================================= */
+*/
 
 .rodape__principal,
 .copyright {
@@ -420,7 +546,7 @@
     }
 
     .logos__redes .icones img {
-        width: 40px;
+        width: 30px;
         height: auto;
         object-fit: contain;
     }

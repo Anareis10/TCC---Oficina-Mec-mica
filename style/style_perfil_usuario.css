@@ -349,3 +349,181 @@ main {
 footer {
     border-top: 1px solid #3d3d3d50;
 }
+
+/* 
+   RESPONSIVIDADE - PERFIL DO USUÁRIO
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* o min-width: 100vh antigo forçava scroll horizontal */
+body {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* menu fixo no desktop: o conteúdo começa abaixo dele */
+main {
+    width: 100%;
+    padding: max(20vh, 130px) 6% 50px;
+}
+
+.perfil__imagem {
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+}
+
+.perfil__nome {
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+/* os dois cards lado a lado, sem larguras mínimas fixas */
+.informacoes__section {
+    align-items: stretch;
+}
+
+.informacoes__usuario,
+.dados__veiculo {
+    min-width: 0;
+    width: auto;
+}
+
+.informacoes__usuario {
+    flex: 1 1 55%;
+}
+
+.dados__veiculo {
+    flex: 1 1 45%;
+}
+
+/* e-mail, chassi e textos longos quebram em vez de vazar */
+.informacoes__detalhes nav p,
+.veiculos__detalhes nav p {
+    overflow-wrap: anywhere;
+}
+
+/* ---------- Telas médias: cards um embaixo do outro ---------- */
+@media (max-width: 1200px) {
+    .informacoes__section {
+        flex-direction: column;
+    }
+
+    .informacoes__usuario,
+    .dados__veiculo {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+    main {
+        padding: max(15vh, 120px) 5% 40px;
+    }
+}
+
+/* ---------- Celular (o menu deixa de ser fixo) ---------- */
+@media (max-width: 768px) {
+    main {
+        padding: 30px 20px 40px;
+    }
+
+    .container__perfil {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .perfil__cabecalho {
+        gap: 15px;
+    }
+
+    .perfil__imagem {
+        width: 56px;
+    }
+
+    .perfil__nome {
+        font-size: 19px;
+    }
+
+    .perfil__dados {
+        font-size: 15px;
+    }
+
+    /* botão ocupa a largura toda, mais fácil de tocar */
+    .perfil__editar {
+        align-self: stretch;
+        justify-content: center;
+        margin-top: 0;
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+
+    .container__informacoes {
+        padding: 10px 0;
+    }
+
+    .informacoes__usuario,
+    .dados__veiculo {
+        padding: 18px 16px;
+    }
+
+    /* os três grupos do veículo ficam empilhados */
+    .veiculos__detalhes {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .veiculos__detalhes div {
+        gap: 15px;
+    }
+
+    /* divisória vertical vira horizontal */
+    .veiculos__detalhes i {
+        width: 100%;
+        height: 1px;
+    }
+
+    .informacoes__detalhes i {
+        display: none;
+    }
+}
+
+/* ---------- Celulares pequenos ---------- */
+@media (max-width: 480px) {
+    main {
+        padding: 24px 16px 32px;
+    }
+
+    .perfil__nome {
+        font-size: 18px;
+    }
+
+    .perfil__dados {
+        font-size: 14px;
+    }
+
+    .informacoes__icone,
+    .carro__icone {
+        width: 40px;
+        height: 40px;
+    }
+
+    .informacoes__usuario h3,
+    .dados__veiculo h3 {
+        font-size: 17px;
+    }
+
+    .informacoes__detalhes nav h6,
+    .informacoes__detalhes nav p,
+    .veiculos__detalhes nav h6,
+    .veiculos__detalhes nav p {
+        font-size: 15px;
+    }
+}
