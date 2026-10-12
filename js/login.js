@@ -1,3 +1,4 @@
+
 const formulario = document.getElementById("formularioLogin");
 
 formulario.addEventListener("submit", function(evento) {
@@ -31,6 +32,12 @@ formulario.addEventListener("submit", function(evento) {
         alert(dados.mensagem);
 
         if (dados.sucesso) {
+
+            localStorage.setItem(
+                "cliente",
+                JSON.stringify(dados.cliente)
+            );
+
             window.location.href = "index.html";
         }
 
