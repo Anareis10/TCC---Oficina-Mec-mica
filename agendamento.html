@@ -75,18 +75,74 @@
                         <i class="fa-solid fa-car"></i>
                         <p class="alinhar__carro">VEÍCULO</p>
                         <div class="barras">
-                                <input id="carModel" name="carModel" class="barra__modelo__carro" type="text" placeholder="Modelo do veículo" required/>
-                                <input id="carPlate" name="carPlate" class="barra__placa__carro" type="text" placeholder="Placa do veículo" required/>
-                                <input id="carYear" name="carYear" class="barra__ano__carro" type="text" placeholder="Ano do veículo" required/>
-                                <select name="carService" id="carService" class="barra__servico__carro" required>
-                                    <option value="">Escolha um serviço</option>
-                                    <option value="Modulo">Módulo</option>
-                                    <option value="ABS">ABS</option>
-                                    <option value="airbag">Airbag</option>
-                                    <option value="injecaoEletronica">Injeção Eletrônica</option>
-                                    <option value="motores">Motores</option>
-                                    <option value="others">Outros</option>
-                                </select>
+                            <div class="input-horario">
+                                <div class="espaco__barras">
+                                    <p class="titulo">Marca</p>
+                                    <input id="carMarca" name="carModel" class="barra__modelo__carro" type="text" placeholder="Ex.: Volkswagen" required/>
+                                </div>
+
+                                <div class="espaco__barras">
+                                    <p class="titulo">Modelo</p>
+                                    <input id="carModel" name="carModel" class="barra__modelo__carro" type="text" placeholder="Ex.: Nivus Highline" required/>
+                                </div>
+                            </div>
+
+                            <div class="input-horario">
+                                <div class="espaco__barras">
+                                    <p class="titulo">Motor</p>
+                                    <input id="carMotor" name="carModel" class="barra__modelo__carro" type="text" placeholder="Ex.: 250 TSI" required/>
+                                </div>
+
+                                <div class="espaco__barras">
+                                    <p class="titulo">Carroceria</p>
+                                    <input id="carCarroceria" name="carModel" class="barra__modelo__carro" type="text" placeholder="Ex.: SUV" required/>
+                                </div>
+                            </div>
+
+                            <div class="input-horario">
+                                <div class="espaco__barras">
+                                    <p class="titulo">Placa</p>
+                                    <input id="carPlate" name="carPlate" class="barra__placa__carro" type="text" placeholder="Ex: ABC1D23" required/>
+                                </div>
+                            
+
+                                <div class="espaco__barras">
+                                    <p class="titulo">Ano</p>
+                                    <input id="carYear" name="carYear" class="barra__ano__carro" type="text" placeholder="Ex.: 2026" required/>
+                                </div>
+                            </div>
+
+                            <div class="input-horario">
+                                <div class="espaco__barras">
+                                    <p class="titulo">Cor</p>
+                                    <input id="carColor" name="carYear" class="barra__ano__carro" type="text" placeholder="Ex.: Cinza" required/>
+                                </div>
+
+                                <div class="espaco__barras">
+                                    <p class="titulo">Combustível</p>
+                                    <input id="carCombustivel" name="carYear" class="barra__ano__carro" type="text" placeholder="Ex.: Flex" required/>
+                                </div>
+                            </div>
+
+                            <div class="input-horario">
+                                <div class="espaco__barras">
+                                    <p class="titulo">Chassi</p>
+                                    <input id="carChassi" name="carYear" class="barra__ano__carro" type="text" placeholder="Número do Chassi" required/>
+                                </div>
+
+                                <div class="espaco__barras">
+                                    <p class="titulo">Serviço</p>
+                                    <select name="carService" id="carService" class="barra__servico__carro" required>
+                                        <option class="cor__selecione" value="">Selecione</option>
+                                        <option value="Modulo">Módulo</option>
+                                        <option value="ABS">ABS</option>
+                                        <option value="airbag">Airbag</option>
+                                        <option value="injecaoEletronica">Injeção Eletrônica</option>
+                                        <option value="motores">Motores</option>
+                                        <option value="others">Outros</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
