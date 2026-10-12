@@ -196,11 +196,21 @@ h2 {
 .barras {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
     font-family: var(--fonte-primaria);
 }
 
+.espaco__barras{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.titulo{
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+}
 
 /*campos de entrada (modelo, placa, ano)*/
 
@@ -246,7 +256,15 @@ h2 {
 }
 
 input::placeholder{
-    color: var(--cor-primaria);
+    color: var(--cor-sextenario-cinza);
+}
+
+select.barra__servico__carro {
+    color: var(--cor-sextenario-cinza);
+}
+
+select.barra__servico__carro:valid {
+    color: #000;
 }
 
 /*seção de data*/
