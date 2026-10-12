@@ -149,6 +149,11 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.perfil__editar:hover {
+    background-color: #d37e1c;
 }
 
 .container__informacoes {
@@ -171,14 +176,14 @@ main {
     color: var(--cor-terciaria);
     min-height: 150px;
     max-height: 100%;
-    width: 60%;
-    min-width: 300px;
+    width: 100%;
+    min-width: 600px;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #3d3d3d50;
 }
 
-.informacoes__usuario div {
+.informacoes__usuario .informacoes__cabecalho {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -189,7 +194,7 @@ main {
     display: block;
     width: 50px;
     height: 50px;
-    filter: invert(68%) sepia(8%) saturate(4446%) hue-rotate(343deg) brightness(202%) contrast(102%);
+    filter: invert(71%) sepia(21%) saturate(2150%) hue-rotate(340deg) brightness(201%) contrast(101%);
 }
 
 
@@ -253,89 +258,6 @@ main {
     border-bottom: 1px solid #3d3d3d50;
 }
 
-.historico__veiculo {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    text-align: left;
-    font-family: var(--fonte-secundaria-Inter);
-    background-color: #33333350;
-    font-size: 16px;
-    color: var(--cor-terciaria);
-    width: 30%;
-    min-width: 300px;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #3d3d3d50;
-}
-
-.historico__veiculo div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-
-.historico__veiculo i {
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: #3d3d3d50;
-}
-
-.historico__veiculo img {
-    display: block;
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-    object-fit: cover;
-}
-
-.historico__agenda {
-    display: block;
-    width: 50px;
-    height: 50px;
-}
-
-.historico__detalhes {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    text-align: left;
-    font-family: var(--fonte-secundaria-Inter);
-    font-size: 16px;
-    color: var(--cor-terciaria);
-    min-width: 100%;
-}
-
-.historico__detalhes div {
-    align-items: left;
-    gap: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-}
-
-.historico__detalhes h6 {
-    display: block;
-    text-align: left;
-    font-weight: 600;
-    font-family: var(--fonte-primaria-Montserrat);
-    font-size: 18px;
-    color: #4e4e4e;
-    margin-bottom: 5px;
-}
-
-.historico__detalhes p {
-    display: block;
-    text-align: left;
-    font-weight: 400;
-    font-family: var(--fonte-secundaria-Inter);
-    font-size: 16px;
-    color: var(--cor-terciaria);
-}
-
 .informacoes__section {
     display: flex;
     flex-direction: row;
@@ -371,18 +293,17 @@ main {
     display: block;
     width: 50px;
     height: 50px;
-    border-radius: 5px;
-    object-fit: cover;
+    filter: invert(71%) sepia(21%) saturate(2150%) hue-rotate(340deg) brightness(101%) contrast(101%);
 }
 
-.informacoes__detalhes {
+.veiculos__detalhes {
     display: flex;
     flex-direction: row;
     gap: 20px;
     text-align: left;
 }
 
-.informacoes__detalhes div {
+.veiculos__detalhes div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -390,7 +311,7 @@ main {
     width: 100%;
 }
 
-.informacoes__detalhes nav {
+.veiculos__detalhes nav {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -398,20 +319,31 @@ main {
     height: auto;
 }
 
-.informacoes__detalhes i {
+.veiculos__detalhes i {
     display: block;
     width: 1px;
     height: 100%;
     background-color: #3d3d3d50;
 }
 
-.informacoes__detalhes nav h6 {
+.veiculos__detalhes nav h6 {
     display: block;
     text-align: left;
     font-weight: 600;
     font-family: var(--fonte-primaria-Montserrat);
     font-size: 16px;
     color: #4e4e4e;
+}
+
+.veiculos__detalhes nav p {
+    display: block;
+    text-align: left;
+    font-weight: 400;
+    font-family: var(--fonte-secundaria-Inter);
+    font-size: 16px;
+    color: var(--cor-terciaria);
+    padding: 5px 0 10px 0;
+    border-bottom: 1px solid #3d3d3d50;
 }
 
 footer {
