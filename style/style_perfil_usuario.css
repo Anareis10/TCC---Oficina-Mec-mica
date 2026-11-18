@@ -177,7 +177,7 @@ main {
     min-height: 150px;
     max-height: 100%;
     width: 100%;
-    min-width: 600px;
+    min-width: 450px;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #3d3d3d50;
@@ -197,7 +197,6 @@ main {
     filter: invert(71%) sepia(21%) saturate(2150%) hue-rotate(340deg) brightness(201%) contrast(101%);
 }
 
-
 .informacoes__usuario h3 {
     display: block;
     text-align: left;
@@ -206,11 +205,12 @@ main {
     font-size: 18px;
     color: var(--cor-terciaria);
     margin-bottom: 5px;
+    margin-left: 10px;
 }
 
 .informacoes__detalhes {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     text-align: left;
     position: relative;
@@ -289,11 +289,22 @@ main {
     gap: 10px;
 }
 
+.dados__veiculo div h3 {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    font-family: var(--fonte-primaria-Montserrat);
+    font-size: 18px;
+    color: var(--cor-terciaria);
+    margin-bottom: 5px;
+}
+
 .carro__icone {
     display: block;
-    width: 50px;
-    height: 50px;
-    filter: invert(71%) sepia(21%) saturate(2150%) hue-rotate(340deg) brightness(101%) contrast(101%);
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
 .veiculos__detalhes {

@@ -1,74 +1,101 @@
 /*importa a fonte Montsserat*/
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /*zera a margem e os espaçamentos padrão*/
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
 
+
 /*Váriaveis de cores e fonte*/
-:root{
+
+:root {
     --cor-primaria: #000000;
     --cor-secundaria: #FF9924;
     --cor-terciaria: #FFFFFF;
     --cor-quarternaria-cinza-claro: #D9D9D9;
     --cor-quinquenaria-cinza: #212121;
     --cor-sextenario-cinza: #3D3C3C;
-    --cor-branco-transparente: rgba(255, 255, 255, 0.5); /*cor com transparência*/
+    --cor-branco-transparente: rgba(255, 255, 255, 0.5);
+    /*cor com transparência*/
     --fonte-primaria: Montserrat, sans-serif;
     --fonte-secundaria: Inter, sans-serif;
 }
 
 html {
-    scroll-behavior: smooth; /*muda a página para onde queremos é instantâneo*/
+    scroll-behavior: smooth;
+    /*muda a página para onde queremos é instantâneo*/
 }
 
+
 /*cor de fundo da página*/
-body{
+
+body {
     background-color: var(--cor-primaria);
 }
 
+
 /*header ocupando a tela inteira*/
+
 header {
-    position: relative; /*posiciona elementos filhos*/
-    height: 100vh; /*altura*/
-    width: 100%; /*largura*/
+    position: relative;
+    /*posiciona elementos filhos*/
+    height: 100vh;
+    /*altura*/
+    width: 100%;
+    /*largura*/
 }
 
+
 /* IMAGEM DE FUNDO (SEM MARGEM) */
-header::before /*pseudo-elemento*/ {
-    content: ""; /*obrigatório para o pseudo aparecer*/
-    position: absolute; /*posiciona livremente dentro do header*/
+
+header::before
+/*pseudo-elemento*/
+
+{
+    content: "";
+    /*obrigatório para o pseudo aparecer*/
+    position: absolute;
+    /*posiciona livremente dentro do header*/
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: url('../imagens/fundoindex.png') top/cover no-repeat; /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
-    opacity: 0.3; /*transparência*/
+    background: url('../imagens/fundoindex.png') top/cover no-repeat;
+    /*top -> posição da imagem; cover -> cobre toda a área; no-repeat -> não repete*/
+    opacity: 0.3;
+    /*transparência*/
 }
 
-.conteudo__geral{
+.conteudo__geral {
     margin: 0 20px;
     position: relative;
 }
 
-.container-center{
+.container-center {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+
 /*edita o texto central*/
-.centro{
-    text-align: center; /*centraliza o texto*/
+
+.centro {
+    text-align: center;
+    /*centraliza o texto*/
     color: var(--cor-terciaria);
 }
 
+
 /*edita a primeira linha do título central*/
-.centro h1{
+
+.centro h1 {
     font-size: 70px;
     font-weight: 600;
     line-height: 1.1;
@@ -76,47 +103,58 @@ header::before /*pseudo-elemento*/ {
     font-family: var(--fonte-primaria);
 }
 
+
 /*segunda linha do títilo central*/
-.centro h2{
-    display: block; /* ocupa toda a largura disponível do seu elemento pai e força uma quebra de linha antes e depois de si*/
+
+.centro h2 {
+    display: block;
+    /* ocupa toda a largura disponível do seu elemento pai e força uma quebra de linha antes e depois de si*/
     font-size: 61px;
     font-weight: 500;
     margin: 0;
     font-family: var(--fonte-primaria);
 }
 
+
 /*última linha do título central*/
-.centro p{
+
+.centro p {
     font-size: 55px;
     margin-top: 15px;
     text-align: center;
     font-family: var(--fonte-secundaria);
 }
 
-.laranja{
+.laranja {
     color: #FF9924;
 }
 
 
 /*2 seção: parte do sobre*/
-.quem__somos{
+
+.quem__somos {
     max-width: 1200px;
     margin: 0 auto;
     height: 75vh;
-    display: grid; /*ativar o grid*/
-    grid-template-columns: 1fr 1fr; /*duas colunas iguais*/
-    gap: 80px; /*espaço entre linha/coluna*/
-    align-items: flex-start; /*controla o alinhamento*/
+    display: grid;
+    /*ativar o grid*/
+    grid-template-columns: 1fr 1fr;
+    /*duas colunas iguais*/
+    gap: 80px;
+    /*espaço entre linha/coluna*/
+    align-items: flex-start;
+    /*controla o alinhamento*/
     padding: 50px;
     margin-top: 80px;
     justify-self: center;
 }
 
-.negrito{
+.negrito {
     font-weight: 900;
 }
 
-.primero_paragrafo, .segundo_paragrafo{
+.primero_paragrafo,
+.segundo_paragrafo {
     color: var(--cor-terciaria);
     font-size: 20px;
     text-align: left;
@@ -127,22 +165,26 @@ header::before /*pseudo-elemento*/ {
     letter-spacing: 1px;
 }
 
-.texto{
+.texto {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
- /*edita a escrita QUEM*/
-.quem{
+
+/*edita a escrita QUEM*/
+
+.quem {
     color: var(--cor-secundaria);
     font-size: 52px;
     margin-bottom: 20px;
     font-family: var(--fonte-primaria);
 }
 
+
 /*edita a escrita SOMOS?*/
-.somos{
+
+.somos {
     color: var(--cor-terciaria);
     margin-left: 150px;
     font-size: 52px;
@@ -150,54 +192,60 @@ header::before /*pseudo-elemento*/ {
     font-family: var(--fonte-primaria);
 }
 
-.imagens__oficina{
+.imagens__oficina {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /*cria duas colunas*/
+    grid-template-columns: repeat(3, 1fr);
+    /*cria duas colunas*/
     gap: 10px;
     width: 450px;
     justify-content: left;
 }
 
-.imagens__oficina img{
+.imagens__oficina img {
     width: 200px;
     height: auto;
     border-radius: 15px;
 }
 
-.img_sobre{
+.img_sobre {
     filter: brightness(120%);
     transition: .2s;
 }
 
-.sobre{
+.sobre {
     filter: brightness(200%);
     transition: .2s;
 }
 
-.sobre:hover{
+.sobre:hover {
     opacity: 0.8;
     transition: .2s;
 }
 
-.img_sobre:hover{
+.img_sobre:hover {
     opacity: 0.8;
     transition: .2s;
 }
+
 
 /* para não cobrir o quem do quem somos */
-#sobre{
+
+#sobre {
     scroll-margin-top: 120px;
 }
 
 
 /* NOSSOS SERVIÇOS */
-.servicos{
+
+.servicos {
     background-color: #070707;
-    height: 90vh; /*altura*/
-    width: 100%; /*largura*/
+    height: 90vh;
+    /*altura*/
+    width: 100%;
+    /*largura*/
 }
 
-.titulo-servico{
+.titulo-servico {
     color: var(--cor-secundaria);
     margin-left: 50px;
     text-align: center;
@@ -205,7 +253,9 @@ header::before /*pseudo-elemento*/ {
     font-family: var(--fonte-primaria);
 }
 
+
 /* todos os botoes de serviços*/
+
 .quadradinhos__servicos {
     display: flex;
     /*controlam como os itens se comportam quando não cabem mais em uma única linha dentro de um container Flex*/
@@ -213,10 +263,11 @@ header::before /*pseudo-elemento*/ {
     margin-top: 1rem;
     margin: 5rem auto 20% auto;
     gap: 50px;
-
 }
 
+
 /* é a classe de cada botão de serviço (cada um e o seu texto compartilha da mesma)*/
+
 .card__front {
     background: #111;
     width: 280px;
@@ -231,7 +282,7 @@ header::before /*pseudo-elemento*/ {
     transition: 1s;
 }
 
-.card__front:hover{
+.card__front:hover {
     transform: scale(1.1);
     transition: 1.5s;
 }
@@ -245,10 +296,9 @@ header::before /*pseudo-elemento*/ {
     font-family: var(--fonte-secundaria);
 }
 
-.alinhamento{
+.alinhamento {
     margin-top: 25px;
 }
-
 
 .card__front a {
     margin-top: auto;
@@ -260,17 +310,17 @@ header::before /*pseudo-elemento*/ {
     transition: .3s;
 }
 
-.card__front a:hover{
+.card__front a:hover {
     color: var(--cor-terciaria);
     transition: .3s;
 }
 
-.card__front h4{
+.card__front h4 {
     font-size: 23px;
     color: var(--cor-terciaria);
 }
 
-.card__front img{
+.card__front img {
     height: 106px;
     width: 106px;
     display: block;
@@ -284,24 +334,18 @@ header::before /*pseudo-elemento*/ {
     font-family: var(--fonte-primaria);
 }
 
-#servicos{
+#servicos {
     scroll-margin-top: 120px;
 }
 
-@media(max-width:768px){
-
-    .quadradinhos__servicos{
-
-        flex-direction:column;
-        align-items:center;
-
+@media(max-width:768px) {
+    .quadradinhos__servicos {
+        flex-direction: column;
+        align-items: center;
     }
-
-    .servicos{
-
-        height:auto;
-        padding:50px 0;
-
+    .servicos {
+        height: auto;
+        padding: 50px 0;
     }
 
 }
