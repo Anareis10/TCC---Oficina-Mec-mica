@@ -1,51 +1,40 @@
 
 const formulario = document.getElementById("formularioLogin");
 
-formulario.addEventListener("submit", function(evento) {
+if (formulario) {
+    formulario.addEventListener("submit", async function (evento) {
+        evento.preventDefault();
 
-    evento.preventDefault();
+        const email = document.getElementById("email").value.trim();
+        const senha = document.getElementById("senha").value;
 
-    const email = document.getElementById("email").value;
-    const senha = document.getElementById("senha").value;
+        try {
+            const resposta = await fetch("http://localhost:3000/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email,
+                    senha
+                })
+            });
 
-    fetch("http://localhost:3000/login", {
+            const dados = await resposta.json();
 
-        method: "POST",
+            if (!resposta.ok || !dados.sucesso) {
+                alert(dados.mensagem || "Erro ao fazer login.");
+                return;
+            }
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+            localStorage.setItem("cliente", JSON.stringify(dados.cliente));
 
-        body: JSON.stringify({
-            email: email,
-            senha: senha
-        })
+            alert(dados.mensagem);
+            window.location.href = "./index.html";
 
-    })
-
-    .then(function(resposta) {
-        return resposta.json();
-    })
-
-    .then(function(dados) {
-
-        alert(dados.mensagem);
-
-        if (dados.sucesso) {
-
-            localStorage.setItem(
-                "cliente",
-                JSON.stringify(dados.cliente)
-            );
-
-            window.location.href = "index.html";
+        } catch (erro) {
+            console.error("Erro no login:", erro);
+            alert("Não foi possível conectar ao servidor.");
         }
-
-    })
-
-    .catch(function(erro) {
-        console.log(erro);
-        alert("Erro ao fazer login!");
     });
-
-});
+}
