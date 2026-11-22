@@ -1,7 +1,6 @@
 
 const express = require("express");
 const cors = require("cors");
-
 const banco = require("./banco");
 
 const app = express();
@@ -9,14 +8,39 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// CADASTRAR CLIENTE
-app.post("/clientes", function(req, res) {
+const PORTA = 3000;
 
-    const nome = req.body.nome;
-    const ddd = req.body.ddd;
-    const telefone = req.body.telefone;
-    const email = req.body.email;
-    const senha = req.body.senha;
+// SERVIÇOS CADASTRADOS NO BANCO
+const servicos = {
+    "Modulo": "Modulo",
+    "ABS": "ABS",
+    "airbag": "Airbag",
+    "injecaoEletronica": "Injeção Eletrônica",
+    "motores": "Motores",
+    "others": "Outros"
+};
+
+// CADASTRAR CLIENTE
+app.post("/clientes", function (req, res) {
+    const { nome, telefone, email, senha } = req.body;
+
+    if (!nome || !telefone || !email || !senha) {
+        return res.status(400).json({
+            mensagem: "Preencha todos os campos."
+        });
+    }
+
+    // O campo telefone deve conter DDD + número.
+    const numeros = String(telefone).replace(/\D/g, "");
+
+    if (numeros.length !== 10 && numeros.length !== 11) {
+        return res.status(400).json({
+            mensagem: "Informe o telefone com DDD."
+        });
+    }
+
+    const ddd = numeros.substring(0, 2);
+    const numeroTelefone = numeros.substring(2);
 
     const sql = `
         INSERT INTO Cliente
@@ -24,34 +48,41 @@ app.post("/clientes", function(req, res) {
         VALUES (?, ?, ?, ?, ?)
     `;
 
-    banco.query(sql, [nome, ddd, telefone, email, senha],
-        function(erro, resultado) {
-
+    banco.query(
+        sql,
+        [nome, ddd, numeroTelefone, email, senha],
+        function (erro) {
             if (erro) {
-                console.log(erro);
+                console.error("Erro no cadastro:", erro);
 
-                res.status(500).json({
+                if (erro.code === "ER_DUP_ENTRY") {
+                    return res.status(409).json({
+                        mensagem: "Este e-mail já está cadastrado."
+                    });
+                }
+
+                return res.status(500).json({
                     mensagem: "Erro ao cadastrar cliente."
                 });
-
-                return;
             }
 
-            res.json({
+            res.status(201).json({
                 mensagem: "Cliente cadastrado com sucesso!"
             });
-
         }
     );
-
 });
 
-
 // LOGIN
-app.post("/login", function(req, res) {
+app.post("/login", function (req, res) {
+    const { email, senha } = req.body;
 
-    const email = req.body.email;
-    const senha = req.body.senha;
+    if (!email || !senha) {
+        return res.status(400).json({
+            sucesso: false,
+            mensagem: "Informe o e-mail e a senha."
+        });
+    }
 
     const sql = `
         SELECT id_cliente, nome, email, DDD, telefone
@@ -59,26 +90,21 @@ app.post("/login", function(req, res) {
         WHERE email = ? AND senha = ?
     `;
 
-    banco.query(sql, [email, senha], function(erro, resultado) {
-
+    banco.query(sql, [email, senha], function (erro, resultado) {
         if (erro) {
-            console.log(erro);
+            console.error("Erro no login:", erro);
 
-            res.status(500).json({
+            return res.status(500).json({
                 sucesso: false,
                 mensagem: "Erro ao fazer login."
             });
-
-            return;
         }
 
-        if (resultado.length == 0) {
-            res.json({
+        if (resultado.length === 0) {
+            return res.status(401).json({
                 sucesso: false,
                 mensagem: "E-mail ou senha incorretos!"
             });
-
-            return;
         }
 
         res.json({
@@ -86,218 +112,241 @@ app.post("/login", function(req, res) {
             mensagem: "Login realizado com sucesso!",
             cliente: resultado[0]
         });
-
     });
-
 });
 
-
-// PERFIL DO USUÁRIO
-app.get("/perfil/:id_cliente", function(req, res) {
-
-    const id_cliente = req.params.id_cliente;
+// PERFIL DO CLIENTE
+app.get("/perfil/:id_cliente", function (req, res) {
+    const idCliente = req.params.id_cliente;
 
     const sql = `
         SELECT
-            Cliente.id_cliente,
-            Cliente.nome,
-            Cliente.email,
-            Cliente.DDD,
-            Cliente.telefone,
-            Veiculo.marca,
-            Veiculo.modelo,
-            Veiculo.placa,
-            Veiculo.Ano AS ano,
-            Veiculo.cor,
-            Veiculo.carroceria,
-            Veiculo.chassi,
-            Veiculo.versao
-        FROM Cliente
-        LEFT JOIN Veiculo
-            ON Cliente.id_cliente = Veiculo.id_cliente
-        WHERE Cliente.id_cliente = ?
-        ORDER BY Veiculo.id_veiculo DESC
+            c.id_cliente,
+            c.nome,
+            c.email,
+            c.DDD,
+            c.telefone,
+            v.marca,
+            v.modelo,
+            v.placa,
+            v.Ano AS ano,
+            v.Cor AS cor,
+            v.Carroceria AS carroceria,
+            v.chassi,
+            v.versao
+        FROM Cliente c
+        LEFT JOIN Veiculo v
+            ON c.id_cliente = v.id_cliente
+        WHERE c.id_cliente = ?
+        ORDER BY v.id_veiculo DESC
         LIMIT 1
     `;
 
-    banco.query(sql, [id_cliente], function(erro, resultado) {
-
+    banco.query(sql, [idCliente], function (erro, resultado) {
         if (erro) {
-            console.log("Erro ao buscar perfil:", erro);
+            console.error("Erro ao buscar perfil:", erro);
 
-            res.status(500).json({
+            return res.status(500).json({
                 mensagem: "Erro ao buscar perfil."
             });
-
-            return;
         }
 
-        if (resultado.length == 0) {
-            res.status(404).json({
+        if (resultado.length === 0) {
+            return res.status(404).json({
                 mensagem: "Cliente não encontrado."
             });
-
-            return;
         }
 
         res.json(resultado[0]);
-
     });
-
 });
 
-
-// HISTÓRICO DO VEÍCULO
-app.get("/historico", function(req, res) {
+// HISTÓRICO DO CLIENTE
+app.get("/historico/:id_cliente", function (req, res) {
+    const idCliente = req.params.id_cliente;
 
     const sql = `
         SELECT
-            Agendamento.data_agendamento,
-            Agendamento.data_horario,
-            Veiculo.placa,
-            Veiculo.marca,
-            Veiculo.modelo,
-            Servico.nome AS servico,
-            Cliente.nome AS cliente
-        FROM Agendamento
-        INNER JOIN Veiculo
-            ON Agendamento.id_veiculo = Veiculo.id_veiculo
-        INNER JOIN Servico
-            ON Agendamento.id_servico = Servico.id_servico
-        INNER JOIN Cliente
-            ON Veiculo.id_cliente = Cliente.id_cliente
+            a.id_agendamento,
+            a.data_agendamento,
+            a.data_horario,
+            v.placa,
+            v.marca,
+            v.modelo,
+            s.nome AS servico,
+            c.nome AS cliente
+        FROM Agendamento a
+        INNER JOIN Veiculo v
+            ON a.id_veiculo = v.id_veiculo
+        INNER JOIN Servico s
+            ON a.id_servico = s.id_servico
+        INNER JOIN Cliente c
+            ON v.id_cliente = c.id_cliente
+        WHERE c.id_cliente = ?
+        ORDER BY a.data_agendamento DESC, a.data_horario DESC
     `;
 
-    banco.query(sql, function(erro, resultado) {
-
+    banco.query(sql, [idCliente], function (erro, resultado) {
         if (erro) {
-            console.log(erro);
+            console.error("Erro ao buscar histórico:", erro);
 
-            res.status(500).json({
+            return res.status(500).json({
                 mensagem: "Erro ao buscar histórico."
             });
-
-            return;
         }
 
         res.json(resultado);
-
     });
-
 });
-
 
 // AGENDAMENTO
-app.post("/agendamento", function(req, res) {
+app.post("/agendamento", function (req, res) {
+    const {
+        id_cliente,
+        marca,
+        modelo,
+        motor,
+        carroceria,
+        placa,
+        ano,
+        cor,
+        combustivel,
+        chassi,
+        servico,
+        data,
+        horario
+    } = req.body;
 
-    const modelo = req.body.modelo;
-    const placa = req.body.placa;
-    const ano = req.body.ano;
-    const servico = req.body.servico;
-    const data = req.body.data;
-    const horario = req.body.horario;
+    if (
+        !id_cliente || !marca || !modelo || !carroceria ||
+        !placa || !ano || !cor || !chassi ||
+        !servico || !data || !horario
+    ) {
+        return res.status(400).json({
+            mensagem: "Preencha todos os dados obrigatórios do agendamento."
+        });
+    }
 
-    // Cliente de teste
-    const id_cliente = 1;
+    const nomeServico = servicos[servico] || servico;
 
-    const sqlServico = `
-        SELECT id_servico
-        FROM Servico
-        WHERE nome = ?
+    const sqlCliente = `
+        SELECT id_cliente
+        FROM Cliente
+        WHERE id_cliente = ?
     `;
 
-    banco.query(sqlServico, [servico], function(erro, resultado) {
-
+    banco.query(sqlCliente, [id_cliente], function (erro, clientes) {
         if (erro) {
-            console.log(erro);
+            console.error(erro);
 
-            res.status(500).json({
-                mensagem: "Erro ao procurar o serviço."
+            return res.status(500).json({
+                mensagem: "Erro ao verificar o cliente."
             });
-
-            return;
         }
 
-        if (resultado.length == 0) {
-            res.status(400).json({
-                mensagem: "Serviço não encontrado."
+        if (clientes.length === 0) {
+            return res.status(404).json({
+                mensagem: "Cliente não encontrado. Faça login novamente."
             });
-
-            return;
         }
 
-        const id_servico = resultado[0].id_servico;
-
-        const sqlVeiculo = `
-            INSERT INTO Veiculo
-            (id_cliente, placa, marca, modelo, ano, cor,
-             carroceria, chassi, versao)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        const sqlServico = `
+            SELECT id_servico
+            FROM Servico
+            WHERE nome = ?
         `;
 
-        banco.query(
-            sqlVeiculo,
-            [
-                id_cliente,
-                placa,
-                "Não informado",
-                modelo,
-                ano,
-                "Não informado",
-                "Não informado",
-                "Não informado",
-                "Não informado"
-            ],
-            function(erro, resultado) {
+        banco.query(sqlServico, [nomeServico], function (erro, servicosEncontrados) {
+            if (erro) {
+                console.error(erro);
 
-                if (erro) {
-                    console.log(erro);
-
-                    res.status(500).json({
-                        mensagem: "Erro ao cadastrar veículo."
-                    });
-
-                    return;
-                }
-
-                const id_veiculo = resultado.insertId;
-
-                const sqlAgendamento = `
-                    INSERT INTO Agendamento
-                    (id_veiculo, id_servico, data_agendamento, data_horario)
-                    VALUES (?, ?, ?, ?)
-                `;
-
-                banco.query(
-                    sqlAgendamento,
-                    [id_veiculo, id_servico, data, horario],
-                    function(erro) {
-
-                        if (erro) {
-                            console.log(erro);
-
-                            res.status(500).json({
-                                mensagem: "Erro ao realizar agendamento."
-                            });
-
-                            return;
-                        }
-
-                        res.json({
-                            mensagem: "Agendamento realizado com sucesso!"
-                        });
-
-                    }
-                );
-
+                return res.status(500).json({
+                    mensagem: "Erro ao procurar o serviço."
+                });
             }
-        );
 
+            if (servicosEncontrados.length === 0) {
+                return res.status(404).json({
+                    mensagem: "Serviço não encontrado no banco de dados."
+                });
+            }
+
+            const idServico = servicosEncontrados[0].id_servico;
+
+            const sqlVeiculo = `
+                INSERT INTO Veiculo
+                (
+                    id_cliente,
+                    placa,
+                    marca,
+                    modelo,
+                    Ano,
+                    Cor,
+                    Carroceria,
+                    chassi,
+                    versao
+                )
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            `;
+
+            banco.query(
+                sqlVeiculo,
+                [
+                    id_cliente,
+                    placa,
+                    marca,
+                    modelo,
+                    ano,
+                    cor,
+                    carroceria,
+                    chassi,
+                    motor || "Não informado"
+                ],
+                function (erro, resultadoVeiculo) {
+                    if (erro) {
+                        console.error("Erro ao cadastrar veículo:", erro);
+
+                        return res.status(500).json({
+                            mensagem: "Erro ao cadastrar veículo."
+                        });
+                    }
+
+                    const idVeiculo = resultadoVeiculo.insertId;
+
+                    const sqlAgendamento = `
+                        INSERT INTO Agendamento
+                        (
+                            id_veiculo,
+                            id_servico,
+                            data_agendamento,
+                            data_horario
+                        )
+                        VALUES (?, ?, ?, ?)
+                    `;
+
+                    banco.query(
+                        sqlAgendamento,
+                        [idVeiculo, idServico, data, horario],
+                        function (erro) {
+                            if (erro) {
+                                console.error("Erro ao salvar agendamento:", erro);
+
+                                return res.status(500).json({
+                                    mensagem: "Veículo cadastrado, mas não foi possível salvar o agendamento."
+                                });
+                            }
+
+                            res.status(201).json({
+                                mensagem: "Agendamento realizado com sucesso!"
+                            });
+                        }
+                    );
+                }
+            );
+        });
     });
-
 });
 
-
-app.listen(3000, function() {
-    console.log("Servidor funcionando!");
+app.listen(PORTA, function () {
+    console.log("Servidor funcionando na porta " + PORTA);
 });

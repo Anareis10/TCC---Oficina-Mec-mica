@@ -1,44 +1,58 @@
+
 const formulario = document.querySelector("form");
 
-formulario.addEventListener("submit", async function(evento) {
+if (formulario) {
+    formulario.addEventListener("submit", async function (evento) {
+        evento.preventDefault();
 
-    evento.preventDefault();
+        const clienteSalvo = localStorage.getItem("cliente");
 
-    const modelo = document.querySelector("#carModel").value;
-    const placa = document.querySelector("#carPlate").value;
-    const ano = document.querySelector("#carYear").value;
-    const servico = document.querySelector("#carService").value;
-    const data = document.querySelector("#data").value;
-    const horario = document.querySelector("#horario").value;
+        if (!clienteSalvo) {
+            alert("Faça login antes de realizar um agendamento.");
+            window.location.href = "./login.html";
+            return;
+        }
 
-    try {
+        const cliente = JSON.parse(clienteSalvo);
 
-        const resposta = await fetch("http://localhost:3000/agendamento", {
-            method: "POST",
+        const dados = {
+            id_cliente: cliente.id_cliente,
+            marca: document.getElementById("carMarca").value.trim(),
+            modelo: document.getElementById("carModel").value.trim(),
+            motor: document.getElementById("carMotor").value.trim(),
+            carroceria: document.getElementById("carCarroceria").value.trim(),
+            placa: document.getElementById("carPlate").value.trim(),
+            ano: document.getElementById("carYear").value.trim(),
+            cor: document.getElementById("carColor").value.trim(),
+            combustivel: document.getElementById("carCombustivel").value.trim(),
+            chassi: document.getElementById("carChassi").value.trim(),
+            servico: document.getElementById("carService").value,
+            data: document.getElementById("data").value,
+            horario: document.getElementById("horario").value
+        };
 
-            headers: {
-                "Content-Type": "application/json"
-            },
+        try {
+            const resposta = await fetch("http://localhost:3000/agendamento", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(dados)
+            });
 
-            body: JSON.stringify({
-                modelo: modelo,
-                placa: placa,
-                ano: ano,
-                servico: servico,
-                data: data,
-                horario: horario
-            })
-        });
+            const resultado = await resposta.json();
 
-        const resultado = await resposta.json();
+            if (!resposta.ok) {
+                alert(resultado.mensagem || "Erro ao realizar o agendamento.");
+                return;
+            }
 
-        alert(resultado.mensagem);
+            alert(resultado.mensagem);
+            formulario.reset();
 
-    } catch (erro) {
-
-        console.log(erro);
-
-        alert("Erro ao realizar o agendamento.");
-    }
-
-});
+        } catch (erro) {
+            console.error("Erro no agendamento:", erro);
+            alert("Não foi possível conectar ao servidor.");
+        }
+    });
+}
