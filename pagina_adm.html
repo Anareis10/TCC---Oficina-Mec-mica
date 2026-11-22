@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,15 +27,228 @@
                 </div>
 
                 <div class="superior__direita">
-                    <a class="Login__Cadastro" href="./login.html">LOGIN</a>
-
-                    <a href="./perfil_usuario.html">
-                        <img src="./imagens/user.png" class="container__usuario" alt="Perfil do usuário">
-                    </a>
+                    <a class="titulo__adm">Administrador</a>
+                    <a class="titulo__adm icone" href="#">PC</a>
                 </div>
 
             </div>
         </div>
     </header>
+
+    <main>
+        <div class="hero">
+            <div class="esquerda">
+                <h1>Painel</h1>
+                <p><span id="data-hoje"></span> · visão geral da oficina</p>
+            </div>
+
+            <button type="button" id="novo__agendamento">+ Novo agendamento</button>
+        </div>
+
+        <section class="agenda">
+            <div class="titulo__agenda">
+                <div class="primeira__coluna">
+                    <img src="https://cdn-icons-png.flaticon.com/128/8740/8740776.png" style="filter: invert(61%) sepia(94%) saturate(1000%) hue-rotate(344deg);">
+                    <h2 id="titulo__agenda__texto">Agenda de hoje</h2>
+                </div>
+
+                <p><span id="quant__veiculo"></span> Veículo(s)</p>
+            </div>
+
+            <div class="campo__pesquisa">
+                <input id="buscar" type="text" placeholder="Buscar por cliente ou placa">
+                <input id="dia" type="date" aria-label="Dia da agenda">
+                <select name="status" id="status" class="status__servico" required>
+                    <option class="cor__selecione" value="">Todos os status</option>
+                    <option value="pendente">Pendente</option>
+                    <option value="andamento">Em andamento</option>
+                    <option value="concluido">Concluído</option>
+                    <option value="cancelado">Cancelado</option>
+                </select>
+            </div>
+
+            <div class="tabela__agenda">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Horário</th>
+                            <th>Cliente</th>
+                            <th>Veículo</th>
+                            <th>Serviço</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="linhas"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="coluna">
+            <section class="agenda topo">
+                <div class="titulo__contato">
+                    <img src="https://cdn-icons-png.flaticon.com/128/8143/8143259.png" style="filter: invert(61%) sepia(94%) saturate(1000%) hue-rotate(344deg);">
+                    <h2>Dados do Cliente</h2>
+                </div>
+
+                <div class="tabela__cliente">
+                    <div class="dados__cliente">
+                        <p class="titulo">Cliente:</p>
+                        <p id="nome" class="nome"></p>
+                    </div>
+
+                    <div class="dados__cliente">
+                        <p class="titulo">E-mail:</p>
+                        <p id="email" class="nome"></p>
+                    </div>
+
+                    <div class="dados__cliente">
+                        <p class="titulo">Telefone:</p>
+                        <p id="telefone" class="nome"></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="agenda topo">
+                <div class="titulo__contato">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1456/1456842.png" style="filter: invert(61%) sepia(94%) saturate(1000%) hue-rotate(344deg);">
+                    <h2>Dados do Veículo</h2>
+                </div>
+
+                <div class="tabela__cliente duas__colunas">
+                    <div class="espaco__colunas">
+                        <div class="dados__cliente">
+                            <p class="titulo">Marca:</p>
+                            <p id="marca" class="nome"></p>
+                        </div>
+
+                        <div class="dados__cliente">
+                            <p class="titulo">Ano:</p>
+                            <p id="ano" class="nome"></p>
+                        </div>
+                    </div>
+
+                    <div class="espaco__colunas">
+                        <div class="dados__cliente">
+                            <p class="titulo">Modelo:</p>
+                            <p id="modelo" class="nome"></p>
+                        </div>
+
+                        <div class="dados__cliente">
+                            <p class="titulo">Placa:</p>
+                            <p id="placa" class="nome"></p>
+                        </div>
+                    </div>
+                    <button type="button" id="atualizar__status">Atualizar status</button>
+
+                    <dialog id="modal__status">
+                        <h3>Atualizar status</h3>
+                        <p id="modal__cliente" class="modal__info"></p>
+
+                        <label for="novo__status" class="titulo">Novo status:</label>
+                        <select id="novo__status" class="status__servico">
+                            <option value="pendente">Pendente</option>
+                            <option value="andamento">Em andamento</option>
+                            <option value="concluido">Concluído</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+
+                        <div class="modal__botoes">
+                            <button type="button" id="cancelar__status">Cancelar</button>
+                            <button type="button" id="salvar__status">Salvar</button>
+                        </div>
+                    </dialog>
+                </div>
+
+                
+            </section>
+        </section>
+
+        <dialog id="modal__novo">
+            <h3>Novo agendamento</h3>
+
+            <form id="form__novo">
+                <div class="form__grade">
+
+                    <label class="form__campo form__campo--cheio">
+                        <span>Cliente</span>
+                        <input type="text" id="n-cliente" required>
+                    </label>
+
+                    <label class="form__campo">
+                        <span>Telefone</span>
+                        <input type="tel" id="n-telefone" required>
+                    </label>
+
+                    <label class="form__campo">
+                        <span>E-mail</span>
+                        <input type="email" id="n-email">
+                    </label>
+
+                    <label class="form__campo">
+                        <span>Marca</span>
+                        <input type="text" id="n-marca" required>
+                    </label>
+
+                    <label class="form__campo">
+                        <span>Modelo</span>
+                        <input type="text" id="n-modelo" required>
+                    </label>
+
+                    <label class="form__campo">
+                        <span>Ano</span>
+                        <input type="number" id="n-ano" required>
+                    </label>
+
+                    <label class="form__campo">
+                        <span>Placa</span>
+                        <input type="text" id="n-placa" maxlength="8" required>
+                    </label>
+
+                    <label class="form__campo form__campo--cheio">
+                        <span>Serviço</span>
+                        <select id="n-servico" required>
+                            <option value="">Selecione</option>
+                            <option value="Modulo">Módulo</option>
+                            <option value="ABS">ABS</option>
+                            <option value="airbag">Airbag</option>
+                            <option value="injecaoEletronica">Injeção Eletrônica</option>
+                            <option value="motores">Motores</option>
+                            <option value="others">Outros</option>
+                        </select>
+                    </label>
+
+                    <label class="form__campo">
+                        <span>Data</span>
+                        <input type="date" id="n-data" required>
+                    </label>
+
+                    <label class="form__campo">
+                        <span>Horário</span>
+                        <input type="time" id="n-horario" required>
+                    </label>
+
+                    <label class="form__campo">
+                        <span>Status</span>
+                        <select id="n-status">
+                            <option value="pendente">Pendente</option>
+                            <option value="andamento">Em andamento</option>
+                            <option value="concluido">Concluído</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                    </label>
+
+                </div>
+
+                <div class="form__botoes">
+                    <button type="button" class="form__cancelar" id="cancelar__novo">Cancelar</button>
+                    <button type="submit" class="form__salvar">Salvar agendamento</button>
+                </div>
+            </form>
+        </dialog>
+    </main>
+
+
+    <script src="./js/adm.js"></script>
 </body>
 </html>

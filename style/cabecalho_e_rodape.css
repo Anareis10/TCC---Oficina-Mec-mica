@@ -26,7 +26,7 @@
 .parte_superior {
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
-    position: fixed;
+    position: sticky;
     display: flex;
     /*ativa layout flexível*/
     padding: 17px 20px;
