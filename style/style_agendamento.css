@@ -70,7 +70,7 @@ main {
 .texto_banner h1 {
     font-size: 60px;
     color: var(--cor-terciaria);
-    margin-top: -150px;
+    margin-top: -80px;
 }
 
 .texto_banner span {
@@ -109,7 +109,7 @@ main {
 .beneficio img {
     width: 60px;
     height: 60px;
-    margin-bottom: 1340px;
+    margin-bottom: 0;
 }
 
 .beneficio h2 {
@@ -117,8 +117,7 @@ main {
     color: var(--cor-terciaria);
     font-size: 25px;
     width: 500px;
-    margin-left: -70px;
-    height: 1400px;
+    height: auto;
 }
 
 .container__agendamento__fundo {
@@ -563,8 +562,8 @@ header {
     position: relative;
     width: 100%;
     height: auto;
-    min-height: 380px;
-    padding: 180px 6% 40px;
+    min-height: 250px;
+    padding: 40px 6%;
     display: flex;
     align-items: center;
 }

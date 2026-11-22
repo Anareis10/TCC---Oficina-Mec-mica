@@ -40,7 +40,7 @@ body{
 
 .titulo{
     background-color: #000000;
-    height: 330px;
+    /* height: 330px; */
     display: flex;
 
 }
@@ -343,4 +343,22 @@ body{
     .quinta__parte h2 {
         font-size: 21px;
     }
+}
+
+.titulo {
+    min-height: 200px;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 6% 35px;
+    gap: 15px;
+}
+
+.titulo h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.titulo img {
+    margin: 0 0 5px;
 }
