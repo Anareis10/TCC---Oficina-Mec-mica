@@ -119,12 +119,12 @@ function mostrarAgenda() {
         var tr = document.createElement("tr");
         tr.dataset.indice = i;
         tr.innerHTML =
-            "<td>" + formatarData(item.data) + "</td>" +
-            "<td><b>" + item.horario + "</b></td>" +
-            "<td>" + item.cliente + "</td>" +
-            "<td>" + item.modelo + '<span class="placa">' + item.placa + "</span></td>" +
-            "<td>" + nomeServico[item.servico] + "</td>" +
-            '<td><span class="etiqueta ' + item.status + '">' + nomeStatus[item.status] + "</span></td>";
+            '<td data-label="Data">' + formatarData(item.data) + "</td>" +
+            '<td data-label="Horário"><b>' + item.horario + "</b></td>" +
+            '<td data-label="Cliente">' + item.cliente + "</td>" +
+            '<td data-label="Veículo">' + item.modelo + '<span class="placa">' + item.placa + "</span></td>" +
+            '<td data-label="Serviço">' + nomeServico[item.servico] + "</td>" +
+            '<td data-label="Status"><span class="etiqueta ' + item.status + '">' + nomeStatus[item.status] + "</span></td>";
 
         tr.addEventListener("click", function () {
             mostrarDetalhes(i);
