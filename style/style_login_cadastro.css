@@ -75,6 +75,27 @@ h2 {
 .input-box {
     position: relative;
     margin: 20px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box label{
+    color: var(--background_color_branco);
+    font-family: var(--fonte_primaria);
+    font-size: 12px;
+}
+
+.opcao{
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--preto_principal);
+    border: none;
+    border-radius: 1.5rem;
+    outline: none;
+    color: var(--background_color_branco);
+    font-size: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: 0.4s;
 }
 
 .input-box input {
