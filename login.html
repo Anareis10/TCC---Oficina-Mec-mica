@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -23,6 +24,14 @@
                 <form id="formularioLogin">
 
                     <div class="input-box">
+                        <select id="tipoLogin" required>
+                            <option value="cliente">Cliente</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                        <label for="tipoLogin">Entrar como</label>
+                    </div>
+
+                    <div class="input-box">
                         <input type="email" id="email" required>
                         <span>E-mail</span>
                     </div>
@@ -43,7 +52,7 @@
 
                 </form>
 
-                <p class="button-cadastro">
+                <p class="button-cadastro" id="areaCadastro">
                     Não tem uma conta?
                     <a href="./cadastro_2.html">Crie uma!</a>
                 </p>

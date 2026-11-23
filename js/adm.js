@@ -1,245 +1,425 @@
 
-function dataISO(d) {
-    var mes = String(d.getMonth() + 1).padStart(2, "0");
-    var dia = String(d.getDate()).padStart(2, "0");
-    return d.getFullYear() + "-" + mes + "-" + dia;
+const API = "http://localhost:3000";
+
+// VERIFICAR AUTENTICAÇÃO DO ADMINISTRADOR
+
+const tokenAdmin = sessionStorage.getItem("tokenAdmin");
+
+if (!tokenAdmin) {
+    alert("Você precisa fazer login como administrador.");
+    window.location.href = "./login.html";
 }
 
-function somarDias(n) {
-    var d = new Date();
-    d.setDate(d.getDate() + n);
-    return dataISO(d);
+// Cabeçalho de autenticação
+function cabecalhoAdmin() {
+    return {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${tokenAdmin}`
+    };
 }
 
-function formatarData(iso) {
-    var p = iso.split("-");
-    return p[2] + "/" + p[1] + "/" + p[0];
-}
-
-var hojeISO = dataISO(new Date());
-
-
-var hoje = new Date().toLocaleDateString("pt-BR", {
-    weekday: "long", day: "numeric", month: "long", year: "numeric"
-});
-document.getElementById("data-hoje").textContent =
-    hoje.charAt(0).toUpperCase() + hoje.slice(1);
-
-//Dados de exemplo (depois virão do banco de dados)
-var agendamentos = [
-    { data: hojeISO,      horario: "08:00", cliente: "Carlos Almeida", email: "carlos.almeida@email.com", telefone: "(19) 99812-3344", marca: "Volkswagen", modelo: "Gol 1.6",          ano: "2016", placa: "FQX-4B21", servico: "injecaoEletronica", status: "concluido" },
-    { data: hojeISO,      horario: "09:30", cliente: "Fernanda Souza", email: "fe.souza@email.com",       telefone: "(19) 98126-5407", marca: "Chevrolet",  modelo: "Onix LT",          ano: "2019", placa: "GHT-9C07", servico: "ABS",               status: "andamento" },
-    { data: hojeISO,      horario: "11:00", cliente: "Marcos Pereira", email: "marcos.p@email.com",       telefone: "(19) 99700-1188", marca: "Fiat",       modelo: "Strada Endurance", ano: "2021", placa: "RTA-2D55", servico: "Modulo",            status: "pendente"  },
-    { data: hojeISO,      horario: "14:00", cliente: "Juliana Rocha",  email: "ju.rocha@email.com",       telefone: "(19) 99655-2290", marca: "Honda",      modelo: "Civic EXL",        ano: "2018", placa: "EQM-7F90", servico: "airbag",            status: "pendente"  },
-    { data: hojeISO,      horario: "15:30", cliente: "Roberto Lima",   email: "roberto.lima@email.com",   telefone: "(19) 98877-4521", marca: "Toyota",     modelo: "Corolla XEi",      ano: "2020", placa: "JKL-1A34", servico: "motores",           status: "cancelado" },
-    { data: somarDias(1), horario: "10:00", cliente: "Patrícia Gomes", email: "patricia.g@email.com",     telefone: "(19) 99123-4567", marca: "Hyundai",    modelo: "HB20",             ano: "2022", placa: "MNB-3E88", servico: "ABS",               status: "pendente"  }
-];
-
-var nomeStatus = {
+const nomeStatus = {
     pendente: "Pendente",
     andamento: "Em andamento",
     concluido: "Concluído",
     cancelado: "Cancelado"
 };
 
-//
-var nomeServico = {
-    Modulo: "Módulo",
-    ABS: "ABS",
-    airbag: "Airbag",
-    injecaoEletronica: "Injeção Eletrônica",
-    motores: "Motores",
-    others: "Outros"
+const nomeServico = {
+    "Modulo": "Módulo",
+    "ABS": "ABS",
+    "Airbag": "Airbag",
+    "Injeção Eletrônica": "Injeção Eletrônica",
+    "Motores": "Motores",
+    "Outros": "Outros"
 };
 
+const linhas = document.getElementById("linhas");
+const campoBusca = document.getElementById("buscar");
+const campoStatus = document.getElementById("status");
+const campoDia = document.getElementById("dia");
+const contador = document.getElementById("quant__veiculo");
+const tituloAgenda = document.getElementById("titulo__agenda__texto");
 
-var linhas = document.getElementById("linhas");
-var campoBusca = document.getElementById("buscar");
-var campoStatus = document.getElementById("status");
-var campoDia = document.getElementById("dia");
-var contador = document.getElementById("quant__veiculo");
-var tituloAgenda = document.getElementById("titulo__agenda__texto");
+const botaoStatus = document.getElementById("atualizar__status");
+const janelaStatus = document.getElementById("modal__status");
+const seletorStatus = document.getElementById("novo__status");
+const textoJanela = document.getElementById("modal__cliente");
 
-campoDia.value = hojeISO; 
+const janelaNovo = document.getElementById("modal__novo");
+const formNovo = document.getElementById("form__novo");
 
-var selecionado = 0;
+let agendamentos = [];
+let selecionado = null;
 
-//Preenche os cards de cliente e veículo
-function mostrarDetalhes(i) {
-    var item = agendamentos[i];
-    selecionado = i;
+// DATA ATUAL NO FUSO LOCAL
+function dataISO(data = new Date()) {
+    const ano = data.getFullYear();
+    const mes = String(data.getMonth() + 1).padStart(2, "0");
+    const dia = String(data.getDate()).padStart(2, "0");
 
-    document.getElementById("nome").textContent = item.cliente;
-    document.getElementById("email").textContent = item.email;
-    document.getElementById("telefone").textContent = item.telefone;
-    document.getElementById("marca").textContent = item.marca;
-    document.getElementById("modelo").textContent = item.modelo;
-    document.getElementById("ano").textContent = item.ano;
-    document.getElementById("placa").textContent = item.placa;
+    return `${ano}-${mes}-${dia}`;
+}
 
-    
-    linhas.querySelectorAll("tr[data-indice]").forEach(function (tr) {
-        tr.classList.toggle("selecionada", Number(tr.dataset.indice) === i);
+function formatarData(iso) {
+    if (!iso) return "-";
+
+    const partes = String(iso).slice(0, 10).split("-");
+
+    if (partes.length !== 3) return iso;
+
+    return `${partes[2]}/${partes[1]}/${partes[0]}`;
+}
+
+function atualizarDataHoje() {
+    const hoje = new Date().toLocaleDateString("pt-BR", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
+
+    const campoDataHoje = document.getElementById("data-hoje");
+
+    campoDataHoje.textContent =
+        hoje.charAt(0).toUpperCase() + hoje.slice(1);
+}
+
+// CARREGAR AGENDAMENTOS DO BANCO
+async function carregarAgendamentos() {
+    try {
+        linhas.innerHTML = `
+            <tr>
+                <td colspan="6" class="vazio">Carregando agendamentos...</td>
+            </tr>
+        `;
+
+        const resposta = await fetch(`${API}/admin/agendamentos`, {
+        headers: cabecalhoAdmin()
+        });
+        const dados = await resposta.json();
+
+        if (!resposta.ok) {
+            throw new Error(dados.mensagem || "Erro ao carregar agenda.");
+        }
+
+        agendamentos = dados.map(item => ({
+            ...item,
+            data: String(item.data).slice(0, 10),
+            horario: String(item.horario).slice(0, 5)
+        }));
+
+        agendamentos.sort((a, b) => {
+            return (a.data + a.horario).localeCompare(b.data + b.horario);
+        });
+
+        mostrarAgenda();
+
+    } catch (erro) {
+        console.error("Erro ao carregar agendamentos:", erro);
+
+        linhas.innerHTML = `
+            <tr>
+                <td colspan="6" class="vazio">
+                    Não foi possível carregar os agendamentos.
+                </td>
+            </tr>
+        `;
+
+        alert(erro.message);
+    }
+}
+
+// MOSTRAR DETALHES DO CLIENTE E DO VEÍCULO
+function mostrarDetalhes(item) {
+    if (!item) return;
+
+    selecionado = item.id_agendamento;
+
+    document.getElementById("nome").textContent = item.cliente || "-";
+    document.getElementById("email").textContent = item.email || "-";
+    document.getElementById("telefone").textContent = item.telefone || "-";
+    document.getElementById("marca").textContent = item.marca || "-";
+    document.getElementById("modelo").textContent = item.modelo || "-";
+    document.getElementById("ano").textContent = item.ano || "-";
+    document.getElementById("placa").textContent = item.placa || "-";
+
+    linhas.querySelectorAll("tr[data-id]").forEach(tr => {
+        tr.classList.toggle(
+            "selecionada",
+            Number(tr.dataset.id) === Number(item.id_agendamento)
+        );
     });
 }
 
+// CRIAR CÉLULA DA TABELA
+function criarCelula(texto, classe = "") {
+    const td = document.createElement("td");
 
-function mostrarAgenda() {
-    var busca = campoBusca.value.trim().toLowerCase();
-    var buscando = busca !== "";
-    var filtro = campoStatus.value;
-    var total = 0;
-    var primeiroVisivel = -1;
-    var selecionadoVisivel = false;
+    td.textContent = texto || "-";
 
-    if (!campoDia.value) campoDia.value = hojeISO;
-
-
-    if (buscando) {
-        tituloAgenda.textContent = "Resultados da busca";
-    } else {
-        tituloAgenda.textContent = campoDia.value === hojeISO
-            ? "Agenda de hoje"
-            : "Agenda de " + formatarData(campoDia.value);
+    if (classe) {
+        td.className = classe;
     }
 
-    
+    return td;
+}
+
+// MOSTRAR AGENDA COM FILTROS
+function mostrarAgenda() {
+    const hojeISO = dataISO();
+
+    if (!campoDia.value) {
+        campoDia.value = hojeISO;
+    }
+
+    const busca = campoBusca.value.trim().toLowerCase();
+    const buscando = busca !== "";
+    const filtro = campoStatus.value;
+
+    const dataSelecionada = campoDia.value;
+
+    tituloAgenda.textContent = buscando
+        ? "Resultados da busca"
+        : dataSelecionada === hojeISO
+            ? "Agenda de hoje"
+            : `Agenda de ${formatarData(dataSelecionada)}`;
+
     campoDia.classList.toggle("inativo", buscando);
 
     linhas.innerHTML = "";
 
-    agendamentos.forEach(function (item, i) {
-        
-        if (!buscando && item.data !== campoDia.value) return;
+    const filtrados = agendamentos.filter(item => {
+        if (!buscando && item.data !== dataSelecionada) {
+            return false;
+        }
 
-        if (filtro && item.status !== filtro) return;
+        if (filtro && item.status !== filtro) {
+            return false;
+        }
 
-        if (buscando && (item.cliente + " " + item.placa).toLowerCase().indexOf(busca) < 0) return;
+        if (buscando) {
+            const textoBusca =
+                `${item.cliente} ${item.placa}`.toLowerCase();
 
-        var tr = document.createElement("tr");
-        tr.dataset.indice = i;
-        tr.innerHTML =
-            '<td data-label="Data">' + formatarData(item.data) + "</td>" +
-            '<td data-label="Horário"><b>' + item.horario + "</b></td>" +
-            '<td data-label="Cliente">' + item.cliente + "</td>" +
-            '<td data-label="Veículo">' + item.modelo + '<span class="placa">' + item.placa + "</span></td>" +
-            '<td data-label="Serviço">' + nomeServico[item.servico] + "</td>" +
-            '<td data-label="Status"><span class="etiqueta ' + item.status + '">' + nomeStatus[item.status] + "</span></td>";
+            if (!textoBusca.includes(busca)) {
+                return false;
+            }
+        }
 
-        tr.addEventListener("click", function () {
-            mostrarDetalhes(i);
-        });
-
-        linhas.appendChild(tr);
-        total++;
-
-        if (primeiroVisivel < 0) primeiroVisivel = i;
-        if (i === selecionado) selecionadoVisivel = true;
+        return true;
     });
 
-    contador.textContent = total;
+    contador.textContent = filtrados.length;
 
-    if (total === 0) {
-        linhas.innerHTML = '<tr><td colspan="6" class="vazio">' +
-            (buscando ? "Nenhum resultado para a busca." : "Nenhum agendamento para este dia.") +
-            "</td></tr>";
+    if (filtrados.length === 0) {
+        const tr = document.createElement("tr");
+        const td = document.createElement("td");
+
+        td.colSpan = 6;
+        td.className = "vazio";
+        td.textContent = buscando
+            ? "Nenhum resultado para a busca."
+            : "Nenhum agendamento para este dia.";
+
+        tr.appendChild(td);
+        linhas.appendChild(tr);
+
+        selecionado = null;
+
+        document.getElementById("nome").textContent = "-";
+        document.getElementById("email").textContent = "-";
+        document.getElementById("telefone").textContent = "-";
+        document.getElementById("marca").textContent = "-";
+        document.getElementById("modelo").textContent = "-";
+        document.getElementById("ano").textContent = "-";
+        document.getElementById("placa").textContent = "-";
+
         return;
     }
 
+    filtrados.forEach(item => {
+        const tr = document.createElement("tr");
 
-    mostrarDetalhes(selecionadoVisivel ? selecionado : primeiroVisivel);
+        tr.dataset.id = item.id_agendamento;
+
+        tr.appendChild(criarCelula(formatarData(item.data)));
+        tr.appendChild(criarCelula(item.horario));
+
+        tr.appendChild(criarCelula(item.cliente));
+
+        const tdVeiculo = document.createElement("td");
+        tdVeiculo.appendChild(document.createTextNode(item.modelo || "-"));
+
+        const spanPlaca = document.createElement("span");
+        spanPlaca.className = "placa";
+        spanPlaca.textContent = item.placa || "-";
+
+        tdVeiculo.appendChild(spanPlaca);
+        tr.appendChild(tdVeiculo);
+
+        tr.appendChild(
+            criarCelula(nomeServico[item.servico] || item.servico)
+        );
+
+        const tdStatus = document.createElement("td");
+        const etiqueta = document.createElement("span");
+
+        etiqueta.className = `etiqueta ${item.status}`;
+        etiqueta.textContent = nomeStatus[item.status] || item.status;
+
+        tdStatus.appendChild(etiqueta);
+        tr.appendChild(tdStatus);
+
+        tr.addEventListener("click", function () {
+            mostrarDetalhes(item);
+        });
+
+        linhas.appendChild(tr);
+    });
+
+    const itemSelecionado = filtrados.find(
+        item => Number(item.id_agendamento) === Number(selecionado)
+    );
+
+    mostrarDetalhes(itemSelecionado || filtrados[0]);
 }
 
+// EVENTOS DOS FILTROS
 campoBusca.addEventListener("input", mostrarAgenda);
 campoStatus.addEventListener("change", mostrarAgenda);
 campoDia.addEventListener("change", mostrarAgenda);
 
-
-var botaoStatus = document.getElementById("atualizar__status");
-var janela = document.getElementById("modal__status");
-var seletorStatus = document.getElementById("novo__status");
-var textoJanela = document.getElementById("modal__cliente");
-
-
+// ABRIR JANELA DE STATUS
 botaoStatus.addEventListener("click", function () {
-    if (!linhas.querySelector("tr[data-indice]")) return;
+    if (!selecionado) {
+        alert("Selecione um agendamento primeiro.");
+        return;
+    }
 
-    var item = agendamentos[selecionado];
-    textoJanela.textContent = item.cliente + " · " + item.modelo + " (" + item.placa + ")";
-    seletorStatus.value = item.status;       
-    janela.showModal();
+    const item = agendamentos.find(
+        agendamento =>
+            Number(agendamento.id_agendamento) === Number(selecionado)
+    );
+
+    if (!item) return;
+
+    textoJanela.textContent =
+        `${item.cliente} · ${item.modelo} (${item.placa})`;
+
+    seletorStatus.value = item.status;
+
+    janelaStatus.showModal();
 });
 
+// CANCELAR ALTERAÇÃO DE STATUS
 document.getElementById("cancelar__status").addEventListener("click", function () {
-    janela.close();
+    janelaStatus.close();
 });
 
+// SALVAR STATUS NO BANCO
+document.getElementById("salvar__status").addEventListener("click", async function () {
+    if (!selecionado) return;
 
-document.getElementById("salvar__status").addEventListener("click", function () {
-    agendamentos[selecionado].status = seletorStatus.value;
+    const novoStatus = seletorStatus.value;
 
-    // Quando tiver back-end, envie a mudança aqui, por exemplo:
-    // fetch("/api/agendamentos/" + agendamentos[selecionado].id, {
-    //     method: "PATCH",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({ status: seletorStatus.value })
-    // });
+    try {
+        const resposta = await fetch(
+            `${API}/admin/agendamentos/${selecionado}/status`,
+            {
+                method: "PATCH",
+                headers: cabecalhoAdmin(),
+                body: JSON.stringify({
+                    status: novoStatus
+                })
+            }
+        );
 
-    janela.close();
-    mostrarAgenda();
+        const dados = await resposta.json();
+
+        if (!resposta.ok) {
+            throw new Error(dados.mensagem || "Erro ao atualizar status.");
+        }
+
+        janelaStatus.close();
+
+        await carregarAgendamentos();
+
+        alert("Status atualizado com sucesso!");
+
+    } catch (erro) {
+        console.error(erro);
+        alert(erro.message);
+    }
 });
 
-//Novo agendamento
-var janelaNovo = document.getElementById("modal__novo");
-var formNovo = document.getElementById("form__novo");
-
+// ABRIR NOVO AGENDAMENTO
 document.getElementById("novo__agendamento").addEventListener("click", function () {
     formNovo.reset();
-    document.getElementById("n-data").value = campoDia.value;  
+
+    document.getElementById("n-data").value =
+        campoDia.value || dataISO();
+
     janelaNovo.showModal();
 });
 
+// FECHAR NOVO AGENDAMENTO
 document.getElementById("cancelar__novo").addEventListener("click", function () {
     janelaNovo.close();
 });
 
-formNovo.addEventListener("submit", function (evento) {
+// CADASTRAR AGENDAMENTO PELO ADMINISTRADOR
+formNovo.addEventListener("submit", async function (evento) {
     evento.preventDefault();
 
-    var novo = {
-        data:     document.getElementById("n-data").value,
-        horario:  document.getElementById("n-horario").value,
-        cliente:  document.getElementById("n-cliente").value.trim(),
-        email:    document.getElementById("n-email").value.trim() || "-",
+    const novo = {
+        cliente: document.getElementById("n-cliente").value.trim(),
         telefone: document.getElementById("n-telefone").value.trim(),
-        marca:    document.getElementById("n-marca").value.trim(),
-        modelo:   document.getElementById("n-modelo").value.trim(),
-        ano:      document.getElementById("n-ano").value,
-        placa:    document.getElementById("n-placa").value.trim().toUpperCase(),
-        servico:  document.getElementById("n-servico").value,
-        status:   document.getElementById("n-status").value
+        email: document.getElementById("n-email").value.trim(),
+        marca: document.getElementById("n-marca").value.trim(),
+        modelo: document.getElementById("n-modelo").value.trim(),
+        ano: document.getElementById("n-ano").value,
+        placa: document.getElementById("n-placa").value.trim().toUpperCase(),
+        servico: document.getElementById("n-servico").value,
+        data: document.getElementById("n-data").value,
+        horario: document.getElementById("n-horario").value,
+        status: document.getElementById("n-status").value
     };
 
-    // Quando tiver back-end, envie o novo agendamento aqui, por exemplo:
-    // fetch("/api/agendamentos", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(novo)
-    // });
+    try {
+        const resposta = await fetch(`${API}/admin/agendamentos`, {
+            method: "POST",
+            headers: cabecalhoAdmin(),
+            body: JSON.stringify(novo)
+        });
 
-    agendamentos.push(novo);
-    agendamentos.sort(function (a, b) {
-        return (a.data + a.horario).localeCompare(b.data + b.horario);
-    });
+        const dados = await resposta.json();
 
+        if (!resposta.ok) {
+            throw new Error(dados.mensagem || "Erro ao cadastrar agendamento.");
+        }
 
-    campoBusca.value = "";
-    campoStatus.value = "";
-    campoDia.value = novo.data;
-    selecionado = agendamentos.indexOf(novo);
+        janelaNovo.close();
 
-    janelaNovo.close();
-    mostrarAgenda();
+        campoBusca.value = "";
+        campoStatus.value = "";
+        campoDia.value = novo.data;
+
+        selecionado = dados.id_agendamento;
+
+        await carregarAgendamentos();
+
+        alert(dados.mensagem || "Agendamento cadastrado com sucesso!");
+
+    } catch (erro) {
+        console.error("Erro ao cadastrar agendamento:", erro);
+        alert(erro.message);
+    }
 });
 
-mostrarAgenda();
+// INICIALIZAÇÃO
+atualizarDataHoje();
+
+campoDia.value = dataISO();
+
+carregarAgendamentos();
