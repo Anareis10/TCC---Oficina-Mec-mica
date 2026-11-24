@@ -4,13 +4,19 @@ const formulario = document.getElementById("formularioLogin");
 const tipoLogin = document.getElementById("tipoLogin");
 const areaCadastro = document.getElementById("areaCadastro");
 
-// Mostra o cadastro somente para clientes
-if (tipoLogin && areaCadastro) {
+// Mostra o cadastro e esqueci senha somente para clientes
+if (tipoLogin && areaCadastro && recuperacao__senha) {
     tipoLogin.addEventListener("change", function () {
         if (tipoLogin.value === "admin") {
             areaCadastro.style.display = "none";
         } else {
             areaCadastro.style.display = "block";
+        }
+        if (tipoLogin.value === "admin"){
+            recuperacao__senha.style.display = "none";
+        }
+        else {
+            recuperacao__senha.style.display = "block";
         }
     });
 }
